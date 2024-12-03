@@ -7,6 +7,7 @@ using UnityEngine.AI;
 using UnityEngine.Rendering;
 using static Unity.VisualScripting.StickyNote;
 using System.Collections;
+using DG.Tweening;
 
 public enum BlockedSide
 {
@@ -38,8 +39,9 @@ public class GridElement : MonoBehaviour
     // public GameObject Block;
     public Vector3 PlayerInitialPos;
     public Vector3 PlayerInitialScale;
-
+    public bool StartedRunning;
     public Rigidbody rb;
+    public GameObject Hole;
     // public bool Activated;
     //  public SpriteRenderer spriteRenderer;
     //  public GameObject RingParticle;
@@ -75,9 +77,64 @@ public class GridElement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (StartedRunning)
+        {
+            if (IsWithinStoppingDistance())
+            {
+              StartCoroutine(OnReachedDestination());
+            }
+        }
 
     }
 
+    bool IsWithinStoppingDistance()
+    {
+        // Check if the agent has a valid path and is close enough to the destination
+        return !agent.pathPending &&
+               agent.remainingDistance <= agent.stoppingDistance &&
+               (!agent.hasPath || agent.velocity.sqrMagnitude == 0f);
+    }
+  IEnumerator OnReachedDestination()
+    {
+        // Stop the NavMeshAgent and other related actions
+        StartedRunning = false;
+        agent.enabled = false;
+
+        // Trigger the jump animation if an animator exists
+        if (animator != null)
+        {
+            animator.SetTrigger("Jump"); // Assumes "Jump" is a valid trigger in the Animator Controller
+        }
+
+        // Get the first child of this transform as a GameObject
+        if (transform.childCount > 0)
+        {
+            GameObject Player = transform.GetChild(0).gameObject;
+            Player.transform.parent = null;
+            // Use DOTween to move the Player smoothly to the Hole's position
+            if (Hole != null)
+            {
+                Player.transform.DOLocalMove(Hole.transform.localPosition, 0.3f).OnComplete(() =>
+                {
+                   rb.useGravity =true;
+                   
+                });
+                yield return new WaitForSeconds(1f);
+                Player.SetActive(false);
+                transform.gameObject.SetActive(false);
+            }
+            else
+            {
+                Debug.LogWarning("Hole reference is not set!");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No children found under this transform!");
+        }
+
+       yield return null;
+    }
 
     private void OnValidate()
     {
@@ -170,55 +227,55 @@ public class GridElement : MonoBehaviour
     //     Debug.Log("DO ANIM PLAYER--" + transform.gameObject.name);
 
     // }
-    //public IEnumerator JumpToHole()
-    //{
-
-    //    if (agent.remainingDistance <=agent.stoppingDistance)
-    //    {
-    //        // Stop the agent and play the jump/fall animation
-    //        if (agent.velocity.magnitude <= 0.1f) // If the agent is practically stopped
-    //        {
-    //            // Trigger jump/fall animatior
-    //            if (animator != null)
-    //            {
-    //                animator.SetTrigger("Jump"); // Assuming you have a "Jump" trigger in your Animator
-    //            }
-
-    //            // Optionally, you can disable the agent after the jump/fall animation is triggered
-    //            agent.enabled = false;
-    //        }
-    //    }
-    //    else
-    //    {
-    //        yield return new WaitForSeconds(0.1f);
-    //        StartCoroutine(JumpToHole());
-    //    }
-    //}
-
-
     public IEnumerator JumpToHole()
     {
-        // Wait for the agent to reach the destination
-        while (agent.remainingDistance > agent.stoppingDistance || agent.velocity.magnitude > 0.1f)
+
+        if (agent.remainingDistance == 0)
         {
-            yield return null; // Wait for the next frame
-        }
+            // Stop the agent and play the jump/fall animation
+            if (agent.velocity.magnitude <= 0.1f) // If the agent is practically stopped
+            {
+                // Trigger jump/fall animatior
+                if (animator != null)
+                {
+                    animator.SetTrigger("Jump"); // Assuming you have a "Jump" trigger in your Animator
+                }
 
-        // Agent has reached the destination and stopped
-        if (animator != null)
+                // Optionally, you can disable the agent after the jump/fall animation is triggered
+                agent.enabled = false;
+            }
+        }
+        else
         {
-            animator.SetTrigger("Jump"); // Trigger the jump animation
+            yield return new WaitForSeconds(0.5f);
+            StartCoroutine(JumpToHole());
         }
-
-        // Optionally disable the agent while the jump animation plays
-        agent.enabled = false;
-
-        // Wait for the duration of the jump animation
-        yield return new WaitForSeconds(1f); // Adjust this based on your animation duration
-
-        // Re-enable the agent or perform follow-up actions if needed
-        agent.enabled = true;
     }
+
+
+    //public IEnumerator JumpToHole()
+    //{
+    //    // Wait for the agent to reach the destination
+    //    while (agent.remainingDistance > agent.stoppingDistance || agent.velocity.magnitude > 0.1f)
+    //    {
+    //        yield return null; // Wait for the next frame
+    //    }
+
+    //    // Agent has reached the destination and stopped
+    //    if (animator != null)
+    //    {
+    //        animator.SetTrigger("Jump"); // Trigger the jump animation
+    //    }
+
+    //    // Optionally disable the agent while the jump animation plays
+    //    agent.enabled = false;
+
+    //    // Wait for the duration of the jump animation
+    //    yield return new WaitForSeconds(1f); // Adjust this based on your animation duration
+
+    //    // Re-enable the agent or perform follow-up actions if needed
+    //    agent.enabled = true;
+    //}
 
 
     ////public IEnumerator JumpToHole()

@@ -20,6 +20,6 @@ public class Hole : MonoBehaviour
     private void OnMouseDown()
     {
         Debug.Log("clicked");
-        GameManager.Instance.IsPlayerMovable(colorEnum,transform);
+        GameManager.Instance.IsPlayerMovable(colorEnum,transform.gameObject);
     }
 }

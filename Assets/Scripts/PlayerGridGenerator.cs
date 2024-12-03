@@ -298,10 +298,10 @@ public class PlayerGridGenerator : MonoBehaviour
     //    return gridElement.Player;
     //}
 
-    public void movePlayerToHole(Transform holePosition)
+    public void movePlayerToHole(GameObject hole)
     {
         obstacle.enabled = false;
-
+        Transform holePosition = hole.transform;
         foreach (GridElement gridElement in playerGridElements)
         {
             gridElement.agent.enabled = true;
@@ -314,7 +314,9 @@ public class PlayerGridGenerator : MonoBehaviour
             }
 
             // Start the jump coroutine
-            StartCoroutine(gridElement.JumpToHole());
+            gridElement.StartedRunning = true;
+            gridElement.Hole= hole;
+           // StartCoroutine(gridElement.JumpToHole());
         }
 
         foreach (PlayerGridGenerator gridGenerator in unBlockingGrid)
@@ -326,14 +328,6 @@ public class PlayerGridGenerator : MonoBehaviour
                 gridGenerator.isMovable = true;
             }
         }
-        foreach(PlayerGridGenerator gridGenerator in unBlockingGrid)
-        {
-            gridGenerator.blockingGrid.Remove(this);
-
-            if(gridGenerator.blockingGrid.Count <= 0)
-            {
-                gridGenerator.isMovable = true;
-            }
-        }
+      
     }
 }

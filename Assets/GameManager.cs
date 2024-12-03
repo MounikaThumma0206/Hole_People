@@ -12,15 +12,16 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
     }
-    public void IsPlayerMovable(ColorEnum color,Transform holePosition)
+    public void IsPlayerMovable(ColorEnum color,GameObject hole)
     {
+       
         foreach (PlayerGridGenerator generator in playerGrids)
         {
             if(generator.gridColor == color)
             {
                if(generator.isMovable)
                 {
-                    generator.movePlayerToHole(holePosition);
+                    generator.movePlayerToHole(hole);
                 }
             }
         }
