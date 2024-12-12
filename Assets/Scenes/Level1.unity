@@ -1683,6 +1683,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd1b48a19ae48441a24e2c6608edb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxMoves: 5
+  movesText: {fileID: 1100577698}
   playerGridElements: []
   PlayerPositions:
   - {fileID: 1510771611}
@@ -2603,6 +2605,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd1b48a19ae48441a24e2c6608edb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxMoves: 5
+  movesText: {fileID: 1100577698}
   playerGridElements: []
   PlayerPositions:
   - {fileID: 675998239}
@@ -3961,6 +3965,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd1b48a19ae48441a24e2c6608edb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxMoves: 5
+  movesText: {fileID: 1100577698}
   playerGridElements: []
   PlayerPositions:
   - {fileID: 1630232524}
@@ -12514,6 +12520,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd1b48a19ae48441a24e2c6608edb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxMoves: 5
+  movesText: {fileID: 1100577698}
   playerGridElements: []
   PlayerPositions:
   - {fileID: 1122479352}
@@ -13525,6 +13533,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd1b48a19ae48441a24e2c6608edb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxMoves: 5
+  movesText: {fileID: 1100577698}
   playerGridElements: []
   PlayerPositions:
   - {fileID: 1859350153}
@@ -17141,6 +17151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd1b48a19ae48441a24e2c6608edb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxMoves: 5
+  movesText: {fileID: 1100577698}
   playerGridElements:
   - {fileID: 1013237424}
   - {fileID: 1567795182}
@@ -19180,6 +19192,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd1b48a19ae48441a24e2c6608edb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxMoves: 5
+  movesText: {fileID: 1100577698}
   playerGridElements: []
   PlayerPositions:
   - {fileID: 2011598418}
@@ -20428,6 +20442,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd1b48a19ae48441a24e2c6608edb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxMoves: 5
+  movesText: {fileID: 1100577698}
   playerGridElements: []
   PlayerPositions:
   - {fileID: 457832745}

@@ -1,13 +1,25 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class PlayerGridGenerator : MonoBehaviour
 {
     public static PlayerGridGenerator Instance;
+
+    [Header("Moves Configuration")]
+    public int maxMoves = 5; 
+    private int remainingMoves; 
+    private bool isGameplayActive = true; 
+
+    [Header("UI Elements")]
+    public TextMeshProUGUI movesText;
+    private GameObject retryUI;
+
 
     public GameObject[,] PlayerGrid;
     public List<GridElement> playerGridElements = new List<GridElement>();
@@ -39,10 +51,18 @@ public class PlayerGridGenerator : MonoBehaviour
         {
             Instance = this;
         }
+        remainingMoves = maxMoves;
     }
 
     void Start()
     {
+        
+        UpdateMovesUI();
+        if (retryUI != null)
+        {
+            retryUI.SetActive(false); 
+        }
+
         AddElementsToGrid();
         foreach (PlayerGridGenerator generator in blockingGrid)
         {
@@ -298,10 +318,61 @@ public class PlayerGridGenerator : MonoBehaviour
     //    return gridElement.Player;
     //}
 
+    //////public void movePlayerToHole(GameObject hole)
+    //////{
+    //////    obstacle.enabled = false;
+    //////    Transform holePosition = hole.transform;
+    //////    foreach (GridElement gridElement in playerGridElements)
+    //////    {
+    //////        gridElement.agent.enabled = true;
+    //////        gridElement.agent.SetDestination(holePosition.position);
+    //////        gridElement.agent.stoppingDistance = 2;
+
+    //////        if (gridElement.animator != null)
+    //////        {
+    //////            gridElement.animator.SetTrigger("Run");
+    //////        }
+
+    //////        // Start the jump coroutine
+    //////        gridElement.StartedRunning = true;
+    //////        gridElement.Hole= hole;
+    //////       // StartCoroutine(gridElement.JumpToHole());
+    //////    }
+
+    //////    foreach (PlayerGridGenerator gridGenerator in unBlockingGrid)
+    //////    {
+    //////        gridGenerator.blockingGrid.Remove(this);
+
+    //////        if (gridGenerator.blockingGrid.Count <= 0)
+    //////        {
+    //////            gridGenerator.isMovable = true;
+    //////        }
+    //////    }
+
+    //////}
+    ///
+
+
+
+
     public void movePlayerToHole(GameObject hole)
     {
+        if (!isGameplayActive)
+        {
+            Debug.Log("Gameplay stopped. No moves left!");
+            return;
+        }
+
+        if (remainingMoves <= 0)
+        {
+            Debug.Log("No moves left.");
+            StopGameplay();
+            return;
+        }
+
         obstacle.enabled = false;
         Transform holePosition = hole.transform;
+
         foreach (GridElement gridElement in playerGridElements)
         {
             gridElement.agent.enabled = true;
@@ -313,10 +384,8 @@ public class PlayerGridGenerator : MonoBehaviour
                 gridElement.animator.SetTrigger("Run");
             }
 
-            // Start the jump coroutine
             gridElement.StartedRunning = true;
-            gridElement.Hole= hole;
-           // StartCoroutine(gridElement.JumpToHole());
+            gridElement.Hole = hole;
         }
 
         foreach (PlayerGridGenerator gridGenerator in unBlockingGrid)
@@ -328,6 +397,68 @@ public class PlayerGridGenerator : MonoBehaviour
                 gridGenerator.isMovable = true;
             }
         }
-      
+        remainingMoves--;
+        UpdateMovesUI();
+        if (remainingMoves <= 0)
+        {
+            StopGameplay();
+        }
     }
+
+    private void UpdateMovesUI()
+    {
+        if (movesText != null)
+        {
+            movesText.text = $" Move : {remainingMoves}";
+        }
+        else
+        {
+            Debug.LogWarning("Moves Text is not assigned in the Inspector.");
+        }
+    }
+    private void StopGameplay()
+    {
+        isGameplayActive = false;
+        Debug.Log("Gameplay stopped. No moves left!");
+
+        // Stop all time-dependent operations in the scene
+        Time.timeScale = 0;
+
+        // Show the retry UI
+        if (retryUI != null)
+        {
+            retryUI.SetActive(true);
+        }
+    }
+     // Check if gameplay should stop
+       
+public void RetryGame()
+{
+    // Reset the game state and reload the scene
+    Time.timeScale = 1;
+    remainingMoves = maxMoves;
+    UpdateMovesUI();
+
+    if (retryUI != null)
+    {
+        retryUI.SetActive(false);
+    }
+
+    Debug.Log("Game restarted.");
+    // Optionally, reload the scene if needed:
+    // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+}
+
+private void OnMouseDown()
+{
+    // Block all mouse interactions if gameplay is stopped
+    if (!isGameplayActive)
+    {
+        Debug.Log("Mouse interaction blocked. No moves left!");
+        return;
+    }
+
+    Debug.Log("Mouse down detected. Processing interaction...");
+    // Add logic for mouse interaction here
+}
 }
