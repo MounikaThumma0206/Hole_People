@@ -1,35 +1,37 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour
 {
+    public static LevelManager instance;
+    public TextMeshProUGUI levelText; // Make sure this is assigned in the Inspector.
+
     private static List<int> loadedLevels = new List<int>();
+
+    public void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
-        LoadLevel();  // Start with the current level
+        LoadLevel();
     }
 
-    // Retrieves the current level progress
     public static int GetCurrentLevelNumber()
     {
-        return PlayerPrefs.GetInt(PlayerPrefsManager.LevelProgress, 1);
+        return PlayerPrefs.GetInt("LevelProgress", 1);
     }
 
-    // Reloads the current level
-    public static void ReloadLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    // Loads a specific level by index
     public static void LoadLevel(int levelIndex)
     {
         if (levelIndex >= 0 && levelIndex < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadScene(levelIndex);
+            PlayerPrefs.SetInt("LevelProgress", levelIndex);
+            PlayerPrefs.Save();
         }
         else
         {
@@ -37,47 +39,49 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    // Progresses to the next level and updates PlayerPrefs
-    public static void LevelProgressed()
-    {
-        int progress = GetCurrentLevelNumber();  // Retrieve the current progress
-        progress++;
-        PlayerPrefs.SetInt(PlayerPrefsManager.LevelProgress, progress);
-        PlayerPrefs.Save();  // Save changes
-    }
-
-    // Loads the next level based on progress or selects a random level if all have been completed
     public static void LoadLevel()
     {
         int progress = GetCurrentLevelNumber();
         int totalLevels = SceneManager.sceneCountInBuildSettings;
-
-        if (progress >= totalLevels)  // All levels completed, select a random unique level
+        Debug.Log("Current Level Progress: " + progress);
+        Debug.Log("Total Levels: " + totalLevels);
+        if (progress < totalLevels)
+        {
+            LoadLevel(progress);
+        }
+        else
         {
             int randomLevel = GetUniqueRandomLevel();
             LoadLevel(randomLevel);
         }
-        else  // Load the next sequential level
+        // Call UpdateLevelUI after the level is loaded
+        Instance.UpdateLevelUI();
+    }
+
+    public void UpdateLevelUI()
+    {
+        if (levelText != null)
         {
-            LoadLevel(progress);
+            levelText.text = "Level: " + GetCurrentLevelNumber();
+        }
+        else
+        {
+            Debug.LogError("Level Text UI component is not assigned in the Inspector.");
         }
     }
 
-    // Generates a unique random level that hasn't been loaded recently
     private static int GetUniqueRandomLevel()
     {
-        // Retrieve loaded levels from PlayerPrefs
-        string loadedLevelsStr = PlayerPrefs.GetString(PlayerPrefsManager.LoadedLevels, "");
+        string loadedLevelsStr = PlayerPrefs.GetString("LoadedLevels", "");
         if (!string.IsNullOrEmpty(loadedLevelsStr))
         {
-            loadedLevels = new List<int>(Array.ConvertAll(loadedLevelsStr.Split(','), int.Parse));
+            loadedLevels = new List<int>(System.Array.ConvertAll(loadedLevelsStr.Split(','), int.Parse));
         }
 
         int totalLevels = SceneManager.sceneCountInBuildSettings;
         List<int> availableLevels = new List<int>();
 
-        // Collect levels from 10 onwards (assuming first levels are mandatory or tutorial)
-        for (int i = 10; i < totalLevels; i++)
+        for (int i = 0; i < totalLevels; i++)
         {
             if (!loadedLevels.Contains(i))
             {
@@ -85,23 +89,47 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        // If all levels have been played, reset the list
         if (availableLevels.Count == 0)
         {
             loadedLevels.Clear();
-            for (int i = 10; i < totalLevels; i++)
+            for (int i = 0; i < totalLevels; i++)
             {
                 availableLevels.Add(i);
             }
         }
 
-        // Choose a random level from available options
         int randomIndex = UnityEngine.Random.Range(0, availableLevels.Count);
         int randomLevel = availableLevels[randomIndex];
+
         loadedLevels.Add(randomLevel);
-        PlayerPrefs.SetString(PlayerPrefsManager.LoadedLevels, string.Join(",", loadedLevels));
-        PlayerPrefs.Save();  // Save updated list
+        PlayerPrefs.SetString("LoadedLevels", string.Join(",", loadedLevels));
+        PlayerPrefs.Save();
 
         return randomLevel;
+    }
+
+    public static void ResetLevelProgress()
+    {
+        PlayerPrefs.SetInt("LevelProgress", 1);
+        PlayerPrefs.Save();
+    }
+
+    // Singleton pattern to access the LevelManager instance
+    private static LevelManager _instance;
+    public static LevelManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<LevelManager>();
+                if (_instance == null)
+                {
+                    GameObject obj = new GameObject("LevelManager");
+                    _instance = obj.AddComponent<LevelManager>();
+                }
+            }
+            return _instance;
+        }
     }
 }
