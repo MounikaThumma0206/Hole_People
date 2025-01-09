@@ -33,9 +33,9 @@ public class PlayerGridGenerator : MonoBehaviour
     public float Row_spacing;
     public GameObject Tile;
     public int TileCount;
-    public ColorManager colorManager;
     public ColorEnum gridColor;
     private Material gridMaterial;
+    public ColorManager colorManager;
     public bool Generated;
 
     [Header("Player Movement")]
@@ -94,12 +94,61 @@ public class PlayerGridGenerator : MonoBehaviour
             GameManager.Instance.playerGrids.Add(this);
         }
     }
-
     [ContextMenu("Generate Grid")]
     public void GeneratePlayerGrid()
     {
-        AddElementsToGrid();
+        if (Tile == null)
+        {
+            Debug.LogError("Tile prefab is not assigned.");
+            return;
+        }
+
+        PlayerGrid = new GameObject[columns, rows];
+
+        // Clear any existing grid elements
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        for (int row = 0; row < rows; row++)
+        {
+            for (int column = 0; column < columns; column++)
+            {
+                Vector3 position = new Vector3(column * Column_spacing, 0, row * Row_spacing);
+                GameObject tile = Instantiate(Tile, position, Quaternion.identity, transform);
+                tile.name = $"Tile_{row}_{column}";
+
+                // Assign GridElement properties
+                GridElement gridElement = tile.GetComponent<GridElement>();
+                if (gridElement != null)
+                {
+                    gridElement.Row = row;
+                    gridElement.Column = column;
+                }
+
+                // Apply the selected grid color
+                Renderer tileRenderer = tile.GetComponent<Renderer>();
+                if (tileRenderer != null && colorManager != null)
+                {
+                    Color selectedColor = colorManager.GetColor(gridColor);
+                    tileRenderer.material.color = selectedColor;
+                }
+
+                PlayerGrid[column, row] = tile;
+            }
+        }
+
+        Generated = true;
+        Debug.Log("Grid successfully generated with colors.");
     }
+
+
+    //[ContextMenu("Generate Grid")]
+    //public void GeneratePlayerGrid()
+    //{
+    //    AddElementsToGrid();
+    //}
 
     public void AddElementsToGrid()
     {
@@ -124,10 +173,11 @@ public class PlayerGridGenerator : MonoBehaviour
     public void IncrementSortedGrids()
     {
         sortedGrids++;
-        if (sortedGrids == totalGrids)
-        {
-            DisplaySuccessPanel();
-        }
+        // Comment out the following line to prevent displaying the success panel
+        // if (sortedGrids == totalGrids)
+        // {
+        //     DisplaySuccessPanel();
+        // }
     }
 
     private void CheckAllChildrenDestroyed()
@@ -144,10 +194,11 @@ public class PlayerGridGenerator : MonoBehaviour
             }
         }
 
-        if (allDestroyed)
-        {
-            DisplaySuccessPanel();
-        }
+        // Comment out the following lines to prevent displaying the success panel
+        // if (allDestroyed)
+        // {
+        //     DisplaySuccessPanel();
+        // }
     }
 
     public void movePlayerToHole(GameObject targetHole)
@@ -327,6 +378,123 @@ public class PlayerGridGenerator : MonoBehaviour
 
         return angle < angleTolerance;
     }
+    //private IEnumerator MoveAllPlayersToHole(GameObject hole)
+    //{
+    //    Vector3 holePosition = hole.transform.position;
+    //    float baseRunDuration = moveDuration * 1.5f;
+    //    float baseJumpDuration = moveDuration * 0.5f;
+    //    List<Tween> runTweens = new List<Tween>();
+
+    //    foreach (GridElement gridElement in playerGridElements)
+    //    {
+    //        if (IsObstacleInPath(gridElement.transform.position, holePosition))
+    //        {
+    //            Debug.Log("Path blocked by an obstacle! Player can't move.");
+    //            if (AudioManager.instance != null)
+    //            {
+    //                // AudioManager.instance.Play("WrongMove");
+    //            }
+    //            yield break;
+    //            //vibration.vibrate(20);
+    //        }
+
+    //        ParticleSystem ps = gridElement.GetComponentInChildren<ParticleSystem>(true);
+    //        if (ps != null)
+    //        {
+    //            ps.gameObject.SetActive(true);
+    //            ps.Play();
+    //        }
+
+    //        if (gridElement.animator != null)
+    //        {
+    //            float animSpeedMultiplier = UnityEngine.Random.Range(0.9f, 1.1f);
+    //            gridElement.animator.SetTrigger(runID);
+    //            gridElement.animator.speed = animSpeedMultiplier;
+    //        }
+
+    //        gridElement.StartedRunning = true;
+    //        gridElement.Hole = hole;
+    //        float runDuration = baseRunDuration * UnityEngine.Random.Range(0.5f, 1f);
+    //        Vector3 startPos = gridElement.transform.position;
+
+    //        float xPos = Random.Range((holePosition.x - 1f), (holePosition.x + 1f));
+    //        float zPos = Random.Range((holePosition.z - 1f), (holePosition.z + 1f));
+    //        Vector3 endPos = new Vector3(xPos, startPos.y, zPos);
+    //        Vector3 controlPoint = Vector3.Lerp(startPos, endPos, 0.5f);
+    //        controlPoint += new Vector3(
+    //            UnityEngine.Random.Range(-1.5f, 1.5f),
+    //            0,
+    //            UnityEngine.Random.Range(-1.5f, 1.5f)
+    //        );
+
+    //        Tween runTween = DOTween.To(
+    //            () => 0f,
+    //            (float progress) =>
+    //            {
+    //                Vector3 m1 = Vector3.Lerp(startPos, controlPoint, progress);
+    //                Vector3 m2 = Vector3.Lerp(controlPoint, endPos, progress);
+    //                gridElement.transform.position = Vector3.Lerp(m1, m2, progress);
+    //            },
+    //            1f,
+    //            runDuration
+    //        ).SetEase(Ease.OutQuad);
+    //        runTween.Play().OnUpdate(() =>
+    //        {
+    //            float distance = Vector3.Distance(gridElement.transform.position, endPos);
+    //            if (distance <= Random.Range(0.5f, 1f))
+    //            {
+    //                if (gridElement.animator != null)
+    //                {
+    //                    gridElement.animator.SetTrigger(jumpID);
+    //                }
+    //                if (AudioManager.instance != null)
+    //                {
+    //                    // AudioManager.instance.Play("Jump");
+    //                }
+
+    //                float jumpDuration = baseJumpDuration * UnityEngine.Random.Range(0.1f, .2f);
+    //                float jumpHeight = UnityEngine.Random.Range(0.1f, 0.2f);
+
+    //                Vector3 startJumpPos = gridElement.transform.position;
+    //                Vector3 endJumpPos = new Vector3(
+    //                    holePosition.x + UnityEngine.Random.Range(-0.3f, 0.3f),
+    //                    holePosition.y - 10,
+    //                    holePosition.z + UnityEngine.Random.Range(-0.3f, 0.3f)
+    //                );
+
+    //                Sequence jumpSequence = DOTween.Sequence();
+
+    //                jumpSequence.Append(gridElement.transform.DOMoveY(
+    //                    startJumpPos.y + jumpHeight,
+    //                    jumpDuration * 0.4f
+    //                ).SetEase(Ease.OutQuad));
+
+    //                jumpSequence.Append(gridElement.transform.DOMoveY(
+    //                    endJumpPos.y,
+    //                    jumpDuration * 0.6f
+    //                ).SetEase(Ease.InQuad));
+
+    //                jumpSequence.Join(gridElement.transform.DOMove(
+    //                    endJumpPos,
+    //                    jumpDuration
+    //                ).SetEase(Ease.InOutQuad));
+
+    //                jumpSequence.OnComplete(() =>
+    //                {
+    //                    ParticleSystem ps = gridElement.GetComponentInChildren<ParticleSystem>(true);
+    //                    if (ps != null)
+    //                    {
+    //                        ps.Stop();
+    //                        ps.gameObject.SetActive(false);
+    //                    }
+    //                });
+    //            }
+    //        }).OnComplete(() =>
+    //        {
+
+    //        });
+    //        // runTweens.Add(runTween);
+    //    }
     private IEnumerator MoveAllPlayersToHole(GameObject hole)
     {
         Vector3 holePosition = hole.transform.position;
@@ -446,48 +614,85 @@ public class PlayerGridGenerator : MonoBehaviour
         }
 
         /*  Sequence runSequence = DOTween.Sequence();
-          foreach (Tween runTween in runTweens)
-          {
-              runSequence.Join(runTween);
-          }
-          runSequence.Play();
-          runSequence.OnComplete(() =>
-          {
+           foreach (Tween runTween in runTweens)
+           {
+               runSequence.Join(runTween);
+           }
+           runSequence.Play();
+           runSequence.OnComplete(() =>
+           {
 
-          });
-          yield return runSequence.WaitForCompletion();
+           });
+           yield return runSequence.WaitForCompletion();
 
-          foreach (GridElement gridElement in playerGridElements)
-          {
-              if (gridElement.animator != null)
-              {
-                  gridElement.animator.speed = 1f;
-              }
-          }
+           foreach (GridElement gridElement in playerGridElements)
+           {
+               if (gridElement.animator != null)
+               {
+                   gridElement.animator.speed = 1f;
+               }
+           }
 
-          List<Tween> jumpTweens = new List<Tween>();
-          foreach (GridElement gridElement in playerGridElements)
-          {
+           List<Tween> jumpTweens = new List<Tween>();
+           foreach (GridElement gridElement in playerGridElements)
+           {
 
 
-              //jumpTweens.Add(jumpSequence);
-          }
+               //jumpTweens.Add(jumpSequence);
+           }
 
-          Sequence finalJumpSequence = DOTween.Sequence();
-          foreach (Tween jumpTween in jumpTweens)
-          {
-              finalJumpSequence.Join(jumpTween);
-          }
-          finalJumpSequence.Play();
-          yield return finalJumpSequence.WaitForCompletion();*/
+           Sequence finalJumpSequence = DOTween.Sequence();
+           foreach (Tween jumpTween in jumpTweens)
+           {
+               finalJumpSequence.Join(jumpTween);
+           }
+           finalJumpSequence.Play();
+           yield return finalJumpSequence.WaitForCompletion();*/
         CheckAllChildrenDestroyed();
         Debug.Log("All players have jumped into the hole!");
-        if (AreAllPlayersInHole())
-        {
-            DisplaySuccessPanel();
-        }
+        // Comment out the following lines to prevent displaying the success panel
+        // if (AreAllPlayersInHole())
+        // {
+        //     DisplaySuccessPanel();
+        // }
     }
 
+
+    //////*  Sequence runSequence = DOTween.Sequence();
+    //  foreach (Tween runTween in runTweens)
+    //  {
+    //      runSequence.Join(runTween);
+    //  }
+    //  //runSequence.Play();
+      //runSequence.OnComplete(() =>
+      //{
+
+      //});
+      //yield return runSequence.WaitForCompletion();
+
+      //foreach (GridElement gridElement in playerGridElements)
+      //{
+      //    if (gridElement.animator != null)
+      //    {
+      //        gridElement.animator.speed = 1f;
+      //    }
+      //}
+
+      //List<Tween> jumpTweens = new List<Tween>();
+      //foreach (GridElement gridElement in playerGridElements)
+      //{
+
+
+      //    //jumpTweens.Add(jumpSequence);
+      //}
+
+      //Sequence finalJumpSequence = DOTween.Sequence();
+      //foreach (Tween jumpTween in jumpTweens)
+      //{
+      //    finalJumpSequence.Join(jumpTween);
+      //}
+      //finalJumpSequence.Play();
+ 
 
     public IEnumerator RemoveGridElementAfterDelay(GridElement gridElement, float delay)
     {

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4467044122042076393}
-  - component: {fileID: 1881231209348672481}
+  - component: {fileID: 7500805394871653739}
   m_Layer: 0
   m_Name: GridElement
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 5012953724846931359}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1881231209348672481
+--- !u!114 &7500805394871653739
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,8 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ElementColor: 0
-  playerGridGenerator: {fileID: 7695056340021200659, guid: fed90a27cce2ced4287ef4651d032b9c,
-    type: 3}
+  GridColor: 0
+  lineIndex: 0
+  playerGridGenerator: {fileID: 0}
   gizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   Row: 0
   Column: 0
@@ -55,7 +56,7 @@ MonoBehaviour:
   IsOccupied: 0
   Isempty: 0
   PlayerColor: 0
-  Player: {fileID: 972845070692572869, guid: 1d917d685d9ac2147a24a0f3e1e4d5c3, type: 3}
+  Player: {fileID: 6400884016802751115}
   playerRenderer: {fileID: 2453976050141680445}
   rb: {fileID: 7926245341022345294}
   animator: {fileID: 8058442015659904010}
@@ -74,22 +75,42 @@ PrefabInstance:
     - target: {fileID: 707689307774293775, guid: 1d917d685d9ac2147a24a0f3e1e4d5c3,
         type: 3}
       propertyPath: m_Speed
-      value: 10
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 707689307774293775, guid: 1d917d685d9ac2147a24a0f3e1e4d5c3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 707689307774293775, guid: 1d917d685d9ac2147a24a0f3e1e4d5c3,
+        type: 3}
+      propertyPath: m_AutoBraking
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 707689307774293775, guid: 1d917d685d9ac2147a24a0f3e1e4d5c3,
         type: 3}
       propertyPath: m_Acceleration
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 707689307774293775, guid: 1d917d685d9ac2147a24a0f3e1e4d5c3,
         type: 3}
       propertyPath: m_AngularSpeed
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 707689307774293775, guid: 1d917d685d9ac2147a24a0f3e1e4d5c3,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 972845070692572869, guid: 1d917d685d9ac2147a24a0f3e1e4d5c3,
         type: 3}
       propertyPath: m_Name
       value: stickman_tpose_rev_2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 972845070692572869, guid: 1d917d685d9ac2147a24a0f3e1e4d5c3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1208417894651052497, guid: 1d917d685d9ac2147a24a0f3e1e4d5c3,
         type: 3}

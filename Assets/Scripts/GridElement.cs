@@ -27,12 +27,7 @@ public class GridElement : MonoBehaviour
     public bool StartedRunning;
     public GameObject Hole;
 
-    private void Awake()
-    {
-        PlayerInitialPos = Player.transform.localPosition;
-        PlayerInitialScale = Player.transform.localScale;
-        rb.useGravity = false;
-    }
+  
 
     void Start()
     {
