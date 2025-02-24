@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.AI;
 
 public class GridElement : MonoBehaviour
 {
     public ColorEnum ElementColor;
     public ColorEnum GridColor;
     public int lineIndex;
-    public PlayerGridGenerator playerGridGenerator;
+    public PlayerGenerator playerGenerator;
     public Color gizmoColor = Color.yellow;
     public int Row;
     public int Column;
@@ -26,12 +27,23 @@ public class GridElement : MonoBehaviour
     public Vector3 PlayerInitialScale;
     public bool StartedRunning;
     public GameObject Hole;
+    public NavMeshAgent agent;
 
-  
 
     void Start()
     {
-        rb.useGravity = false;
+        // Ensure the Rigidbody reference is set
+        if (rb == null)
+        {
+            rb = GetComponent<Rigidbody>();
+            if (rb == null)
+            {
+                rb = gameObject.AddComponent<Rigidbody>();
+            }
+        }
+
+        rb.useGravity = false; // Initially disable gravity
+        rb.isKinematic = true; // Set 
     }
     public void MoveToHoleWithDOTween(GameObject hole)
     {
@@ -80,7 +92,7 @@ public class GridElement : MonoBehaviour
         {
             gridElement.MoveToHoleWithDOTween(hole);
             yield return new WaitForSeconds(1f);
-            StartCoroutine(PlayerGridGenerator.Instance.RemoveGridElementAfterDelay(gridElement, 0.5f));
+           // StartCoroutine(PlayerGridGenerator.Instance.RemoveGridElementAfterDelay(gridElement, 0.5f));
         }
     }
 

@@ -6,7 +6,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public List<PlayerGridGenerator> playerGrids = new List<PlayerGridGenerator>();
+    public List<PlayerGenerator> playerGrids = new List<PlayerGenerator>();
     public List<GridElement> playerGridElements;
 
     private void Awake()
@@ -62,65 +62,38 @@ public class GameManager : MonoBehaviour
     public void IsPlayerMovable(ColorEnum color, GameObject hole)
     {
         Debug.Log("kflkasih");
-        foreach (PlayerGridGenerator generator in playerGrids)
+        foreach (PlayerGenerator generator in playerGrids)
         {
             if (generator.gridColor == color)
             {
                 if (generator.isMovable)
                 {
                     generator.movePlayerToHole(hole);
-                    CheckLevelComplete();
+                    //CheckLevelComplete();
                 }
             }
         }
 
     }
-    //public void IsPlayerMovable(ColorEnum color, GameObject hole)
+    //public void CheckLevelComplete()
     //{
-    // //   Debug.Log("kflkasih");
-    //    if (playerGrids == null || playerGrids.Count == 0)
+    //    bool completed = true;
+
+    //    foreach (PlayerGenerator _grid in playerGrids)
     //    {
-    //        Debug.LogError("playerGrids is not initialized or empty.");
-    //        return;
-    //    }
-
-    //    foreach (PlayerGridGenerator generator in playerGrids)
-    //    { 
-    //        if (generator == null)
+    //        if(!_grid._moved)
     //        {
-    //            Debug.LogWarning("A PlayerGridGenerator is null in the playerGrids list.");
-    //            continue; 
-    //        }
-
-    //        if (generator.gridColor == color)
-    //        {
-    //            if (generator.isMovable)
-    //            {
-    //                generator.movePlayerToHole(hole);
-    //                CheckLevelComplete();
-    //            }
+    //            completed = false;
+    //            break;
     //        }
     //    }
-    //}
-    public void CheckLevelComplete()
-    {
-        bool completed = true;
 
-        foreach (PlayerGridGenerator _grid in playerGrids)
-        {
-            if(!_grid.moved)
-            {
-                completed = false;
-                break;
-            }
-        }
-
-        if(completed)
-        {
-            if(UiManager.instance != null)
-            {
-                UiManager.instance.LevelComplete();
-            }
-        }
-    }
+        //if(completed)
+        //{
+        //    if(UiManager.instance != null)
+        //    {
+        //        UiManager.instance.LevelComplete();
+        //    }
+        //}
+    
 }
