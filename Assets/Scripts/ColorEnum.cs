@@ -8,5 +8,6 @@ public enum ColorEnum
     Violet,
     Pink,
     Brown,
-    Gray
+    Gray,
+    None    
 }

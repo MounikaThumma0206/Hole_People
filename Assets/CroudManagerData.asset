@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b2d0ffa5adc82a43b906fd60e3b5d70, type: 3}
+  m_Name: CroudManagerData
+  m_EditorClassIdentifier: 
+  croudPrefab: {fileID: 4748950854581125915, guid: a162de26ea859bd4490bf8b220853d65,
+    type: 3}
+  moveDuration: 1
+  runTriggerName: Run
+  jumpTriggerName: Jump
+  colorManager: {fileID: 11400000, guid: 44cdd661bcd65ca42a6267925628adb8, type: 2}
+  spacing: {x: 0.5, y: 0.5}

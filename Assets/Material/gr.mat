@@ -139,11 +139,11 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: -25
     - _RampBands: 1
-    - _RampBandsSmoothing: 0.5
+    - _RampBandsSmoothing: 0.381
     - _RampOffset: 0
     - _RampScale: 1
-    - _RampSmoothing: 0.521
-    - _RampThreshold: 0.754
+    - _RampSmoothing: 0.883
+    - _RampThreshold: 0.665
     - _RampType: 0
     - _ReceiveShadows: 1
     - _ReceiveShadowsOff: 1
@@ -168,9 +168,9 @@ Material:
     - _SpecularEnabled: 1
     - _SpecularHighlights: 0
     - _SpecularMapType: 0
-    - _SpecularRoughness: 0.5
-    - _SpecularToonSize: 0.25
-    - _SpecularToonSmoothness: 0.05
+    - _SpecularRoughness: 0.581
+    - _SpecularToonSize: 0.023
+    - _SpecularToonSmoothness: 0.51
     - _SpecularType: 0
     - _SrcBlend: 5
     - _Surface: 1
@@ -199,7 +199,7 @@ Material:
     - _ZWrite: 1
     - __dummy__: 0
     m_Colors:
-    - _BaseColor: {r: 0.25490198, g: 0.7490196, b: 0.15686275, a: 1}
+    - _BaseColor: {r: 0.282801, g: 0.831, b: 0.1740314, a: 1}
     - _BaseColorasd: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 0, b: 0, a: 1}
     - _ColorDim: {r: 0, g: 0, b: 0, a: 1}

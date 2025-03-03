@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class levelLocalManager : MonoBehaviour
 {
-    public PlayerGenerator[] playerGroups;
+    public CroudManager[] playerGroups;
 
     public void CheckForLevelComplete()
     {

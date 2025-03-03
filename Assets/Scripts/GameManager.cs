@@ -1,99 +1,161 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
-    public List<PlayerGenerator> playerGrids = new List<PlayerGenerator>();
-    public List<GridElement> playerGridElements;
+	public static GameManager Instance;
+	[SerializeField] List<CroudManager> playerGrids = new List<CroudManager>();
+	//public List<GridElement> playerGridElements;
 
-    private void Awake()
-    { 
-        if (Instance == null)
-        {
-            Instance = this; 
-            DontDestroyOnLoad(gameObject); 
-        }
-        else
-        {
-            Destroy(gameObject); 
-        }
-    }
-        private GameObject destinationHole;
+	[SerializeField] GameData gameData;
+	private int usedMoves = 0;
+	[SerializeField] private int maxMoves = 3;
+	bool isGameOn = true;
+	private void Awake()
+	{
+		if (Instance == null)
+		{
+			Instance = this;
+			DontDestroyOnLoad(gameObject);
+			DOTween.Init();
+		}
+		else
+		{
+			DOTween.KillAll();
+			DestroyImmediate(gameObject);
+		}
 
-        private void Start()
-        {
-            // Find the destination hole object by tag (adjust the tag accordingly)
-            destinationHole = GameObject.FindWithTag("Hole");
+		usedMoves = 0;
 
-            if (destinationHole == null)
-            {
-                Debug.LogError("Destination hole not found in the scene!");
-            }
-        }
+	}
 
-        private IEnumerator MovePlayerToDestination()
-        {
-            if (destinationHole == null)
-            {
-                Debug.LogError("Destination hole is not assigned or not found!");
-                yield break;
-            }
+	private void OnEnable()
+	{
+		playerGrids.Clear();
 
-            // Get the position of the hole (destination object)
-            Vector3 holePosition = destinationHole.transform.position;
+	}
+	private void Start()
+	{
+		UiManager.instance.UpdateMoveText(GetAvailableMoves());
+		GenerateLevel();
+	}
 
-            // Proceed with player movement towards the hole as described earlier
-            foreach (GridElement gridElement in playerGridElements)
-            {
-                if (gridElement == null)
-                {
-                    Debug.LogWarning("GridElement is null, skipping...");
-                    continue;
-                }
+	public bool IsGameOn()
+	{
+		return isGameOn;
+	}
 
-                // Particle effects, obstacle deactivation, animations, and other logic remain the same...
-            }
-        }
+	void GenerateLevel()
+	{
+		var levelData = gameData.Levels[Random.Range(0, gameData.Levels.Length)];
+		maxMoves = levelData.maxMoves;
+		usedMoves = 0;
+		Instantiate(levelData.levelPrefab);
+	}
 
+	public void Restart()
+	{
+		Instance.playerGrids.Clear();
+		DOTween.KillAll();
+		usedMoves = 0;
+		var asyncOp = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+		asyncOp.completed += (op) =>
+		{
+			isGameOn = true;
+			GenerateLevel();
+			UiManager.instance.UpdateMoveText(GetAvailableMoves());
+		};
+	}
+	List<CroudManager> notMovables = new List<CroudManager>();
+	public void IsPlayerMovable(ColorEnum color, Hole hole)
+	{
+		bool hadMovables = false;
+		notMovables.Clear();
+		foreach (CroudManager generator in playerGrids)
+		{
+			if (generator.gridColor == color)
+			{
+				if (!generator.Moved)
+				{
+					if (generator.CanMove())
+					{
+						generator.movePlayerToHole(hole);
+						hadMovables = true;
+					}
+					else
+					{
+						notMovables.Add(generator);
+					}
+				}
+			}
+		}
+		if (!hadMovables)
+		{
+			hole.PlayNoMoves();
+			foreach (CroudManager generator in notMovables)
+			{
+				generator.PlayNoMoves();
+			}
+		}
+		else
+		{
+			CheckLevelComplete();
+		}
+	}
+	public void SusbscribeGenerators(CroudManager generator)
+	{
+		playerGrids.Add(generator);
+	}
+	public void UnSubscribeGenerators(CroudManager generator)
+	{
+		playerGrids.Remove(generator);
+	}
+	internal void UseMove()
+	{
+		usedMoves++;
+		UiManager.instance.UpdateMoveText(GetAvailableMoves());
+		if (GetAvailableMoves() > 0) return;
+		foreach (CroudManager generator in playerGrids)
+		{
+			if (!generator.IsCleared)
+			{
+				if (UiManager.instance != null)
+				{
+					isGameOn = false;
+					UiManager.instance.GameOver();
+				}
+			}
+		}
+	}
 
-    public void IsPlayerMovable(ColorEnum color, GameObject hole)
-    {
-        Debug.Log("kflkasih");
-        foreach (PlayerGenerator generator in playerGrids)
-        {
-            if (generator.gridColor == color)
-            {
-                if (generator.isMovable)
-                {
-                    generator.movePlayerToHole(hole);
-                    //CheckLevelComplete();
-                }
-            }
-        }
+	public int GetAvailableMoves()
+	{
+		int max = maxMoves - usedMoves;
+		return Mathf.Clamp(max, 0, maxMoves);
+	}
 
-    }
-    //public void CheckLevelComplete()
-    //{
-    //    bool completed = true;
+	public void CheckLevelComplete()
+	{
+		bool completed = true;
 
-    //    foreach (PlayerGenerator _grid in playerGrids)
-    //    {
-    //        if(!_grid._moved)
-    //        {
-    //            completed = false;
-    //            break;
-    //        }
-    //    }
+		foreach (CroudManager _grid in playerGrids)
+		{
+			if (!_grid._moved)
+			{
+				completed = false;
+				break;
+			}
+		}
 
-        //if(completed)
-        //{
-        //    if(UiManager.instance != null)
-        //    {
-        //        UiManager.instance.LevelComplete();
-        //    }
-        //}
-    
+		if (completed)
+		{
+			if (UiManager.instance != null)
+			{
+				UiManager.instance.LevelComplete();
+			}
+		}
+
+	}
 }
