@@ -1,11 +1,24 @@
 {
   "dependencies": {
+    "com.autodesk.fbx": {
+      "version": "4.2.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.dreamertheory.gridsystem": {
       "version": "https://github.com/RahulLinganagoudra/com.dreamertheory.gridsystem.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
       "hash": "daec2a5683744e52c825d42ce9ae2b0d94b04752"
+    },
+    "com.unity.2d.sprite": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
     },
     "com.unity.ai.navigation": {
       "version": "1.1.5",
@@ -44,6 +57,16 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.formats.fbx": {
+      "version": "4.2.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.autodesk.fbx": "4.2.1",
+        "com.unity.timeline": "1.7.1"
+      },
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {

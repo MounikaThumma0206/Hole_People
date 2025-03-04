@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.AI;
@@ -32,6 +31,15 @@ public class GridElement : MonoBehaviour
 	private float JumpDetectionRadius => Hole.JumpDetectionRadius;
 	void Start()
 	{
+		
+
+		// Offset idle animation clip
+		if (animator != null)
+		{
+			AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+			animator.Play(state.fullPathHash, -1, Random.Range(0f, 1f));
+		}
+
 		// Ensure the Rigidbody reference is set
 		if (rb == null)
 		{
@@ -45,6 +53,7 @@ public class GridElement : MonoBehaviour
 		rb.useGravity = false; // Initially disable gravity
 		rb.isKinematic = true; // Set 
 	}
+	
 	//public void MoveToHoleWithDOTween(GameObject hole)
 	//{
 	//	if (Player != null && hole != null)

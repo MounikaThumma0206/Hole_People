@@ -80,8 +80,9 @@ MonoBehaviour:
   moveDuration: 1
   _moved: 0
   shouldGeneratePillers: 0
-  pillerPrefab: {fileID: 7624898819346997068, guid: 1aeebbc820b41e449b84e5d3cfb3af9e,
-    type: 3}
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &9569047129442534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,8 +181,9 @@ MonoBehaviour:
   moveDuration: 1
   _moved: 0
   shouldGeneratePillers: 1
-  pillerPrefab: {fileID: 7624898819346997068, guid: 1aeebbc820b41e449b84e5d3cfb3af9e,
-    type: 3}
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8880863087056638167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,8 +282,9 @@ MonoBehaviour:
   moveDuration: 1
   _moved: 0
   shouldGeneratePillers: 0
-  pillerPrefab: {fileID: 7624898819346997068, guid: 1aeebbc820b41e449b84e5d3cfb3af9e,
-    type: 3}
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4368719820137145211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,8 +383,9 @@ MonoBehaviour:
   moveDuration: 1
   _moved: 0
   shouldGeneratePillers: 0
-  pillerPrefab: {fileID: 7624898819346997068, guid: 1aeebbc820b41e449b84e5d3cfb3af9e,
-    type: 3}
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8658416816640325901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,7 +477,7 @@ MonoBehaviour:
   columns: 4
   TileCount: 84
   gridColor: 3
-  Generated: 1
+  Generated: 0
   isMovable: 1
   blockingGrid:
   - {fileID: 3910859492362316630}
@@ -482,8 +486,9 @@ MonoBehaviour:
   moveDuration: 1
   _moved: 0
   shouldGeneratePillers: 1
-  pillerPrefab: {fileID: 7624898819346997068, guid: 1aeebbc820b41e449b84e5d3cfb3af9e,
-    type: 3}
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4821441842137764571
 MonoBehaviour:
   m_ObjectHideFlags: 0

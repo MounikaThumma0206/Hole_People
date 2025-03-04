@@ -260,7 +260,9 @@ MonoBehaviour:
   moveDuration: 1
   _moved: 0
   shouldGeneratePillers: 0
-  pillerPrefab: {fileID: 0}
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2824811132594302907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,7 +362,9 @@ MonoBehaviour:
   moveDuration: 1
   _moved: 0
   shouldGeneratePillers: 0
-  pillerPrefab: {fileID: 0}
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4468566509907499213
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,7 +769,9 @@ MonoBehaviour:
   moveDuration: 1
   _moved: 0
   shouldGeneratePillers: 0
-  pillerPrefab: {fileID: 0}
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6093465874805029304
 GameObject:
   m_ObjectHideFlags: 0

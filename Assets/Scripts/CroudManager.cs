@@ -35,7 +35,7 @@ public class CroudManager : GridItemGenerator
 
 	[Header("Pillers")]
 	public bool shouldGeneratePillers;
-	public Pillar pillerPrefab;
+	public static Pillar pillerPrefab;
 
 	[Header("Events")]
 	[SerializeField] UnityEvent OnCrowdCleared = new();

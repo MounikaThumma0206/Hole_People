@@ -77,9 +77,10 @@ MonoBehaviour:
   obstacle: {fileID: 0}
   moveDuration: 1
   _moved: 0
-  shouldGeneratePillers: 1
-  pillerPrefab: {fileID: 7624898819346997068, guid: 1aeebbc820b41e449b84e5d3cfb3af9e,
-    type: 3}
+  shouldGeneratePillers: 0
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3638423235882033107
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,9 +159,10 @@ MonoBehaviour:
   obstacle: {fileID: 0}
   moveDuration: 1
   _moved: 0
-  shouldGeneratePillers: 1
-  pillerPrefab: {fileID: 7624898819346997068, guid: 1aeebbc820b41e449b84e5d3cfb3af9e,
-    type: 3}
+  shouldGeneratePillers: 0
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4488410825149190478
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,9 +241,10 @@ MonoBehaviour:
   obstacle: {fileID: 0}
   moveDuration: 1
   _moved: 0
-  shouldGeneratePillers: 1
-  pillerPrefab: {fileID: 7624898819346997068, guid: 1aeebbc820b41e449b84e5d3cfb3af9e,
-    type: 3}
+  shouldGeneratePillers: 0
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6589086802310388838
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,8 +324,9 @@ MonoBehaviour:
   moveDuration: 1
   _moved: 0
   shouldGeneratePillers: 1
-  pillerPrefab: {fileID: 7624898819346997068, guid: 1aeebbc820b41e449b84e5d3cfb3af9e,
-    type: 3}
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8073957054323265535
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,9 +405,10 @@ MonoBehaviour:
   obstacle: {fileID: 0}
   moveDuration: 1
   _moved: 0
-  shouldGeneratePillers: 1
-  pillerPrefab: {fileID: 7624898819346997068, guid: 1aeebbc820b41e449b84e5d3cfb3af9e,
-    type: 3}
+  shouldGeneratePillers: 0
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8514503941989365674
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,9 +487,10 @@ MonoBehaviour:
   obstacle: {fileID: 0}
   moveDuration: 1
   _moved: 0
-  shouldGeneratePillers: 1
-  pillerPrefab: {fileID: 7624898819346997068, guid: 1aeebbc820b41e449b84e5d3cfb3af9e,
-    type: 3}
+  shouldGeneratePillers: 0
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8846682758310092136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,7 +789,7 @@ PrefabInstance:
     - target: {fileID: 1421469807993881846, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: shouldGeneratePillers
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1421469807993881846, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -800,12 +806,11 @@ PrefabInstance:
       propertyPath: blockingGrid.Array.data[1]
       value: 
       objectReference: {fileID: 211758047042067688}
-    - target: {fileID: 1961927896193233052, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+    - target: {fileID: 1823780994889820100, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
-      propertyPath: m_NavMeshData
-      value: 
-      objectReference: {fileID: 23800000, guid: 6057f3b3fda64594d9a80426ebc770ec,
-        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.84
+      objectReference: {fileID: 0}
     - target: {fileID: 2309788744569678583, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -906,6 +911,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3986857379656970893, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.43
+      objectReference: {fileID: 0}
     - target: {fileID: 4006627669820646353, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_IsActive
@@ -970,7 +980,7 @@ PrefabInstance:
     - target: {fileID: 6482304172784229975, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: shouldGeneratePillers
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6482304172784229975, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -997,6 +1007,16 @@ PrefabInstance:
       propertyPath: blockingGrid.Array.data[3]
       value: 
       objectReference: {fileID: 211758047042067688}
+    - target: {fileID: 6601239774343227804, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601239774343227804, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7383903937789203408, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalScale.x
