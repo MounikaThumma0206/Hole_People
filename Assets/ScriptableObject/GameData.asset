@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8ac58b5f6ef1094baf86ed4ee108c56, type: 3}
-  m_Name: NewGameData
+  m_Name: GameData
   m_EditorClassIdentifier: 
   levels:
   - {fileID: 11400000, guid: 26f54f99b7efdf1408691ed65def9106, type: 2}
+  - {fileID: 11400000, guid: f57c6da4ebc4e9c488ea0b873258b274, type: 2}
   - {fileID: 11400000, guid: 9d4887ac6712aaa4ca098a4a0ef3dfe8, type: 2}
+  - {fileID: 11400000, guid: 35a903534b7e47f4aa22953828549ff6, type: 2}
+  - {fileID: 11400000, guid: 7350d3d07c06efd4d972da3cd2d4385e, type: 2}

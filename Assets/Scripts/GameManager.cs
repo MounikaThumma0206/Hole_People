@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
 		notMovables.Clear();
 		foreach (CroudManager generator in playerGrids)
 		{
-			if (generator.gridColor == color)
+			if (generator.GridColor == color)
 			{
 				if (!generator.Moved)
 				{

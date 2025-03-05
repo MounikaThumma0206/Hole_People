@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59ff99dbfa5886345b903db94859d163, type: 3}
-  m_Name: NewLevelData
+  m_Name: Level 4
   m_EditorClassIdentifier: 
   cameraPosition: {x: 0, y: 0, z: 0}
   cameraSize: 0
-  maxMoves: 10
+  maxMoves: 5
   cameraRotation: {x: 0, y: 0, z: 0}
-  levelPrefab: {fileID: 6516054358963939257, guid: 00453410fe4811549b0a09c82ff41984,
+  levelPrefab: {fileID: 6516054358963939257, guid: b3cb4b570cdddaf4b8f4bba4d6b2bc79,
     type: 3}

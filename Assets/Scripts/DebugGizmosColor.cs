@@ -1,39 +1,29 @@
 ﻿using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+[CreateAssetMenu(fileName = "DebugGizmosColor", menuName = "ScriptableObjects/DebugGizmosColor", order = 1)]
+public class DebugGizmosColor : ScriptableObject
 {
-	public static AudioManager instance;
-	public AudioSource audioSource;
-	public AudioClip jumpClip;
-	public AudioClip wrongMoveClip;
-
-	private void Awake()
+	[System.Serializable]
+	public struct GizmoColor
 	{
-		if (instance == null)
+		public ColorEnum colorEnum;
+		[ColorUsage(true)]
+		public Color color;
+	}
+	[SerializeField]GizmoColor[] gizmoColors;
+
+	public Color GetGizmoColor(ColorEnum colorEnum)
+	{
+		foreach (var gizmoColor in gizmoColors)
 		{
-			instance = this;
+			if (gizmoColor.colorEnum == colorEnum)
+			{
+				return gizmoColor.color;
+			}
 		}
+		return Color.white;
 	}
 
-	public void Play(string clipName)
-	{
-		AudioClip clipToPlay = null;
-
-		if (clipName == "Jump")
-		{
-			clipToPlay = jumpClip;
-		}
-		else if (clipName == "WrongMove")
-		{
-			clipToPlay = wrongMoveClip;
-		}
-
-		if (clipToPlay != null)
-		{
-			audioSource.clip = clipToPlay;
-			audioSource.Play();
-		}
-	}
 }
 //using System.Collections;
 //using System.Collections.Generic;

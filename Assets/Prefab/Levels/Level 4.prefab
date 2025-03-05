@@ -63,7 +63,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridGenerator: {fileID: 1796708653057558814}
-  gizmoColor: {r: 0, g: 0.23921569, b: 1, a: 1}
+  colorEnum: 2
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
   boxSize: {x: 2.5, y: 0, z: 2.59}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
@@ -71,7 +72,6 @@ MonoBehaviour:
   rows: 4
   columns: 4
   TileCount: 16
-  gridColor: 2
   Generated: 1
   isMovable: 1
   blockingGrid:
@@ -165,7 +165,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridGenerator: {fileID: 1796708653057558814}
-  gizmoColor: {r: 1, g: 0, b: 0, a: 1}
+  colorEnum: 0
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
   boxSize: {x: 1, y: 0, z: 1.01}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
@@ -173,7 +174,6 @@ MonoBehaviour:
   rows: 6
   columns: 4
   TileCount: 24
-  gridColor: 0
   Generated: 1
   isMovable: 1
   blockingGrid: []
@@ -266,7 +266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridGenerator: {fileID: 1796708653057558814}
-  gizmoColor: {r: 1, g: 0, b: 0, a: 1}
+  colorEnum: 0
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
   boxSize: {x: 1, y: 0, z: 25.107504}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
@@ -274,7 +275,6 @@ MonoBehaviour:
   rows: 20
   columns: 4
   TileCount: 80
-  gridColor: 0
   Generated: 1
   isMovable: 1
   blockingGrid: []
@@ -367,7 +367,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridGenerator: {fileID: 1796708653057558814}
-  gizmoColor: {r: 0.17254902, g: 1, b: 0, a: 1}
+  colorEnum: 1
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
   boxSize: {x: 0.8403761, y: 0, z: 0.5707123}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
@@ -375,7 +376,6 @@ MonoBehaviour:
   rows: 5
   columns: 4
   TileCount: 20
-  gridColor: 1
   Generated: 1
   isMovable: 1
   blockingGrid: []
@@ -468,7 +468,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridGenerator: {fileID: 1796708653057558814}
-  gizmoColor: {r: 0.96862745, g: 1, b: 0, a: 1}
+  colorEnum: 3
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
   boxSize: {x: 0.9, y: 0, z: 1}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
@@ -476,7 +477,6 @@ MonoBehaviour:
   rows: 21
   columns: 4
   TileCount: 84
-  gridColor: 3
   Generated: 0
   isMovable: 1
   blockingGrid:
@@ -598,6 +598,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
         type: 3}
+      propertyPath: Radius
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
+        type: 3}
       propertyPath: boxSize.x
       value: 1.5
       objectReference: {fileID: 0}
@@ -611,6 +616,12 @@ PrefabInstance:
       propertyPath: boxSize.z
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
+        type: 3}
+      propertyPath: gizmoColor
+      value: 
+      objectReference: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec,
+        type: 2}
     - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
         type: 3}
       propertyPath: gizmoColor.a
@@ -747,6 +758,11 @@ PrefabInstance:
       objectReference: {fileID: 1796708653057558814}
     - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
         type: 3}
+      propertyPath: Radius
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
+        type: 3}
       propertyPath: boxSize.x
       value: 1.5
       objectReference: {fileID: 0}
@@ -760,6 +776,12 @@ PrefabInstance:
       propertyPath: boxSize.z
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
+        type: 3}
+      propertyPath: gizmoColor
+      value: 
+      objectReference: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec,
+        type: 2}
     - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
         type: 3}
       propertyPath: gizmoColor.a
@@ -790,6 +812,11 @@ PrefabInstance:
       propertyPath: m_Carve
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7558089995955316681, guid: 96eaa91d683d67543ac7f34a26571357,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8437730787568224221, guid: 96eaa91d683d67543ac7f34a26571357,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -805,7 +832,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.26
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5204935067251680782, guid: 96eaa91d683d67543ac7f34a26571357, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -851,6 +879,11 @@ PrefabInstance:
       objectReference: {fileID: 1796708653057558814}
     - target: {fileID: 2666406258958278602, guid: 501683f9395f1ae4990b5061f6f3f3d3,
         type: 3}
+      propertyPath: Radius
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666406258958278602, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
       propertyPath: boxSize.x
       value: 1.5
       objectReference: {fileID: 0}
@@ -864,6 +897,12 @@ PrefabInstance:
       propertyPath: boxSize.z
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2666406258958278602, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: gizmoColor
+      value: 
+      objectReference: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec,
+        type: 2}
     - target: {fileID: 2666406258958278602, guid: 501683f9395f1ae4990b5061f6f3f3d3,
         type: 3}
       propertyPath: gizmoColor.a
@@ -980,6 +1019,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 381103648670810599, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
+      propertyPath: Radius
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 381103648670810599, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
       propertyPath: boxSize.x
       value: 1.05
       objectReference: {fileID: 0}
@@ -988,6 +1032,12 @@ PrefabInstance:
       propertyPath: boxSize.z
       value: 1.05
       objectReference: {fileID: 0}
+    - target: {fileID: 381103648670810599, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: gizmoColor
+      value: 
+      objectReference: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec,
+        type: 2}
     - target: {fileID: 381103648670810599, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: gizmoColor.a

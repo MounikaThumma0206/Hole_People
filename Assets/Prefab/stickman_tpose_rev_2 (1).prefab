@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: 0.075, y: 0.08000003, z: 0.074}
-  m_LocalScale: {x: 3.65, y: 2.9891162, z: 1.1967216}
+  m_LocalScale: {x: 0.3, y: 0.24568078, z: 0.09836067}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1208417894651052497}
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 0.29803923}
+  m_Sprite: {fileID: 21300000, guid: 91a960c66129a2d42a5f6563453b28dc, type: 3}
+  m_Color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 0.69411767}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -295,7 +295,7 @@ NavMeshAgent:
   m_Speed: 10
   m_Acceleration: 1
   avoidancePriority: 50
-  m_AngularSpeed: 100
+  m_AngularSpeed: 500
   m_StoppingDistance: 0.2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1

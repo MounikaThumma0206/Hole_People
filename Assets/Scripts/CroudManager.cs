@@ -10,35 +10,40 @@ public class CroudManager : GridItemGenerator
 
 	public CroudManagerData croudManagerData;
 	public GameObject[,] PlayerGrid;
-	public List<GridElement> playerGridElements = new List<GridElement>();
 
-	public List<Transform> PlayerPositions = new List<Transform>();
+
+	[HideInInspector] public List<GridElement> playerGridElements = new List<GridElement>();
+	[HideInInspector] public List<Transform> PlayerPositions = new List<Transform>();
+
+
+
 	[Header("Generate Grid")]
-	public int rows;
-	public int columns;
-	public GameObject Tile => croudManagerData.croudPrefab;
-	public int TileCount;
-	public ColorEnum gridColor;
-	public bool Generated;
+	[HideInInspector] public int rows;
+	[HideInInspector] public int columns;
+	[HideInInspector] public int TileCount;
 	[Header("Player Movement")]
 	public bool isMovable = false;
 	private Material gridMaterial;
-	public List<CroudManager> blockingGrid = new List<CroudManager>();
-	private List<CroudManager> unBlockingGrid = new List<CroudManager>();
-	public NavMeshObstacle obstacle;
-	public float moveDuration = 1.0f;
-	//private HoleGenerator croudGenerator;
-	public int runTriggerName => croudManagerData.RunId;
-	public int jumpTriggerName => croudManagerData.JumpId;
 
-	public bool _moved;
 
 	[Header("Pillers")]
 	public bool shouldGeneratePillers;
-	public static Pillar pillerPrefab;
+	[SerializeField] static Pillar pillerPrefab;
+	[SerializeField] List<CroudManager> blockingGrid = new List<CroudManager>();
+	private List<CroudManager> unBlockingGrid = new List<CroudManager>();
+	NavMeshObstacle obstacle;
 
+	[HideInInspector] public bool _moved;
 	[Header("Events")]
 	[SerializeField] UnityEvent OnCrowdCleared = new();
+
+
+	public int runTriggerName => croudManagerData.RunId;
+	public int jumpTriggerName => croudManagerData.JumpId;
+
+
+	public ColorEnum GridColor => colorEnum;
+	public GameObject Tile => croudManagerData.croudPrefab;
 	public ColorManager colorManager => croudManagerData.colorManager;
 	public float Column_spacing => croudManagerData.spacing.y;
 	public float Row_spacing => croudManagerData.spacing.x;
@@ -62,7 +67,7 @@ public class CroudManager : GridItemGenerator
 		}
 		else
 		{
-			obstacle = transform.GetComponent<NavMeshObstacle>();
+			obstacle = GetComponent<NavMeshObstacle>();
 			if (obstacle != null)
 			{
 				obstacle.enabled = true;
@@ -74,8 +79,9 @@ public class CroudManager : GridItemGenerator
 		}
 		foreach (Pillar pillar in pillars)
 		{
-			pillar.SwitchPillarType(gridColor);
+			pillar.SwitchPillarType(GridColor);
 		}
+
 	}
 	public override void OnEnable()
 	{
@@ -102,7 +108,7 @@ public class CroudManager : GridItemGenerator
 		}
 		foreach (Pillar pillar in pillars)
 		{
-			pillar.SwitchPillarType(gridColor);
+			pillar.SwitchPillarType(GridColor);
 		}
 	}
 
@@ -154,7 +160,7 @@ public class CroudManager : GridItemGenerator
 		//Get the color with same enum from the color manager
 		foreach (ColorMaterial colorMaterial in colorManager.colorMaterials)
 		{
-			if (colorMaterial.colorEnum == gridColor)
+			if (colorMaterial.colorEnum == GridColor)
 			{
 				gridMaterial = colorMaterial.material;
 				break; // Exit the loop once we find the matching color
@@ -243,9 +249,9 @@ public class CroudManager : GridItemGenerator
 				}
 
 
-				Vector3 position = gridGenerator.GetWorldPosition(i, j, true);
+
 				GameObject cube = Instantiate(Tile);
-				cube.transform.position = position;
+				cube.transform.position = gridGenerator.GetWorldPosition(i, j, true);
 
 				// Ensure the cube has a GridElement component
 				GridElement gridElement = cube.GetComponent<GridElement>();
@@ -285,7 +291,6 @@ public class CroudManager : GridItemGenerator
 		}
 
 		TileCount = PlayerPositions.Count;
-		Generated = true;
 		AddElementsToGrid();
 	}
 	private void GeneratePillers(int i, int j, PillarType pillarType)

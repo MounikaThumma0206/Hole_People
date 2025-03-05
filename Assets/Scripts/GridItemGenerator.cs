@@ -3,7 +3,8 @@
 public class GridItemGenerator : MonoBehaviour
 {
 	[SerializeField] protected GridGenerator gridGenerator;
-	[SerializeField] protected Color gizmoColor;
+	[SerializeField] protected ColorEnum colorEnum;
+	[SerializeField] protected DebugGizmosColor gizmoColor;
 	[SerializeField] protected Vector3 boxSize;
 	public Vector3 BoxSize
 	{
@@ -44,7 +45,11 @@ public class GridItemGenerator : MonoBehaviour
 #if UNITY_EDITOR
 	protected virtual void OnDrawGizmos()
 	{
-		Gizmos.color = gizmoColor;
+		if(gizmoColor == null)
+		{
+			return;
+		}
+		Gizmos.color = gizmoColor.GetGizmoColor(colorEnum);
 
 		if (gridGenerator == null)
 		{

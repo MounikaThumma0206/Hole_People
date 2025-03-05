@@ -5,7 +5,6 @@ using UnityEngine.Events;
 public class Hole : GridItemGenerator
 {
 	public static UnityEvent<ColorEnum> OnAnyHoleClicked = new();
-	public ColorEnum colorEnum;
 	//public CroudManager playerGenerator; // Reference to PlayerGridGenerator
 	[SerializeField] private float jumpDetectionRadius;
 	[SerializeField] private float holeRadius = 1;

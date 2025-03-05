@@ -1,5 +1,161 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &384795251871715480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9020074210066696468}
+  - component: {fileID: 2257203490893756223}
+  - component: {fileID: 3760151756008646945}
+  m_Layer: 0
+  m_Name: Blue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &9020074210066696468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384795251871715480}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.98, y: 0, z: 4.02}
+  m_LocalScale: {x: 1.65, y: 1, z: 6.68}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8128193471260524997}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &2257203490893756223
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384795251871715480}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58, y: 0.5, z: 0.245}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: -0.01}
+  m_TimeToStationary: 0.5
+--- !u!114 &3760151756008646945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384795251871715480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridGenerator: {fileID: 1796708653057558814}
+  colorEnum: 2
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
+  boxSize: {x: 1.14, y: 0, z: 0.3119999}
+  croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
+  playerGridElements: []
+  PlayerPositions: []
+  rows: 21
+  columns: 4
+  TileCount: 84
+  isMovable: 0
+  shouldGeneratePillers: 0
+  blockingGrid: []
+  _moved: 0
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &2127347984605967580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 473054969176732639}
+  - component: {fileID: 5073426875329925337}
+  - component: {fileID: 7701465818182205715}
+  m_Layer: 0
+  m_Name: Green Middle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &473054969176732639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127347984605967580}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.45, y: 0, z: -0.91}
+  m_LocalScale: {x: 1.9, y: 1, z: 7.65}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8128193471260524997}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &5073426875329925337
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127347984605967580}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.875, y: 0.5, z: 0.105}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.12, y: 0, z: 0.01}
+  m_TimeToStationary: 0.5
+--- !u!114 &7701465818182205715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127347984605967580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridGenerator: {fileID: 1796708653057558814}
+  colorEnum: 1
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
+  boxSize: {x: 1.12, y: 0, z: 0.11}
+  croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
+  playerGridElements: []
+  PlayerPositions: []
+  rows: 21
+  columns: 4
+  TileCount: 84
+  isMovable: 0
+  shouldGeneratePillers: 0
+  blockingGrid: []
+  _moved: 0
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3210483827449420979
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +168,7 @@ GameObject:
   - component: {fileID: 702914377317622441}
   - component: {fileID: 462064361586055937}
   m_Layer: 0
-  m_Name: Grid item (3)
+  m_Name: Red Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +183,7 @@ Transform:
   m_GameObject: {fileID: 3210483827449420979}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.52, y: 0, z: 5.95}
+  m_LocalPosition: {x: -1.95, y: 0, z: 4.02}
   m_LocalScale: {x: 1.65, y: 1, z: 6.68}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,11 +199,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.785, y: 0.5, z: 0.18}
+  m_Extents: {x: 0.58, y: 0.5, z: 0.245}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: -0.03}
+  m_Center: {x: 0, y: 0, z: -0.01}
   m_TimeToStationary: 0.5
 --- !u!114 &462064361586055937
 MonoBehaviour:
@@ -62,22 +218,98 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridGenerator: {fileID: 1796708653057558814}
-  colorEnum: 2
+  colorEnum: 0
   gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
-  boxSize: {x: 1.46, y: 0, z: 0.3119999}
+  boxSize: {x: 1.14, y: 0, z: 0.3119999}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
   rows: 21
   columns: 4
   TileCount: 84
-  Generated: 1
   isMovable: 0
-  blockingGrid: []
-  obstacle: {fileID: 0}
-  moveDuration: 1
-  _moved: 0
   shouldGeneratePillers: 0
+  blockingGrid: []
+  _moved: 0
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &3474536096053908658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6109963234682250283}
+  - component: {fileID: 5901854534215463591}
+  - component: {fileID: 8115711490934956377}
+  m_Layer: 0
+  m_Name: Red (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &6109963234682250283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3474536096053908658}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.99, y: 0, z: -2.49}
+  m_LocalScale: {x: 1.9, y: 1, z: 7.65}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8128193471260524997}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &5901854534215463591
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3474536096053908658}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.55, y: 0.5, z: 0.12}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.03, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!114 &8115711490934956377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3474536096053908658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridGenerator: {fileID: 1796708653057558814}
+  colorEnum: 0
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
+  boxSize: {x: 0.94, y: 0, z: 0.2}
+  croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
+  playerGridElements: []
+  PlayerPositions: []
+  rows: 21
+  columns: 4
+  TileCount: 84
+  isMovable: 1
+  shouldGeneratePillers: 0
+  blockingGrid:
+  - {fileID: 5701401894656681280}
+  _moved: 0
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -93,7 +325,7 @@ GameObject:
   - component: {fileID: 8242067526084203815}
   - component: {fileID: 211758047042067688}
   m_Layer: 0
-  m_Name: Grid Item (2)
+  m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,7 +340,7 @@ Transform:
   m_GameObject: {fileID: 3638423235882033107}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.49, y: 0, z: 0.49}
+  m_LocalPosition: {x: 1.49, y: 0, z: -0.84}
   m_LocalScale: {x: 1.9, y: 1, z: 7.65}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -124,11 +356,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.665, y: 0.5, z: 0.19}
+  m_Extents: {x: 0.815, y: 0.5, z: 0.09}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: -0.12, y: 0, z: -0.04}
+  m_Center: {x: 0.03, y: 0, z: 0.02}
   m_TimeToStationary: 0.5
 --- !u!114 &211758047042067688
 MonoBehaviour:
@@ -145,21 +377,98 @@ MonoBehaviour:
   gridGenerator: {fileID: 1796708653057558814}
   colorEnum: 0
   gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
-  boxSize: {x: 1.42, y: 0, z: 0.31849986}
+  boxSize: {x: 1.12, y: 0, z: 0.11}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
   rows: 21
   columns: 4
   TileCount: 84
-  Generated: 1
   isMovable: 0
-  blockingGrid:
-  - {fileID: 2374115585208195671}
-  obstacle: {fileID: 0}
-  moveDuration: 1
-  _moved: 0
   shouldGeneratePillers: 0
+  blockingGrid:
+  - {fileID: 2963808441904827709}
+  _moved: 0
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &3916306812818455046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6346570349292755553}
+  - component: {fileID: 1269646230429390074}
+  - component: {fileID: 5701401894656681280}
+  m_Layer: 0
+  m_Name: Blue Bottom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &6346570349292755553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3916306812818455046}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.03, y: 0, z: -2.49}
+  m_LocalScale: {x: 1.9, y: 1, z: 7.65}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8128193471260524997}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1269646230429390074
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3916306812818455046}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.55, y: 0.5, z: 0.12}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.03, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!114 &5701401894656681280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3916306812818455046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridGenerator: {fileID: 1796708653057558814}
+  colorEnum: 2
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
+  boxSize: {x: 0.58, y: 0, z: 0.19}
+  croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
+  playerGridElements: []
+  PlayerPositions: []
+  rows: 21
+  columns: 4
+  TileCount: 84
+  isMovable: 0
+  shouldGeneratePillers: 0
+  blockingGrid:
+  - {fileID: 1273225449829287958}
+  - {fileID: 211758047042067688}
+  _moved: 0
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -175,7 +484,7 @@ GameObject:
   - component: {fileID: 2044722974309527829}
   - component: {fileID: 6618954315042685746}
   m_Layer: 0
-  m_Name: Grid Item (1)
+  m_Name: Green top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,7 +499,7 @@ Transform:
   m_GameObject: {fileID: 4488410825149190478}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.65, y: 0, z: 3.27}
+  m_LocalPosition: {x: -0.08, y: 0, z: 1.69}
   m_LocalScale: {x: 1.81, y: 1, z: 4.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -206,11 +515,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.855, y: 0.5, z: 0.24}
+  m_Extents: {x: 1.73, y: 0.5, z: 0.24}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: -0.03}
+  m_Center: {x: 0.04, y: 0, z: -0.03}
   m_TimeToStationary: 0.5
 --- !u!114 &6618954315042685746
 MonoBehaviour:
@@ -225,27 +534,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridGenerator: {fileID: 1796708653057558814}
-  colorEnum: 0
+  colorEnum: 1
   gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
-  boxSize: {x: 1.42, y: 0, z: 0.31849986}
+  boxSize: {x: 2.95, y: 0, z: 0.19}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
   rows: 21
   columns: 4
   TileCount: 84
-  Generated: 1
-  isMovable: 0
+  isMovable: 1
+  shouldGeneratePillers: 0
   blockingGrid:
+  - {fileID: 3760151756008646945}
   - {fileID: 462064361586055937}
-  obstacle: {fileID: 0}
-  moveDuration: 1
   _moved: 0
-  shouldGeneratePillers: 0
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &6589086802310388838
+--- !u!1 &5783884188361225199
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -253,54 +560,54 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7996739128010236832}
-  - component: {fileID: 2034339034214931615}
-  - component: {fileID: 120858646360464058}
+  - component: {fileID: 3018676242715064354}
+  - component: {fileID: 7036525005588373094}
+  - component: {fileID: 2963808441904827709}
   m_Layer: 0
-  m_Name: Grid item (2)
+  m_Name: Blue Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!4 &7996739128010236832
+--- !u!4 &3018676242715064354
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6589086802310388838}
+  m_GameObject: {fileID: 5783884188361225199}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.52, y: 0, z: 0.42}
-  m_LocalScale: {x: 1.9, y: 1, z: 7.65}
+  m_LocalPosition: {x: -0.08, y: 0, z: 0.51}
+  m_LocalScale: {x: 1.81, y: 1, z: 4.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8128193471260524997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!208 &2034339034214931615
+--- !u!208 &7036525005588373094
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6589086802310388838}
+  m_GameObject: {fileID: 5783884188361225199}
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.75, y: 0.5, z: 0.2}
+  m_Extents: {x: 1.675, y: 0.5, z: 0.09}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: -0.03}
+  m_Center: {x: 0.04, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &120858646360464058
+--- !u!114 &2963808441904827709
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6589086802310388838}
+  m_GameObject: {fileID: 5783884188361225199}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
@@ -309,107 +616,23 @@ MonoBehaviour:
   gridGenerator: {fileID: 1796708653057558814}
   colorEnum: 2
   gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
-  boxSize: {x: 1.46, y: 0, z: 0.3119999}
+  boxSize: {x: 2.95, y: 0, z: 0.01}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
   rows: 21
   columns: 4
   TileCount: 84
-  Generated: 1
-  isMovable: 0
-  blockingGrid:
-  - {fileID: 6618954315042685746}
-  obstacle: {fileID: 0}
-  moveDuration: 1
-  _moved: 0
-  shouldGeneratePillers: 1
-  OnCrowdCleared:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!1 &8073957054323265535
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4805934288491637982}
-  - component: {fileID: 3197383281537244196}
-  - component: {fileID: 2374115585208195671}
-  m_Layer: 0
-  m_Name: Grid item (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!4 &4805934288491637982
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8073957054323265535}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.75, y: 0, z: 3.27}
-  m_LocalScale: {x: 1.9, y: 1, z: 5.36}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8128193471260524997}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!208 &3197383281537244196
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8073957054323265535}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.665, y: 0.5, z: 0.19}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: -0.12, y: 0, z: -0.04}
-  m_TimeToStationary: 0.5
---- !u!114 &2374115585208195671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8073957054323265535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gridGenerator: {fileID: 1796708653057558814}
-  colorEnum: 2
-  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
-  boxSize: {x: 1.7, y: 0, z: 0.3119999}
-  croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
-  playerGridElements: []
-  PlayerPositions: []
-  rows: 21
-  columns: 4
-  TileCount: 84
-  Generated: 1
-  isMovable: 0
-  blockingGrid:
-  - {fileID: 2803772446763348490}
-  obstacle: {fileID: 0}
-  moveDuration: 1
-  _moved: 0
+  isMovable: 1
   shouldGeneratePillers: 0
+  blockingGrid:
+  - {fileID: 7701465818182205715}
+  - {fileID: 462064361586055937}
+  _moved: 0
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &8514503941989365674
+--- !u!1 &5857486069633245413
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -417,55 +640,54 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7170889693506552426}
-  - component: {fileID: 5919250661209216980}
-  - component: {fileID: 2803772446763348490}
-  - component: {fileID: 8846682758310092136}
+  - component: {fileID: 3609603290745186550}
+  - component: {fileID: 1900964633203245090}
+  - component: {fileID: 1273225449829287958}
   m_Layer: 0
-  m_Name: Grid Item (3)
+  m_Name: Red (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!4 &7170889693506552426
+--- !u!4 &3609603290745186550
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8514503941989365674}
+  m_GameObject: {fileID: 5857486069633245413}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.49, y: 0, z: 6.0199995}
+  m_LocalPosition: {x: 2, y: 0, z: -2.49}
   m_LocalScale: {x: 1.9, y: 1, z: 7.65}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8128193471260524997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!208 &5919250661209216980
+--- !u!208 &1900964633203245090
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8514503941989365674}
+  m_GameObject: {fileID: 5857486069633245413}
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.665, y: 0.5, z: 0.19}
+  m_Extents: {x: 0.55, y: 0.5, z: 0.12}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: -0.12, y: 0, z: -0.04}
+  m_Center: {x: 0.03, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &2803772446763348490
+--- !u!114 &1273225449829287958
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8514503941989365674}
+  m_GameObject: {fileID: 5857486069633245413}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
@@ -474,41 +696,186 @@ MonoBehaviour:
   gridGenerator: {fileID: 1796708653057558814}
   colorEnum: 0
   gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
-  boxSize: {x: 1.42, y: 0, z: 0.31849986}
+  boxSize: {x: 0.94, y: 0, z: 0.2}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
   rows: 21
   columns: 4
   TileCount: 84
-  Generated: 1
   isMovable: 0
-  blockingGrid: []
-  obstacle: {fileID: 0}
-  moveDuration: 1
-  _moved: 0
   shouldGeneratePillers: 0
+  blockingGrid:
+  - {fileID: 3760151756008646945}
+  _moved: 0
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8846682758310092136
-MonoBehaviour:
+--- !u!1001 &5127912695676235865
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1622041530705504448}
+    m_Modifications:
+    - target: {fileID: 1351795208089884595, guid: 96eaa91d683d67543ac7f34a26571357,
+        type: 3}
+      propertyPath: boxSize.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351795208089884595, guid: 96eaa91d683d67543ac7f34a26571357,
+        type: 3}
+      propertyPath: boxSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351795208089884595, guid: 96eaa91d683d67543ac7f34a26571357,
+        type: 3}
+      propertyPath: boxSize.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351795208089884595, guid: 96eaa91d683d67543ac7f34a26571357,
+        type: 3}
+      propertyPath: gridGenerator
+      value: 
+      objectReference: {fileID: 1796708653057558814}
+    - target: {fileID: -8300254561908973183, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: m_Carve
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666406258958278602, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: Radius
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666406258958278602, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: boxSize.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666406258958278602, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: boxSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666406258958278602, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: boxSize.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666406258958278602, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: colorEnum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666406258958278602, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: gizmoColor
+      value: 
+      objectReference: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec,
+        type: 2}
+    - target: {fileID: 2666406258958278602, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: gizmoColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666406258958278602, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: gizmoColor.g
+      value: 0.07450981
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666406258958278602, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: gizmoColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666406258958278602, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: gridGenerator
+      value: 
+      objectReference: {fileID: 1796708653057558814}
+    - target: {fileID: 2666406258958278602, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: jumpDetectionRadius
+      value: 1.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650428060033040740, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650428060033040740, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650428060033040740, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252318037437998400, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252318037437998400, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252318037437998400, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252318037437998400, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252318037437998400, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252318037437998400, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252318037437998400, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252318037437998400, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252318037437998400, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269099022414962021, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: m_Name
+      value: GreenHole
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 501683f9395f1ae4990b5061f6f3f3d3, type: 3}
+--- !u!4 &1137715262487860505 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5252318037437998400, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5127912695676235865}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8514503941989365674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4be78b8818f9c9841ba4e793a8390a30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gridGenerator: {fileID: 1796708653057558814}
-  colorEnum: 0
-  gizmoColor: {fileID: 0}
-  boxSize: {x: 1.42, y: 0, z: 0.31849986}
-  isHole: 0
-  Radius: 3
 --- !u!1001 &7188645683029360875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -525,7 +892,7 @@ PrefabInstance:
     - target: {fileID: 359530969950709178, guid: 96eaa91d683d67543ac7f34a26571357,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.23
+      value: -3.01
       objectReference: {fileID: 0}
     - target: {fileID: 359530969950709178, guid: 96eaa91d683d67543ac7f34a26571357,
         type: 3}
@@ -535,7 +902,7 @@ PrefabInstance:
     - target: {fileID: 359530969950709178, guid: 96eaa91d683d67543ac7f34a26571357,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.96
+      value: -6.62
       objectReference: {fileID: 0}
     - target: {fileID: 359530969950709178, guid: 96eaa91d683d67543ac7f34a26571357,
         type: 3}
@@ -594,6 +961,11 @@ PrefabInstance:
       objectReference: {fileID: 1796708653057558814}
     - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
         type: 3}
+      propertyPath: Radius
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
+        type: 3}
       propertyPath: boxSize.x
       value: 1.5
       objectReference: {fileID: 0}
@@ -607,6 +979,12 @@ PrefabInstance:
       propertyPath: boxSize.z
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
+        type: 3}
+      propertyPath: gizmoColor
+      value: 
+      objectReference: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec,
+        type: 2}
     - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
         type: 3}
       propertyPath: gizmoColor.a
@@ -703,6 +1081,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 381103648670810599, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
+      propertyPath: Radius
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 381103648670810599, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
       propertyPath: boxSize.x
       value: 1.05
       objectReference: {fileID: 0}
@@ -711,6 +1094,12 @@ PrefabInstance:
       propertyPath: boxSize.z
       value: 1.05
       objectReference: {fileID: 0}
+    - target: {fileID: 381103648670810599, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: gizmoColor
+      value: 
+      objectReference: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec,
+        type: 2}
     - target: {fileID: 381103648670810599, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: gizmoColor.a
@@ -731,6 +1120,12 @@ PrefabInstance:
       propertyPath: gridGenerator
       value: 
       objectReference: {fileID: 1796708653057558814}
+    - target: {fileID: 519391375650170454, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: gizmoColor
+      value: 
+      objectReference: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec,
+        type: 2}
     - target: {fileID: 1421469807993881846, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: rows
@@ -755,11 +1150,6 @@ PrefabInstance:
         type: 3}
       propertyPath: boxSize.z
       value: 0.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 1421469807993881846, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
-        type: 3}
-      propertyPath: colorEnum
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1421469807993881846, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -836,12 +1226,12 @@ PrefabInstance:
     - target: {fileID: 2309788744569678583, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.65
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 2309788744569678583, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.51
+      value: -4.44
       objectReference: {fileID: 0}
     - target: {fileID: 2422678713353090172, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -866,7 +1256,7 @@ PrefabInstance:
     - target: {fileID: 2869630217971242289, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_Name
-      value: Level 1
+      value: Level 6
       objectReference: {fileID: 0}
     - target: {fileID: 3540600272356728428, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -930,18 +1320,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4006627669820646353, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
+      propertyPath: m_Name
+      value: RedBottom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006627669820646353, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4039616204568734887, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.55
+      value: 0.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039616204568734887, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.42
       objectReference: {fileID: 0}
     - target: {fileID: 5957720755653680845, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482304172784229975, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: _moved
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6482304172784229975, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -951,12 +1356,17 @@ PrefabInstance:
     - target: {fileID: 6482304172784229975, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: boxSize.x
-      value: 1.36
+      value: 0.86
       objectReference: {fileID: 0}
     - target: {fileID: 6482304172784229975, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: boxSize.z
-      value: 0.3
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482304172784229975, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: colorEnum
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6482304172784229975, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -1009,7 +1419,7 @@ PrefabInstance:
         type: 3}
       propertyPath: blockingGrid.Array.data[0]
       value: 
-      objectReference: {fileID: 120858646360464058}
+      objectReference: {fileID: 5701401894656681280}
     - target: {fileID: 6482304172784229975, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: blockingGrid.Array.data[1]
@@ -1035,6 +1445,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7300445569625144214, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: gridSize.y
+      value: 22
+      objectReference: {fileID: 0}
     - target: {fileID: 7383903937789203408, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1053,7 +1468,7 @@ PrefabInstance:
     - target: {fileID: 7383903937789203408, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.51
+      value: -4.23
       objectReference: {fileID: 0}
     - target: {fileID: 7680432118537322482, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -1083,7 +1498,7 @@ PrefabInstance:
     - target: {fileID: 9083400231807024089, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_Center.x
-      value: -0.08
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9083400231807024089, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -1093,45 +1508,62 @@ PrefabInstance:
     - target: {fileID: 9083400231807024089, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_Extents.x
-      value: 0.95
+      value: 0.585
       objectReference: {fileID: 0}
     - target: {fileID: 9083400231807024089, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_Extents.z
-      value: 0.24
+      value: 0.175
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5288324896037460597, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5957720755653680845, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7727600530480470600, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7439520705201677649}
+    - targetCorrespondingSourceObject: {fileID: 7727600530480470600, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1137715262487860505}
     - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 7996739128010236832}
-    - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
-        type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 7933644949867366203}
-    - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
-        type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 7908505641915427803}
-    - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
-        type: 3}
-      insertIndex: 5
-      addedObject: {fileID: 4805934288491637982}
-    - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
-        type: 3}
-      insertIndex: 6
+      insertIndex: 1
       addedObject: {fileID: 2098540972198552184}
     - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 9020074210066696468}
+    - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 7908505641915427803}
+    - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 3018676242715064354}
+    - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 7933644949867366203}
+    - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 3609603290745186550}
+    - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
       insertIndex: 7
-      addedObject: {fileID: 7170889693506552426}
+      addedObject: {fileID: 6109963234682250283}
+    - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      insertIndex: 8
+      addedObject: {fileID: 6346570349292755553}
+    - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      insertIndex: 9
+      addedObject: {fileID: 473054969176732639}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c, type: 3}
 --- !u!208 &266255477707868497 stripped

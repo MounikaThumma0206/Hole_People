@@ -177,7 +177,6 @@ GameObject:
   - component: {fileID: 4531459545318798720}
   - component: {fileID: 4034508201392119061}
   - component: {fileID: 8284597332906741003}
-  - component: {fileID: 3688932861012214690}
   m_Layer: 6
   m_Name: FakeShadow
   m_TagString: Untagged
@@ -250,28 +249,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3688932861012214690
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463792689420712374}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2024052807292148516
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,9 +351,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridGenerator: {fileID: 0}
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
-  boxSize: {x: 0, y: 0, z: 0}
   colorEnum: 2
+  gizmoColor: {fileID: 0}
+  boxSize: {x: 0, y: 0, z: 0}
   jumpDetectionRadius: 1.28
   holeRadius: 0.5
   audioSource: {fileID: 5794635341304445631}

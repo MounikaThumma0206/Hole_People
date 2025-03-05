@@ -244,7 +244,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridGenerator: {fileID: 7300445569625144214}
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  colorEnum: 0
+  gizmoColor: {fileID: 0}
   boxSize: {x: 0, y: 0, z: 0}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
@@ -252,14 +253,10 @@ MonoBehaviour:
   rows: 6
   columns: 4
   TileCount: 24
-  gridColor: 0
-  Generated: 1
   isMovable: 1
-  blockingGrid: []
-  obstacle: {fileID: 5108655910121296119}
-  moveDuration: 1
-  _moved: 0
   shouldGeneratePillers: 0
+  blockingGrid: []
+  _moved: 0
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -344,7 +341,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridGenerator: {fileID: 7300445569625144214}
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  colorEnum: 0
+  gizmoColor: {fileID: 0}
   boxSize: {x: 0, y: 0, z: 0}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
@@ -352,16 +350,12 @@ MonoBehaviour:
   rows: 21
   columns: 4
   TileCount: 84
-  gridColor: 3
-  Generated: 1
   isMovable: 1
+  shouldGeneratePillers: 0
   blockingGrid:
   - {fileID: 1421469807993881846}
   - {fileID: 0}
-  obstacle: {fileID: 9083400231807024089}
-  moveDuration: 1
   _moved: 0
-  shouldGeneratePillers: 0
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -475,6 +469,7 @@ GameObject:
   - component: {fileID: 1646917183832499109}
   - component: {fileID: 4821614216397087502}
   - component: {fileID: 4212021692972288009}
+  - component: {fileID: 7713170780633222359}
   m_Layer: 0
   m_Name: Plane (2)
   m_TagString: Untagged
@@ -569,6 +564,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &7713170780633222359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5652994365363668033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &5933518574251163338
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,7 +767,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridGenerator: {fileID: 7300445569625144214}
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  colorEnum: 0
+  gizmoColor: {fileID: 0}
   boxSize: {x: 0, y: 0, z: 0}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
@@ -761,14 +776,10 @@ MonoBehaviour:
   rows: 20
   columns: 4
   TileCount: 80
-  gridColor: 0
-  Generated: 1
   isMovable: 1
-  blockingGrid: []
-  obstacle: {fileID: 2422678713353090172}
-  moveDuration: 1
-  _moved: 0
   shouldGeneratePillers: 0
+  blockingGrid: []
+  _moved: 0
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -885,6 +896,7 @@ GameObject:
   - component: {fileID: 3328957644991877321}
   - component: {fileID: 1973592391108774094}
   - component: {fileID: 239582047495666593}
+  - component: {fileID: 1267539637982213131}
   m_Layer: 0
   m_Name: Plane (3)
   m_TagString: Untagged
@@ -979,6 +991,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1267539637982213131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6285695356602029413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &7073810944466174868
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +1022,7 @@ GameObject:
   - component: {fileID: 7740347984272548449}
   - component: {fileID: 3225167585311205658}
   - component: {fileID: 8441527419261405785}
+  - component: {fileID: 2528963775284430916}
   m_Layer: 0
   m_Name: Plane (1)
   m_TagString: Untagged
@@ -1085,6 +1117,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2528963775284430916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7073810944466174868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &7342859447837683902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,6 +1270,7 @@ GameObject:
   - component: {fileID: 4713090211517562573}
   - component: {fileID: 1338716799745753993}
   - component: {fileID: 2652093747731602164}
+  - component: {fileID: 6045369926032797867}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -1313,6 +1365,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &6045369926032797867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7608634763409103290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &9015980105621305424
 GameObject:
   m_ObjectHideFlags: 0

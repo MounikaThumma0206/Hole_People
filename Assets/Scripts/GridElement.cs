@@ -20,7 +20,6 @@ public class GridElement : MonoBehaviour
 	public SkinnedMeshRenderer playerRenderer;
 	public Rigidbody rb;
 	public Animator animator;
-	public AudioSource audioSource;
 	public bool IsFilled { get; private set; } = false;
 	public Vector3 PlayerInitialPos;
 	public Vector3 PlayerInitialScale;
@@ -31,7 +30,7 @@ public class GridElement : MonoBehaviour
 	private float JumpDetectionRadius => Hole.JumpDetectionRadius;
 	void Start()
 	{
-		
+
 
 		// Offset idle animation clip
 		if (animator != null)
@@ -53,7 +52,7 @@ public class GridElement : MonoBehaviour
 		rb.useGravity = false; // Initially disable gravity
 		rb.isKinematic = true; // Set 
 	}
-	
+
 	//public void MoveToHoleWithDOTween(GameObject hole)
 	//{
 	//	if (Player != null && hole != null)
@@ -114,7 +113,7 @@ public class GridElement : MonoBehaviour
 				player.transform.DOMove(Hole.transform.position + Vector3.up * 2 + GetRandomDirectionalVector() * HoleRadius, 0.3f).SetEase(Ease.InQuad).OnComplete(() =>
 				{
 					player.transform.DOMove(Hole.transform.position + Vector3.down * 2 + GetRandomDirectionalVector() * HoleRadius, .3f).SetEase(Ease.InQuad);
-					audioSource.Play();
+					CrowdAudioManager.PlayJumpSound();
 				});
 
 				//Vector3 holeDownPosition = Hole.transform.position + Vector3.down * 2 + GetRandomDirectionalVector() * HoleRadius;
