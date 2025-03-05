@@ -71,13 +71,10 @@ MonoBehaviour:
   rows: 21
   columns: 4
   TileCount: 84
-  Generated: 1
   isMovable: 0
-  blockingGrid: []
-  obstacle: {fileID: 0}
-  moveDuration: 1
-  _moved: 0
   shouldGeneratePillers: 0
+  blockingGrid: []
+  _moved: 0
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -152,14 +149,11 @@ MonoBehaviour:
   rows: 21
   columns: 4
   TileCount: 84
-  Generated: 1
   isMovable: 0
+  shouldGeneratePillers: 0
   blockingGrid:
   - {fileID: 2374115585208195671}
-  obstacle: {fileID: 0}
-  moveDuration: 1
   _moved: 0
-  shouldGeneratePillers: 0
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -234,14 +228,11 @@ MonoBehaviour:
   rows: 21
   columns: 4
   TileCount: 84
-  Generated: 1
   isMovable: 0
+  shouldGeneratePillers: 0
   blockingGrid:
   - {fileID: 462064361586055937}
-  obstacle: {fileID: 0}
-  moveDuration: 1
   _moved: 0
-  shouldGeneratePillers: 0
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -316,14 +307,11 @@ MonoBehaviour:
   rows: 21
   columns: 4
   TileCount: 84
-  Generated: 1
   isMovable: 0
+  shouldGeneratePillers: 1
   blockingGrid:
   - {fileID: 6618954315042685746}
-  obstacle: {fileID: 0}
-  moveDuration: 1
   _moved: 0
-  shouldGeneratePillers: 1
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -398,14 +386,11 @@ MonoBehaviour:
   rows: 21
   columns: 4
   TileCount: 84
-  Generated: 1
   isMovable: 0
+  shouldGeneratePillers: 0
   blockingGrid:
   - {fileID: 2803772446763348490}
-  obstacle: {fileID: 0}
-  moveDuration: 1
   _moved: 0
-  shouldGeneratePillers: 0
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -481,13 +466,10 @@ MonoBehaviour:
   rows: 21
   columns: 4
   TileCount: 84
-  Generated: 1
   isMovable: 0
-  blockingGrid: []
-  obstacle: {fileID: 0}
-  moveDuration: 1
-  _moved: 0
   shouldGeneratePillers: 0
+  blockingGrid: []
+  _moved: 0
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -937,6 +919,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108655910121296119, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108655910121296119, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_Extents.x
+      value: 0.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108655910121296119, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_Extents.z
+      value: 0.00001
       objectReference: {fileID: 0}
     - target: {fileID: 5957720755653680845, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}

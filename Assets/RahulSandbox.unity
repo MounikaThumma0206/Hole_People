@@ -123,57 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &113618809
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 113618810}
-  - component: {fileID: 113618811}
-  m_Layer: 0
-  m_Name: Blue Croud
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &113618810
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113618809}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.16, y: 0, z: -2.28}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 839917316}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &113618811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113618809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4be78b8818f9c9841ba4e793a8390a30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gizmoColor: {r: 0, g: 0.1637621, b: 1, a: 1}
-  gridColor: 0
-  boxSize: {x: 7.402678, y: 1, z: 2.5735674}
-  gridGenerator: {fileID: 839917315}
-  isHole: 0
-  Radius: 3
-  holePrefab: {fileID: 0}
 --- !u!1 &439263895
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 439263896}
+  - component: {fileID: 439263898}
   - component: {fileID: 439263897}
   m_Layer: 0
   m_Name: BlueHole
@@ -200,13 +150,29 @@ Transform:
   m_GameObject: {fileID: 439263895}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.12, y: 0, z: -4.9}
-  m_LocalScale: {x: 1, y: 1, z: 0.20483345}
+  m_LocalPosition: {x: 1.44, y: 0, z: 0.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 839917316}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &439263897
+--- !u!208 &439263897
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439263895}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.25, y: 0.5, z: 3.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.19000006, y: 0, z: -0.3}
+  m_TimeToStationary: 0.5
+--- !u!114 &439263898
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,17 +181,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 439263895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4be78b8818f9c9841ba4e793a8390a30, type: 3}
+  m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gizmoColor: {r: 0, g: 0.19440794, b: 1, a: 1}
-  gridColor: 0
-  boxSize: {x: 1.74, y: 1, z: 1.4}
   gridGenerator: {fileID: 839917315}
-  isHole: 1
-  Radius: 0.96
-  holePrefab: {fileID: 2024052807292148516, guid: 289da8af977403141bd8ffc4562acafd,
-    type: 3}
+  colorEnum: 0
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
+  boxSize: {x: 2.24, y: 1.38, z: 7.14}
+  croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
+  playerGridElements: []
+  PlayerPositions: []
+  rows: 0
+  columns: 0
+  TileCount: 0
+  isMovable: 0
+  shouldGeneratePillers: 0
+  blockingGrid: []
+  obstacle: {fileID: 439263897}
+  _moved: 0
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &462738364
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,58 +320,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1 &562678673
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 562678674}
-  - component: {fileID: 562678675}
-  m_Layer: 0
-  m_Name: GreenHole
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &562678674
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562678673}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.89, y: 0, z: -4.9}
-  m_LocalScale: {x: 1, y: 1, z: 0.20483345}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 839917316}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &562678675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562678673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4be78b8818f9c9841ba4e793a8390a30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gizmoColor: {r: 0.2259376, g: 1, b: 0, a: 1}
-  gridColor: 0
-  boxSize: {x: 1.3850155, y: 1, z: 1.4405565}
-  gridGenerator: {fileID: 839917315}
-  isHole: 1
-  Radius: 0.96
-  holePrefab: {fileID: 8269099022414962021, guid: 501683f9395f1ae4990b5061f6f3f3d3,
-    type: 3}
 --- !u!1 &839917314
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,13 +360,14 @@ MonoBehaviour:
   gridPrefab: {fileID: 3889648112902271224, guid: 4b14ce8cb3385d14d946b1d5419458af,
     type: 3}
   croudGenerators:
-  - {fileID: 1138453365}
-  - {fileID: 1680417111}
-  - {fileID: 113618811}
-  - {fileID: 2015833280}
-  - {fileID: 2004235432}
-  - {fileID: 562678675}
-  - {fileID: 439263897}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  navMeshSurface: {fileID: 0}
 --- !u!4 &839917316
 Transform:
   m_ObjectHideFlags: 0
@@ -456,12 +381,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1138453364}
-  - {fileID: 1680417110}
-  - {fileID: 113618810}
-  - {fileID: 2015833279}
-  - {fileID: 2004235431}
-  - {fileID: 562678674}
   - {fileID: 439263896}
   - {fileID: 2082390739}
   m_Father: {fileID: 0}
@@ -511,88 +430,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshSurface: {fileID: 839917317}
   Characters: {fileID: 0}
---- !u!1 &1138453363
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1138453364}
-  - component: {fileID: 1138453365}
-  m_Layer: 0
-  m_Name: Red Croud
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1138453364
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138453363}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.89, y: 0, z: 2}
-  m_LocalScale: {x: 1, y: 1, z: 0.2875}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 839917316}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1138453365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138453363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4be78b8818f9c9841ba4e793a8390a30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gizmoColor: {r: 1, g: 0, b: 0, a: 1}
-  gridColor: 0
-  boxSize: {x: 2.837497, y: 1, z: 4.257495}
-  gridGenerator: {fileID: 839917315}
-  isHole: 0
-  Radius: 3
-  holePrefab: {fileID: 0}
---- !u!1 &1365558125
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1365558126}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1365558126
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365558125}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5.29}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1472741146
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,160 +567,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!1 &1680417109
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1680417110}
-  - component: {fileID: 1680417111}
-  m_Layer: 0
-  m_Name: Green Croud
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1680417110
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1680417109}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.01, y: 0, z: 3.02}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 839917316}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1680417111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1680417109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4be78b8818f9c9841ba4e793a8390a30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gizmoColor: {r: 0.16264248, g: 1, b: 0, a: 1}
-  gridColor: 0
-  boxSize: {x: 3.1859064, y: 1.4875354, z: 6.2151117}
-  gridGenerator: {fileID: 839917315}
-  isHole: 0
-  Radius: 3
-  holePrefab: {fileID: 0}
---- !u!1 &2004235430
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2004235431}
-  - component: {fileID: 2004235432}
-  m_Layer: 0
-  m_Name: Red Hole
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2004235431
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2004235430}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.46, y: 0, z: 5.44}
-  m_LocalScale: {x: 1, y: 1, z: 0.20483345}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 839917316}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2004235432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2004235430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4be78b8818f9c9841ba4e793a8390a30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gizmoColor: {r: 1, g: 0, b: 0, a: 1}
-  gridColor: 0
-  boxSize: {x: 1.3850155, y: 1, z: 1.4405565}
-  gridGenerator: {fileID: 839917315}
-  isHole: 1
-  Radius: 0.96
-  holePrefab: {fileID: 102508287325193429, guid: 96eaa91d683d67543ac7f34a26571357,
-    type: 3}
---- !u!1 &2015833278
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2015833279}
-  - component: {fileID: 2015833280}
-  m_Layer: 0
-  m_Name: Blue Croud
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2015833279
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2015833278}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.67, y: 0, z: -5.13}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 839917316}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2015833280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2015833278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4be78b8818f9c9841ba4e793a8390a30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gizmoColor: {r: 0, g: 0.1637621, b: 1, a: 1}
-  gridColor: 0
-  boxSize: {x: 2.8409655, y: 0.23985958, z: 1.3811978}
-  gridGenerator: {fileID: 839917315}
-  isHole: 0
-  Radius: 3
-  holePrefab: {fileID: 0}
 --- !u!1 &2082390738
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,4 +637,3 @@ SceneRoots:
   - {fileID: 1472741149}
   - {fileID: 462738366}
   - {fileID: 839917316}
-  - {fileID: 1365558126}

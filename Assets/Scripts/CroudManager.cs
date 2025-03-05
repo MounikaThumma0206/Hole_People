@@ -30,8 +30,8 @@ public class CroudManager : GridItemGenerator
 	public bool shouldGeneratePillers;
 	[SerializeField] static Pillar pillerPrefab;
 	[SerializeField] List<CroudManager> blockingGrid = new List<CroudManager>();
+	[SerializeField] NavMeshObstacle obstacle;
 	private List<CroudManager> unBlockingGrid = new List<CroudManager>();
-	NavMeshObstacle obstacle;
 
 	[HideInInspector] public bool _moved;
 	[Header("Events")]
@@ -293,6 +293,43 @@ public class CroudManager : GridItemGenerator
 		TileCount = PlayerPositions.Count;
 		AddElementsToGrid();
 	}
+#if UNITY_EDITOR
+
+	private void OnValidate()
+	{
+		CalculateNavmeshSize();
+	}
+#endif
+	private void CalculateNavmeshSize()
+	{
+		Vector2Int minBounds = GetMinBounds();
+		Vector2Int maxBounds = GetMaxBounds();
+
+		Vector3 startPosition = gridGenerator.GetWorldPosition(minBounds.x, minBounds.y, true);
+		Vector3 endPosition = gridGenerator.GetWorldPosition(maxBounds.x , maxBounds.y, true); // Ensure full coverage
+
+		Vector3 gridSize = endPosition - startPosition;
+		Vector3 objectScale = transform.lossyScale; // Use lossyScale to account for world scale
+
+		// Calculate NavMeshObstacle size (adjusting for object's actual scale)
+		Vector3 navMeshSize = new Vector3(gridSize.x * objectScale.x, 1, gridSize.z * objectScale.z);
+
+		// Calculate proper offset to center the NavMeshObstacle
+		Vector3 navMeshOffset = startPosition + new Vector3(gridSize.x / 2, 0, gridSize.z / 2);
+
+		// Set the size and center of the NavMeshObstacle
+		if (obstacle != null)
+		{
+			obstacle.size = navMeshSize;
+			obstacle.center = transform.InverseTransformPoint(navMeshOffset); // Convert to local space
+		}
+		else
+		{
+			Debug.LogError("NavMeshObstacle component missing on " + gameObject.name);
+		}
+	}
+
+
 	private void GeneratePillers(int i, int j, PillarType pillarType)
 	{
 		var pillar = Instantiate(pillerPrefab, gridGenerator.GetWorldPosition(i, j, true), Quaternion.identity, parent: pillarParent.transform);
