@@ -300,13 +300,19 @@ public class CroudManager : GridItemGenerator
 		CalculateNavmeshSize();
 	}
 #endif
-	private void CalculateNavmeshSize()
+	public void CalculateNavmeshSize()
 	{
+		if (!TryGetComponent(out obstacle))
+		{
+			return;
+		}
+
+
 		Vector2Int minBounds = GetMinBounds();
 		Vector2Int maxBounds = GetMaxBounds();
 
 		Vector3 startPosition = gridGenerator.GetWorldPosition(minBounds.x, minBounds.y, true);
-		Vector3 endPosition = gridGenerator.GetWorldPosition(maxBounds.x , maxBounds.y, true); // Ensure full coverage
+		Vector3 endPosition = gridGenerator.GetWorldPosition(maxBounds.x, maxBounds.y, true); // Ensure full coverage
 
 		Vector3 gridSize = endPosition - startPosition;
 		Vector3 objectScale = transform.lossyScale; // Use lossyScale to account for world scale
