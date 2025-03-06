@@ -49,8 +49,10 @@ public class CroudManager : GridItemGenerator
 	GameObject pillarParent;
 	private PillarType pillarType = PillarType.DEACTIVE;
 	private List<Pillar> pillars = new List<Pillar>();
+	private NavMeshPath pathCache;
 	void Start()
 	{
+		pathCache = new();
 		foreach (CroudManager generator in blockingGrid)
 		{
 			generator.isMovable = false;
@@ -60,7 +62,7 @@ public class CroudManager : GridItemGenerator
 		{
 			//GameManager.Instance.playerGrids.Add(this);
 		}
-		
+
 		foreach (Pillar pillar in pillars)
 		{
 			pillar.SwitchPillarType(GridColor);
@@ -444,4 +446,50 @@ public class CroudManager : GridItemGenerator
 	{
 		return isMovable && PillarType == PillarType.DEACTIVE;
 	}
+
+	#region pathfinding Based Unlocking
+
+
+	/// <summary>
+	/// Checks if there is a valid path to the target position using the NavMesh.
+	/// </summary>
+	/// <param name="target">The target position to check the path to.</param>
+	/// <returns>True if a valid path exists, otherwise false.</returns>
+	internal bool HasPath(Vector3 target)
+	{
+		// Disable the NavMeshObstacle to allow path calculation
+		obstacle.enabled = false;
+
+		// Update the NavMesh to reflect the current state of the environment
+		gridGenerator.NavMeshSurface.UpdateNavMesh(gridGenerator.NavMeshSurface.navMeshData);
+
+		// Enable the NavMeshAgent to calculate the path
+		playerGridElements[0].agent.enabled = true;
+
+		// Calculate the path to the target position
+		bool hasPath = playerGridElements[0].agent.CalculatePath(target, pathCache);
+
+		// Disable the NavMeshAgent after path calculation
+		playerGridElements[0].agent.enabled = false;
+
+		// Re-enable the NavMeshObstacle
+		obstacle.enabled = true;
+
+		// Update the NavMesh again to reflect the obstacle's presence
+		gridGenerator.NavMeshSurface.UpdateNavMesh(gridGenerator.NavMeshSurface.navMeshData);
+
+		// If a path exists, draw debug lines along the path
+		if (hasPath)
+		{
+			for (int i = 0; i < pathCache.corners.Length - 1; i++)
+			{
+				Debug.DrawLine(pathCache.corners[i], pathCache.corners[i + 1], Color.red, 1);
+			}
+		}
+
+		// Return whether a valid path exists
+		return hasPath;
+	}
+	#endregion
+
 }

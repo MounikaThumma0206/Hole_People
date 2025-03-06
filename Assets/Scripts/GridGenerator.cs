@@ -9,16 +9,19 @@ public class GridGenerator : GridSystem3D<GameObject>
 	[SerializeField] private List<GridItemGenerator> croudGenerators;
 	[SerializeField] NavMeshSurface navMeshSurface;
 	GameObject tileParent;
+
+	public NavMeshSurface NavMeshSurface { get => navMeshSurface; }
+
 	private void Start()
 	{
 		foreach (GridItemGenerator generator in croudGenerators)
 		{
 			generator.Generate();
 		}
-		navMeshSurface.BuildNavMesh();
+		NavMeshSurface.BuildNavMesh();
 	}
 	public override GameObject CreateGridObject(GridSystem<GameObject> gridSystem, int x, int y)
-	{ 
+	{
 		if (tileParent == null)
 		{
 			tileParent = new GameObject("TileParent");

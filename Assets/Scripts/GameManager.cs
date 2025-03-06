@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
 			{
 				if (!generator.Moved)
 				{
-					if (generator.CanMove())
+					if (generator.HasPath(hole.transform.position))
 					{
 						totalPeopleAttracted += generator.TileCount;
 						generator.movePlayerToHole(hole);
