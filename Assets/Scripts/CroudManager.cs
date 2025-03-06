@@ -30,7 +30,6 @@ public class CroudManager : GridItemGenerator
 	public bool shouldGeneratePillers;
 	[SerializeField] static Pillar pillerPrefab;
 	[SerializeField] List<CroudManager> blockingGrid = new List<CroudManager>();
-	[SerializeField] NavMeshObstacle obstacle;
 	private List<CroudManager> unBlockingGrid = new List<CroudManager>();
 
 	[HideInInspector] public bool _moved;
@@ -61,22 +60,7 @@ public class CroudManager : GridItemGenerator
 		{
 			//GameManager.Instance.playerGrids.Add(this);
 		}
-		if (obstacle != null)
-		{
-			obstacle.enabled = true;
-		}
-		else
-		{
-			obstacle = GetComponent<NavMeshObstacle>();
-			if (obstacle != null)
-			{
-				obstacle.enabled = true;
-			}
-			else
-			{
-				Debug.LogError("NavMeshObstacle component missing on " + gameObject.name);
-			}
-		}
+		
 		foreach (Pillar pillar in pillars)
 		{
 			pillar.SwitchPillarType(GridColor);
@@ -135,7 +119,7 @@ public class CroudManager : GridItemGenerator
 		Moved = true;
 	}
 
-	[ContextMenu("Generate Grid")]
+	//[ContextMenu("Generate Grid")]
 	internal override void Generate()
 	{
 		if (pillerPrefab == null)
@@ -268,7 +252,7 @@ public class CroudManager : GridItemGenerator
 						Debug.LogWarning("playerRenderer is not set on GridElement for " + cube.name);
 #endif
 					}
-
+					gridElement.PlayerColor = GridColor;
 					gridElement.Row = i - minBounds.x;
 					gridElement.Column = j - minBounds.y;
 					cube.transform.gameObject.name = "Grid (" + j + "," + i + ")";
@@ -293,13 +277,14 @@ public class CroudManager : GridItemGenerator
 		TileCount = PlayerPositions.Count;
 		AddElementsToGrid();
 	}
-#if UNITY_EDITOR
 
+#if UNITY_EDITOR
 	private void OnValidate()
 	{
 		CalculateNavmeshSize();
 	}
 #endif
+
 	public void CalculateNavmeshSize()
 	{
 		if (!TryGetComponent(out obstacle))

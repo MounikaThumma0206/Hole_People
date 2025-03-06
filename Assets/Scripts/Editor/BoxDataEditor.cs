@@ -1,28 +1,26 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(HoleGenerator))]
+[CustomEditor(typeof(CroudManager))]
+[CanEditMultipleObjects]
 public class BoxDataEditor : Editor
 {
-	private void OnSceneGUI()
+	public override void OnInspectorGUI()
 	{
-		HoleGenerator boxData = (HoleGenerator)target;
-		Transform transform = boxData.transform;
 
-		// Fixed position (GameObject's transform position)
-		Vector3 worldPosition = transform.position;
-
-		// Handle for resizing the box
-		EditorGUI.BeginChangeCheck();
-		Vector3 newSize = Handles.ScaleHandle(boxData.BoxSize, worldPosition, Quaternion.identity, HandleUtility.GetHandleSize(worldPosition));
-		if (EditorGUI.EndChangeCheck())
+		CroudManager[] boxDataArray = new CroudManager[targets.Length];
+		for (int i = 0; i < targets.Length; i++)
 		{
-			Undo.RecordObject(boxData, "Resize Box");
-			boxData.BoxSize = newSize;
+			boxDataArray[i] = (CroudManager)targets[i];
 		}
 
-		// Draw a box in Scene View
-		Handles.color = new Color(0, 1, 0, 0.2f);
-		Handles.DrawWireCube(worldPosition, boxData.BoxSize);
+		if (GUILayout.Button("Calculate Navmesh Size"))
+		{
+			foreach (CroudManager boxData in boxDataArray)
+			{
+				boxData.CalculateNavmeshSize();
+			}
+		}
+		DrawDefaultInspector();
 	}
 }

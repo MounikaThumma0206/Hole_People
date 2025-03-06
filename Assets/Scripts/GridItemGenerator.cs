@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
 public class GridItemGenerator : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class GridItemGenerator : MonoBehaviour
 	[SerializeField] protected ColorEnum colorEnum;
 	[SerializeField] protected DebugGizmosColor gizmoColor;
 	[SerializeField] protected Vector3 boxSize;
+	[SerializeField] protected NavMeshObstacle obstacle;
+
 	public Vector3 BoxSize
 	{
 		get => boxSize;
@@ -16,6 +19,22 @@ public class GridItemGenerator : MonoBehaviour
 	{
 		if (gridGenerator == null) transform.root.GetComponent<GridGenerator>();
 		gridGenerator.Subscribe(this);
+		if (obstacle != null)
+		{
+			obstacle.enabled = true;
+		}
+		else
+		{
+			obstacle = GetComponent<NavMeshObstacle>();
+			if (obstacle != null)
+			{
+				obstacle.enabled = true;
+			}
+			else
+			{
+				Debug.LogError("NavMeshObstacle component missing on " + gameObject.name);
+			}
+		}
 	}
 	public virtual void OnDisable()
 	{
@@ -42,6 +61,8 @@ public class GridItemGenerator : MonoBehaviour
 	{
 
 	}
+
+
 #if UNITY_EDITOR
 	protected virtual void OnDrawGizmos()
 	{

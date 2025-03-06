@@ -72,7 +72,9 @@ public class GameManager : MonoBehaviour
 	public void IsPlayerMovable(ColorEnum color, Hole hole)
 	{
 		bool hadMovables = false;
+		bool isAllClear = true;
 		notMovables.Clear();
+		int totalPeopleAttracted = 0;
 		foreach (CroudManager generator in playerGrids)
 		{
 			if (generator.GridColor == color)
@@ -81,8 +83,10 @@ public class GameManager : MonoBehaviour
 				{
 					if (generator.CanMove())
 					{
+						totalPeopleAttracted += generator.TileCount;
 						generator.movePlayerToHole(hole);
 						hadMovables = true;
+						isAllClear = isAllClear && generator.IsCleared;
 					}
 					else
 					{
@@ -99,11 +103,17 @@ public class GameManager : MonoBehaviour
 				generator.PlayNoMoves();
 			}
 		}
+		else if (isAllClear)
+		{
+			hole.CloseHoleAfterEating(totalPeopleAttracted);
+			CheckLevelComplete();
+		}
 		else
 		{
 			CheckLevelComplete();
 		}
 	}
+
 	public void SusbscribeGenerators(CroudManager generator)
 	{
 		playerGrids.Add(generator);

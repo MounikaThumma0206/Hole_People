@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.52, y: 0, z: 4.02}
-  m_LocalScale: {x: 1.65, y: 1, z: 6.68}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8128193471260524997}
@@ -43,11 +43,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.785, y: 0.5, z: 0.18}
+  m_Extents: {x: 1.5, y: 0.5, z: 1.25}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: -0.03}
+  m_Center: {x: 0.26999998, y: 0, z: -0.01999998}
   m_TimeToStationary: 0.5
 --- !u!114 &462064361586055937
 MonoBehaviour:
@@ -64,7 +64,8 @@ MonoBehaviour:
   gridGenerator: {fileID: 1796708653057558814}
   colorEnum: 2
   gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
-  boxSize: {x: 1.46, y: 0, z: 0.3119999}
+  boxSize: {x: 3.42, y: 0, z: 2.16}
+  obstacle: {fileID: 702914377317622441}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
@@ -105,8 +106,8 @@ Transform:
   m_GameObject: {fileID: 3638423235882033107}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.49, y: 0, z: -1.31}
-  m_LocalScale: {x: 1.9, y: 1, z: 7.65}
+  m_LocalPosition: {x: 1.49, y: 0, z: -1.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8128193471260524997}
@@ -121,11 +122,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.665, y: 0.5, z: 0.19}
+  m_Extents: {x: 1.25, y: 0.5, z: 1.5}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: -0.12, y: 0, z: -0.04}
+  m_Center: {x: 0.00999999, y: 0, z: 0.049999952}
   m_TimeToStationary: 0.5
 --- !u!114 &211758047042067688
 MonoBehaviour:
@@ -142,7 +143,8 @@ MonoBehaviour:
   gridGenerator: {fileID: 1796708653057558814}
   colorEnum: 0
   gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
-  boxSize: {x: 1.42, y: 0, z: 0.31849986}
+  boxSize: {x: 2.88, y: 0, z: 3.14}
+  obstacle: {fileID: 8242067526084203815}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
@@ -185,7 +187,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.08, y: 0, z: 1.27}
-  m_LocalScale: {x: 1.81, y: 1, z: 4.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8128193471260524997}
@@ -200,11 +202,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 1.73, y: 0.5, z: 0.24}
+  m_Extents: {x: 2.75, y: 0.5, z: 1}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0.04, y: 0, z: -0.03}
+  m_Center: {x: 0.08, y: 0, z: -0.01999998}
   m_TimeToStationary: 0.5
 --- !u!114 &6618954315042685746
 MonoBehaviour:
@@ -221,7 +223,8 @@ MonoBehaviour:
   gridGenerator: {fileID: 1796708653057558814}
   colorEnum: 3
   gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
-  boxSize: {x: 2.95, y: 0, z: 0.31849986}
+  boxSize: {x: 5.68, y: 0, z: 1.77}
+  obstacle: {fileID: 2044722974309527829}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
@@ -265,11 +268,6 @@ PrefabInstance:
       propertyPath: gridGenerator
       value: 
       objectReference: {fileID: 1796708653057558814}
-    - target: {fileID: -5716558189861624269, guid: 9265589dd6ece6844a44cec9fd7efecd,
-        type: 3}
-      propertyPath: m_Carve
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1998059514662551848, guid: 9265589dd6ece6844a44cec9fd7efecd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -327,43 +325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
         type: 3}
-      propertyPath: Radius
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
-        type: 3}
-      propertyPath: boxSize.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
-        type: 3}
-      propertyPath: boxSize.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
-        type: 3}
-      propertyPath: boxSize.z
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
-        type: 3}
-      propertyPath: gizmoColor
-      value: 
-      objectReference: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec,
-        type: 2}
-    - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
-        type: 3}
-      propertyPath: gizmoColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
-        type: 3}
-      propertyPath: gizmoColor.g
-      value: 0.07450981
-      objectReference: {fileID: 0}
-    - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
-        type: 3}
-      propertyPath: gizmoColor.r
+      propertyPath: canClose
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
@@ -371,11 +333,6 @@ PrefabInstance:
       propertyPath: gridGenerator
       value: 
       objectReference: {fileID: 1796708653057558814}
-    - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
-        type: 3}
-      propertyPath: jumpDetectionRadius
-      value: 1.35
-      objectReference: {fileID: 0}
     - target: {fileID: 9205636001794866352, guid: 9265589dd6ece6844a44cec9fd7efecd,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -487,60 +444,9 @@ PrefabInstance:
       objectReference: {fileID: 1796708653057558814}
     - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
         type: 3}
-      propertyPath: Radius
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
-        type: 3}
-      propertyPath: boxSize.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
-        type: 3}
-      propertyPath: boxSize.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
-        type: 3}
-      propertyPath: boxSize.z
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
-        type: 3}
-      propertyPath: gizmoColor
-      value: 
-      objectReference: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec,
-        type: 2}
-    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
-        type: 3}
-      propertyPath: gizmoColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
-        type: 3}
-      propertyPath: gizmoColor.g
-      value: 0.07450981
-      objectReference: {fileID: 0}
-    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
-        type: 3}
-      propertyPath: gizmoColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
-        type: 3}
       propertyPath: gridGenerator
       value: 
       objectReference: {fileID: 1796708653057558814}
-    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
-        type: 3}
-      propertyPath: jumpDetectionRadius
-      value: 1.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 7558089995955316681, guid: 96eaa91d683d67543ac7f34a26571357,
-        type: 3}
-      propertyPath: m_Carve
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8437730787568224221, guid: 96eaa91d683d67543ac7f34a26571357,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -604,42 +510,6 @@ PrefabInstance:
         type: 3}
       propertyPath: gizmoColor.r
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 381103648670810599, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
-        type: 3}
-      propertyPath: Radius
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 381103648670810599, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
-        type: 3}
-      propertyPath: boxSize.x
-      value: 1.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 381103648670810599, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
-        type: 3}
-      propertyPath: boxSize.z
-      value: 1.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 381103648670810599, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
-        type: 3}
-      propertyPath: gizmoColor
-      value: 
-      objectReference: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec,
-        type: 2}
-    - target: {fileID: 381103648670810599, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
-        type: 3}
-      propertyPath: gizmoColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 381103648670810599, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
-        type: 3}
-      propertyPath: gizmoColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 381103648670810599, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
-        type: 3}
-      propertyPath: gizmoColor.g
-      value: 0.3647059
       objectReference: {fileID: 0}
     - target: {fileID: 381103648670810599, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -742,12 +612,12 @@ PrefabInstance:
     - target: {fileID: 2309788744569678583, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2309788744569678583, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 6.83
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2309788744569678583, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -783,6 +653,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036551282701660160, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036551282701660160, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.38
       objectReference: {fileID: 0}
     - target: {fileID: 3540600272356728428, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -867,17 +747,17 @@ PrefabInstance:
     - target: {fileID: 5108655910121296119, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_Center.z
-      value: 0.25
+      value: -0.008849559
       objectReference: {fileID: 0}
     - target: {fileID: 5108655910121296119, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_Extents.x
-      value: 0.00001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5108655910121296119, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_Extents.z
-      value: 0.00001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5957720755653680845, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -893,16 +773,16 @@ PrefabInstance:
         type: 3}
       propertyPath: obstacle
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 266255477707868497}
     - target: {fileID: 6482304172784229975, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: boxSize.x
-      value: 1.36
+      value: 2.85
       objectReference: {fileID: 0}
     - target: {fileID: 6482304172784229975, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: boxSize.z
-      value: 0.3
+      value: 2.59
       objectReference: {fileID: 0}
     - target: {fileID: 6482304172784229975, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -981,6 +861,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6695037957316161737, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.366
+      objectReference: {fileID: 0}
     - target: {fileID: 7300445569625144214, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: gridSize.y
@@ -1031,25 +916,45 @@ PrefabInstance:
       propertyPath: gizmoColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8017890414802711352, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.053565215
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017890414802711352, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017890414802711352, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.3639188
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037571605242488416, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.361589
+      objectReference: {fileID: 0}
     - target: {fileID: 9083400231807024089, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_Center.x
-      value: -0.08
+      value: 0.14999998
       objectReference: {fileID: 0}
     - target: {fileID: 9083400231807024089, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_Center.z
-      value: -0.06
+      value: 0.23000002
       objectReference: {fileID: 0}
     - target: {fileID: 9083400231807024089, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_Extents.x
-      value: 0.95
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 9083400231807024089, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_Extents.z
-      value: 0.24
+      value: 1.25
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5288324896037460597, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c, type: 3}

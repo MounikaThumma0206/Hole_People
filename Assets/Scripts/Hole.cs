@@ -10,8 +10,18 @@ public class Hole : GridItemGenerator
 	[SerializeField] private float holeRadius = 1;
 	[SerializeField] AudioSource audioSource;
 	[SerializeField] AudioClip noMovesClip;
+	[SerializeField] private Animator _animator;
+	[SerializeField] bool canClose;
+
+
+	private int _totalPeopleToBeAttracted = 0;
+
 	public float JumpDetectionRadius { get => jumpDetectionRadius; }
 	public float HoleRadius => holeRadius;
+
+
+
+
 #if UNITY_EDITOR
 	[Header("Gizmos")]
 	[SerializeField] float Radius = 3.0f;
@@ -42,6 +52,15 @@ public class Hole : GridItemGenerator
 			}
 		}
 	}
+	private void CloseHole()
+	{
+		if (_animator != null)
+		{
+			_animator.SetTrigger("Close");
+		}
+		obstacle.enabled = false;
+	}
+
 
 
 
@@ -92,6 +111,28 @@ public class Hole : GridItemGenerator
 		/* if (other.gameObject.CompareTag("Stickman"))
 			 other.gameObject.SetActive(false);*/
 	}
+	internal void CloseHoleAfterEating(int totalPeopleAttracted)
+	{
+		if (canClose && totalPeopleAttracted > 0)
+		{
+			_totalPeopleToBeAttracted = totalPeopleAttracted;
+			GridElement.OnGridElementJumped.AddListener(CheckForClosing);
+		}
+	}
+
+
+	private void CheckForClosing(GridElement gridElement)
+	{
+		if (gridElement.PlayerColor != colorEnum)
+		{
+			return;
+		}
+		_totalPeopleToBeAttracted--;
+		if (_totalPeopleToBeAttracted <= 0)
+		{
+			CloseHole();
+		}
+	}
 #if UNITY_EDITOR
 
 	protected override void OnDrawGizmos()
@@ -108,6 +149,7 @@ public class Hole : GridItemGenerator
 		Gizmos.color = Color.blue;
 		Gizmos.DrawWireSphere(transform.position, holeRadius);
 	}
+
 #endif
 }
 

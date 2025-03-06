@@ -225,11 +225,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.00001, y: 0.5, z: 0.00001}
+  m_Extents: {x: 0, y: 0.5, z: 0}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: -2.25, y: 0, z: -1}
+  m_Center: {x: -0.105882384, y: 0, z: -0.05309735}
   m_TimeToStationary: 0.5
 --- !u!114 &519391375650170454
 MonoBehaviour:
@@ -245,8 +245,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridGenerator: {fileID: 7300445569625144214}
   colorEnum: 0
-  gizmoColor: {fileID: 0}
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
   boxSize: {x: 0, y: 0, z: 0}
+  obstacle: {fileID: 5108655910121296119}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
@@ -322,11 +323,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.00001, y: 0.5, z: 0.00001}
+  m_Extents: {x: 0, y: 0.5, z: 0}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0.25, y: 0, z: 0}
+  m_Center: {x: 0.015789475, y: 0, z: -0.03137255}
   m_TimeToStationary: 0.5
 --- !u!114 &6482304172784229975
 MonoBehaviour:
@@ -342,8 +343,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridGenerator: {fileID: 7300445569625144214}
   colorEnum: 0
-  gizmoColor: {fileID: 0}
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
   boxSize: {x: 0, y: 0, z: 0}
+  obstacle: {fileID: 9083400231807024089}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
@@ -748,11 +750,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.00001, y: 0.5, z: 0.00001}
+  m_Extents: {x: 0, y: 0.5, z: 0}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 2.25, y: 0, z: 1}
+  m_Center: {x: 0.026967974, y: 0, z: -0.7748315}
   m_TimeToStationary: 0.5
 --- !u!114 &1421469807993881846
 MonoBehaviour:
@@ -768,8 +770,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridGenerator: {fileID: 7300445569625144214}
   colorEnum: 0
-  gizmoColor: {fileID: 0}
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
   boxSize: {x: 0, y: 0, z: 0}
+  obstacle: {fileID: 2422678713353090172}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []

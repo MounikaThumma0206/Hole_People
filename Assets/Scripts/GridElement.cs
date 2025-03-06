@@ -2,10 +2,13 @@ using System.Collections;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class GridElement : MonoBehaviour
 {
-	public ColorEnum ElementColor;
+	public static UnityEvent<GridElement> OnGridElementJumped=new();
+
+
 	public ColorEnum GridColor;
 	public int lineIndex;
 	public CroudManager playerGenerator;
@@ -30,8 +33,6 @@ public class GridElement : MonoBehaviour
 	private float JumpDetectionRadius => Hole.JumpDetectionRadius;
 	void Start()
 	{
-
-
 		// Offset idle animation clip
 		if (animator != null)
 		{
@@ -53,29 +54,6 @@ public class GridElement : MonoBehaviour
 		rb.isKinematic = true; // Set 
 	}
 
-	//public void MoveToHoleWithDOTween(GameObject hole)
-	//{
-	//	if (Player != null && hole != null)
-	//	{
-	//		Vector3 holePosition = hole.transform.position;
-	//		Player.transform.DOMove(holePosition, 1f).SetEase(Ease.InOutQuad).OnStart(() =>
-	//		{
-	//			if (animator != null)
-	//			{
-	//				animator.SetTrigger("Jump");
-	//			}
-	//			if (AudioManager.instance != null)
-	//			{
-	//				AudioManager.instance.Play("Jump");
-	//			}
-	//		}).OnComplete(() =>
-	//		{
-	//			rb.useGravity = true;
-	//			Player.SetActive(false);
-	//			transform.gameObject.SetActive(false);
-	//		});
-	//	}
-	//}
 	void Update()
 	{
 		if (!StartedRunning)
@@ -114,6 +92,7 @@ public class GridElement : MonoBehaviour
 				{
 					player.transform.DOMove(Hole.transform.position + Vector3.down * 2 + GetRandomDirectionalVector() * HoleRadius, .3f).SetEase(Ease.InQuad);
 					CrowdAudioManager.PlayJumpSound();
+					OnGridElementJumped?.Invoke(this);
 				});
 
 				//Vector3 holeDownPosition = Hole.transform.position + Vector3.down * 2 + GetRandomDirectionalVector() * HoleRadius;
