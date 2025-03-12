@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
 public class CrowdAudioManager : MonoBehaviour
 {
 	public static CrowdAudioManager instance;
 	[SerializeField] AudioSource audioSource;
+	[SerializeField] AudioSource moodAudioSource;
 	[SerializeField] AudioClip jumpClip;
 
 	[SerializeField] float audioDelay = 0.1f;
@@ -22,6 +24,28 @@ public class CrowdAudioManager : MonoBehaviour
 			Destroy(gameObject);
 		}
 	}
+	public static void MakeSadMood()
+	{
+		if (instance != null)
+		{
+			instance.moodAudioSource.pitch = .5f;
+		}
+	}
+	public static void MakeNormalMood()
+	{
+		if (instance != null)
+		{
+			instance.moodAudioSource.pitch = 1f;
+		}
+	}
+	public static void MakeHappyMood()
+	{
+		if (instance != null)
+		{
+			instance.moodAudioSource.pitch = 1.5f;
+		}
+	}
+
 	public static void PlayJumpSound()
 	{
 		if (instance != null)

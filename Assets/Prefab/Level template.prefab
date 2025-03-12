@@ -251,13 +251,15 @@ MonoBehaviour:
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
+  IsRefilledGrid: 0
   rows: 6
   columns: 4
   TileCount: 24
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
-  _moved: 0
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -349,6 +351,7 @@ MonoBehaviour:
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
+  IsRefilledGrid: 0
   rows: 21
   columns: 4
   TileCount: 84
@@ -357,7 +360,8 @@ MonoBehaviour:
   blockingGrid:
   - {fileID: 1421469807993881846}
   - {fileID: 0}
-  _moved: 0
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -776,13 +780,15 @@ MonoBehaviour:
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
+  IsRefilledGrid: 0
   rows: 20
   columns: 4
   TileCount: 80
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
-  _moved: 0
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -1571,11 +1577,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BlueHole
-      objectReference: {fileID: 0}
-    - target: {fileID: 3410146510413488466, guid: 289da8af977403141bd8ffc4562acafd,
-        type: 3}
-      propertyPath: jumpDetectionRadius
-      value: 1.35
       objectReference: {fileID: 0}
     - target: {fileID: 5422190385495248688, guid: 289da8af977403141bd8ffc4562acafd,
         type: 3}

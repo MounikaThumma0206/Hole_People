@@ -18,6 +18,7 @@ public class CroudManager : GridItemGenerator
 
 
 	[Header("Generate Grid")]
+	[SerializeField] private bool IsRefilledGrid;
 	[HideInInspector] public int rows;
 	[HideInInspector] public int columns;
 	[HideInInspector] public int TileCount;
@@ -31,24 +32,37 @@ public class CroudManager : GridItemGenerator
 	[SerializeField] static Pillar pillerPrefab;
 	[SerializeField] List<CroudManager> blockingGrid = new List<CroudManager>();
 	private List<CroudManager> unBlockingGrid = new List<CroudManager>();
-
-	[HideInInspector] public bool _moved;
+	[SerializeField] private PillarType pillarType = PillarType.DEACTIVE;
+	[SerializeField] private Transform pipeMouthPosition;
 	[Header("Events")]
 	[SerializeField] UnityEvent OnCrowdCleared = new();
 
 
+	GameObject pillarParent;
+	private List<Pillar> pillars = new List<Pillar>();
+
+
+
+	bool _moved;
+	private float lastTimeCrowdUpdate;
+
 	public int runTriggerName => croudManagerData.RunId;
 	public int jumpTriggerName => croudManagerData.JumpId;
 
+	public bool Moved
+	{
+		get { return _moved; }
+		set { _moved = value; }
+	}
 
+	public bool IsCleared { get; private set; }
+	public PillarType PillarType { get => pillarType; set => pillarType = value; }
 	public ColorEnum GridColor => colorEnum;
 	public GameObject Tile => croudManagerData.croudPrefab;
 	public ColorManager colorManager => croudManagerData.colorManager;
 	public float Column_spacing => croudManagerData.spacing.y;
 	public float Row_spacing => croudManagerData.spacing.x;
-	GameObject pillarParent;
-	private PillarType pillarType = PillarType.DEACTIVE;
-	private List<Pillar> pillars = new List<Pillar>();
+
 	void Start()
 	{
 		foreach (CroudManager generator in blockingGrid)
@@ -60,10 +74,14 @@ public class CroudManager : GridItemGenerator
 		{
 			//GameManager.Instance.playerGrids.Add(this);
 		}
-		
+
 		foreach (Pillar pillar in pillars)
 		{
 			pillar.SwitchPillarType(GridColor);
+		}
+		if (IsRefilledGrid)
+		{
+			gameObject.SetActive(false);
 		}
 
 	}
@@ -104,14 +122,7 @@ public class CroudManager : GridItemGenerator
 			Hole.OnAnyHoleClicked.RemoveListener(SwitchPillarType);
 	}
 
-	public bool Moved
-	{
-		get { return _moved; }
-		set { _moved = value; }
-	}
 
-	public bool IsCleared { get; private set; }
-	public PillarType PillarType { get => pillarType; set => pillarType = value; }
 
 	public void MovePlayer()
 	{
@@ -133,11 +144,7 @@ public class CroudManager : GridItemGenerator
 		{
 			pillarParent = new GameObject("Pillars");
 		}
-		if (shouldGeneratePillers)
-		{
-			PillarType = Random.Range(0, 2) == 1 ? PillarType.ACTIVE : PillarType.DEACTIVE;
-		}
-		else
+		if (!shouldGeneratePillers)
 		{
 			PillarType = PillarType.DEACTIVE;
 		}
@@ -244,7 +251,7 @@ public class CroudManager : GridItemGenerator
 					// Check if playerRenderer exists in the GridElement and set the material
 					if (gridElement.playerRenderer != null)
 					{
-						gridElement.playerRenderer.sharedMaterial = gridMaterial;
+						gridElement.ChangePlayerMaterial(gridMaterial);
 					}
 					else
 					{
@@ -276,6 +283,7 @@ public class CroudManager : GridItemGenerator
 
 		TileCount = PlayerPositions.Count;
 		AddElementsToGrid();
+
 	}
 
 #if UNITY_EDITOR
@@ -284,6 +292,10 @@ public class CroudManager : GridItemGenerator
 		CalculateNavmeshSize();
 	}
 #endif
+
+
+
+
 
 	public void CalculateNavmeshSize()
 	{
@@ -358,7 +370,17 @@ public class CroudManager : GridItemGenerator
 		return gridElement;
 	}
 
-
+	private void Update()
+	{
+		if (Time.time - lastTimeCrowdUpdate > croudManagerData.crowdUpdateInterval)
+		{
+			lastTimeCrowdUpdate = Time.time;
+		}
+		foreach (GridElement gridElement in playerGridElements)
+		{
+			gridElement.OnCrowdUpdate();
+		}
+	}
 	public void movePlayerToHole(Hole hole)
 	{
 		if (IsCleared)
@@ -415,26 +437,10 @@ public class CroudManager : GridItemGenerator
 			}
 		}
 	}
-
-	private bool IsObstacleInPath(Vector3 startPosition, Vector3 targetPosition)
+	public void SetIsMovable(bool val)
 	{
-		RaycastHit hit;
-		Vector3 direction = targetPosition - startPosition;
-		float distance = direction.magnitude;
-
-
-		/* if (Physics.Raycast(startPosition, direction.normalized, out hit, distance))
-		 {
-
-			 if (hit.collider.CompareTag("Obstacle")) 
-			 {
-				 return true;
-			 }
-		 }*/
-
-		return false;
+		isMovable = val;
 	}
-
 	internal void PlayNoMoves()
 	{
 		transform.DOPunchScale(transform.localScale * .1f, 0.2f, 1, 5);
@@ -443,5 +449,12 @@ public class CroudManager : GridItemGenerator
 	internal bool CanMove()
 	{
 		return isMovable && PillarType == PillarType.DEACTIVE;
+	}
+	public void EnableRefillGrid()
+	{
+		foreach (GridElement gridElement in playerGridElements)
+		{
+			gridElement.MoveToPosition(pipeMouthPosition.position);
+		}
 	}
 }

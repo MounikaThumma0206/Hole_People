@@ -11,6 +11,8 @@ public class UiManager : MonoBehaviour
 	public GameObject retryPanel; // Reference to the retry panel
 	private int moveCount = 5; // Start with 5 moves
 	public TextMeshProUGUI moveText; // Reference to the UI Text component for showing remaining moves
+	public TextMeshProUGUI levelText; // Reference to the UI Text component for showing remaining moves
+	public TextMeshProUGUI levelTextInCompletePanel; // Reference to the UI Text component for showing remaining moves
 
 	private void Awake()
 	{
@@ -23,8 +25,18 @@ public class UiManager : MonoBehaviour
 	private void Start()
 	{
 		//UpdateMoveText(); // Initial update to show the starting number of moves
+		UpdateLevelText();
 	}
 
+
+
+	public void UpdateLevelText()
+	{
+		if (levelText != null)
+		{
+			levelText.text = "Level " + GameManager.Instance.GetLevel();
+		}
+	}
 	// Method to reduce the moves
 	public void DecreaseMoveCount()
 	{
@@ -64,25 +76,19 @@ public class UiManager : MonoBehaviour
 		DOVirtual.DelayedCall(2f, () =>
 		{
 			if (levelCompleteMenu != null)
+			{
+				levelTextInCompletePanel.text = "Level " + GameManager.Instance.GetLevel();
 				levelCompleteMenu.SetActive(true);
+				CrowdAudioManager.MakeHappyMood();
+
+			}
 		});
 	}
 
 	// OnContinueButtonClicked is already fine
 	public void OnContinueButtonClicked()
 	{
-		int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-		int nextSceneIndex = currentSceneIndex + 1;
-
-		if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-		{
-			SceneManager.LoadScene(nextSceneIndex);
-		}
-		else
-		{
-			Debug.Log("No more levels available. Returning to the main menu or restarting.");
-			SceneManager.LoadScene(0);
-		}
+		GameManager.Instance.LoadNext();
 	}
 
 	internal void GameOver()

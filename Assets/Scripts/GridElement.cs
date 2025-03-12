@@ -3,10 +3,11 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using DT_Util;
 
 public class GridElement : MonoBehaviour
 {
-	public static UnityEvent<GridElement> OnGridElementJumped=new();
+	public static UnityEvent<GridElement> OnGridElementJumped = new();
 
 
 	public ColorEnum GridColor;
@@ -27,10 +28,19 @@ public class GridElement : MonoBehaviour
 	public Vector3 PlayerInitialPos;
 	public Vector3 PlayerInitialScale;
 	public bool StartedRunning;
+	private bool isRefilling;
 	public Hole Hole;
 	public NavMeshAgent agent;
 	private float HoleRadius => Hole.HoleRadius;
 	private float JumpDetectionRadius => Hole.JumpDetectionRadius;
+	Vector3? targetPosition;
+
+	//For jump
+	[SerializeField] Vector3 jumpStartPosition, jumpMidPosition, jumpEndPosition;
+	[SerializeField] float jumpInterpTime = 0;
+	bool canJump = false;
+
+
 	void Start()
 	{
 		// Offset idle animation clip
@@ -53,19 +63,12 @@ public class GridElement : MonoBehaviour
 		rb.useGravity = false; // Initially disable gravity
 		rb.isKinematic = true; // Set 
 	}
-
-	void Update()
+	public void StartJumping(Vector3 jumpStartPos, Vector3 jumpMidPoint, Vector3 jumpEndPos)
 	{
-		if (!StartedRunning)
-		{
-			return;
-		}
-		if (IsWithinStoppingDistance())
-		{
-			StartCoroutine(OnReachedDestination());
-		}
+		jumpStartPosition = jumpStartPos;
+		jumpMidPosition = jumpMidPoint;
+		jumpEndPosition = jumpEndPos;
 	}
-
 	bool IsWithinStoppingDistance()
 	{
 		if (Hole != null)
@@ -88,23 +91,17 @@ public class GridElement : MonoBehaviour
 
 			if (Hole != null)
 			{
-				player.transform.DOMove(Hole.transform.position + Vector3.up * 2 + GetRandomDirectionalVector() * HoleRadius, 0.3f).SetEase(Ease.InQuad).OnComplete(() =>
-				{
-					player.transform.DOMove(Hole.transform.position + Vector3.down * 2 + GetRandomDirectionalVector() * HoleRadius, .3f).SetEase(Ease.InQuad);
-					CrowdAudioManager.PlayJumpSound();
-					OnGridElementJumped?.Invoke(this);
-				});
-
-				//Vector3 holeDownPosition = Hole.transform.position + Vector3.down * 2 + GetRandomDirectionalVector() * HoleRadius;
-				//player.transform.DOPath(new Vector3[]
+				//player.transform.DOJump(Hole.transform.position + Vector3.down * 1 + GetRandomDirectionalVector() * HoleRadius, 1.5f, 1, .7f).SetEase(Ease.InQuad).OnComplete(() =>
 				//{
-				//	player.transform.position,//current position which is start
-				//	Hole.transform.position + Vector3.up * 2 + GetRandomDirectionalVector() * HoleRadius,//this is the top position when the person jumps
-				//	holeDownPosition //this is the bottom position of the hole
-				//}, .8f, PathType.CubicBezier)
-				//	.SetEase(Ease.InQuad).OnComplete(() =>{ player.transform.position = holeDownPosition;player.a });
-
-
+				//	CrowdAudioManager.PlayJumpSound();
+				//	OnGridElementJumped?.Invoke(this);
+				//});
+				agent.enabled = false;
+				canJump = true;
+				StartJumping(
+					agent.transform.position,
+					Hole.transform.position + Vector3.up * 3 + GetRandomDirectionalVector() * HoleRadius,
+					Hole.transform.position + Vector3.down  + GetRandomDirectionalVector() * HoleRadius);
 				yield return new WaitForSeconds(1f);
 				player.SetActive(false);
 				transform.gameObject.SetActive(false);
@@ -140,29 +137,79 @@ public class GridElement : MonoBehaviour
 	{
 		IsFilled = false;
 	}
-	private void OnValidate()
-	{
-		if (BlockedPath)
-		{
-			BoxCollider boxCollider = GetComponent<BoxCollider>();
-			if (boxCollider != null)
-			{
-				boxCollider.enabled = false;
-			}
-			foreach (Transform child in transform)
-			{
-				child.gameObject.SetActive(false);
-			}
-		}
-	}
 
-	public void changePlayerMaterial(Material material)
+	public void ChangePlayerMaterial(Material material)
 	{
-
+		playerRenderer.sharedMaterial = material;
 	}
 	private Vector3 GetRandomDirectionalVector()
 	{
 		return new Vector3(Random.Range(-1f, 1f), Random.Range(-1, 1), Random.Range(-1f, 1f)).normalized;
 	}
+	public void MoveToPosition(Vector3 pipeMouthPosition)
+	{
+		targetPosition = transform.position;
+		agent.transform.position = pipeMouthPosition;
+		agent.transform.DOMove(targetPosition.Value, .5f).SetDelay(.2f).OnComplete(() =>
+		{
+			isRefilling = false;
+			agent.transform.position = transform.position;
+			agent.transform.forward = Vector3.back;
+			animator.SetTrigger("Idle");
+		});
+		agent.enabled = false;
+		agent.transform.forward = (targetPosition.Value - pipeMouthPosition).normalized;
+		isRefilling = true;
+		animator.SetTrigger("Run");
+	}
 
+	public void OnCrowdUpdate()
+	{
+
+		if (StartedRunning && IsWithinStoppingDistance())
+		{
+			StartCoroutine(OnReachedDestination());
+		}
+		if (canJump)
+		{
+			jumpInterpTime += Time.deltaTime ;
+			agent.transform.position = VectorExt.CubicBezier(jumpStartPosition, jumpMidPosition, jumpEndPosition, jumpInterpTime);
+			if (jumpInterpTime > 1)
+			{
+				jumpInterpTime = 1;
+				canJump = false;
+				CrowdAudioManager.PlayJumpSound();
+				OnGridElementJumped?.Invoke(this);
+			}
+		}
+
+		//if (targetPosition.HasValue)
+		//{
+		//	Vector3 distanceVector = targetPosition.Value - agent.transform.position;
+		//	if (distanceVector.sqrMagnitude < 0.01f)
+		//	{
+		//		targetPosition = null;
+		//		isRefilling = false;
+		//		agent.transform.position = transform.position;
+		//		agent.transform.forward = Vector3.back;
+		//		animator.SetTrigger("Idle");
+		//	}
+		//	agent.transform.Translate(distanceVector.normalized);
+		//}
+		//else
+		//{
+		//	Debug.LogWarning("Target position is not set!");
+		//}
+
+
+	}
+	private void OnDrawGizmosSelected()
+	{
+		Gizmos.DrawSphere(agent.transform.position, .2f);
+		Gizmos.DrawSphere(jumpStartPosition, .2f);
+		Gizmos.DrawSphere(jumpMidPosition, .2f);
+		Gizmos.DrawSphere(jumpEndPosition, .2f);
+		Gizmos.color = Color.blue;
+		Gizmos.DrawSphere(VectorExt.CubicBezier(jumpStartPosition, jumpMidPosition, jumpEndPosition, jumpInterpTime), .2f);
+	}
 }

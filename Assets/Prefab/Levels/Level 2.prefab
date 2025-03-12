@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &712287272574740475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6648967414894019639}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6648967414894019639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712287272574740475}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.98, y: -1.127205, z: -1.86}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5520824494747299044}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3210483827449420979
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,13 +100,15 @@ MonoBehaviour:
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
+  IsRefilledGrid: 0
   rows: 21
   columns: 4
   TileCount: 84
   isMovable: 0
   shouldGeneratePillers: 0
   blockingGrid: []
-  _moved: 0
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -148,6 +181,7 @@ MonoBehaviour:
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
+  IsRefilledGrid: 0
   rows: 21
   columns: 4
   TileCount: 84
@@ -155,7 +189,8 @@ MonoBehaviour:
   shouldGeneratePillers: 0
   blockingGrid:
   - {fileID: 462064361586055937}
-  _moved: 0
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -228,6 +263,7 @@ MonoBehaviour:
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
+  IsRefilledGrid: 0
   rows: 21
   columns: 4
   TileCount: 84
@@ -236,7 +272,8 @@ MonoBehaviour:
   blockingGrid:
   - {fileID: 462064361586055937}
   - {fileID: 211758047042067688}
-  _moved: 0
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -322,11 +359,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: YellowHole
-      objectReference: {fileID: 0}
-    - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
-        type: 3}
-      propertyPath: canClose
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
         type: 3}
@@ -961,6 +993,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 5957720755653680845, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c, type: 3}
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3540600272356728428, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6648967414894019639}
     - targetCorrespondingSourceObject: {fileID: 7727600530480470600, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       insertIndex: -1
@@ -1007,6 +1043,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12a1277e3fc63a94ba0959dea8974412, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &5520824494747299044 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3540600272356728428, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 9061055055641801352}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8128193471260524997 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,

@@ -5,14 +5,23 @@ using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
+	private const string CurrentLevelKey = "CurrentLevel";
 	public static GameManager Instance;
-	[SerializeField] List<CroudManager> playerGrids = new List<CroudManager>();
+	List<CroudManager> playerGrids = new List<CroudManager>();
+	List<Hole> holes = new List<Hole>();
 	//public List<GridElement> playerGridElements;
 
 	[SerializeField] GameData gameData;
 	private int usedMoves = 0;
 	[SerializeField] private int maxMoves = 3;
 	bool isGameOn = true;
+	float gameActiveDelay = .1f;
+	float lastTimeGameBecameActive = 0;
+
+#if UNITY_EDITOR
+
+	[SerializeField] int levelTOloadDebug = 1;
+#endif
 	private void Awake()
 	{
 		if (Instance == null)
@@ -31,6 +40,14 @@ public class GameManager : MonoBehaviour
 
 	}
 
+#if UNITY_EDITOR
+	[ContextMenu("Load")]
+	private void LoadLevel()
+	{
+		PlayerPrefs.SetInt(CurrentLevelKey, levelTOloadDebug);
+		Restart();
+	}
+#endif
 	private void OnEnable()
 	{
 		playerGrids.Clear();
@@ -44,17 +61,43 @@ public class GameManager : MonoBehaviour
 
 	public bool IsGameOn()
 	{
-		return isGameOn;
+		return isGameOn && Time.time - lastTimeGameBecameActive > gameActiveDelay;
 	}
-
+	public void SetGameOn(bool value)
+	{
+		isGameOn = value;
+		if (value == true)
+		{
+			lastTimeGameBecameActive = Time.time;
+		}
+	}
 	void GenerateLevel()
 	{
-		var levelData = gameData.Levels[Random.Range(0, gameData.Levels.Length)];
+		int levelToLoad = GetLevel() - 1;
+		var levelData = gameData.Levels[levelToLoad];
 		maxMoves = levelData.maxMoves;
 		usedMoves = 0;
 		Instantiate(levelData.levelPrefab);
-	}
 
+		foreach (var hole in holes)
+		{
+			//set hole's player count
+		}
+	}
+	public void LoadNext()
+	{
+		int currentLevel = GetLevel() - 1;
+		if (currentLevel >= gameData.Levels.Length - 1)
+		{
+			PlayerPrefs.SetInt(CurrentLevelKey, 0);
+		}
+		else
+		{
+			PlayerPrefs.SetInt(CurrentLevelKey, currentLevel + 1);
+		}
+		PlayerPrefs.Save();
+		Restart();
+	}
 	public void Restart()
 	{
 		Instance.playerGrids.Clear();
@@ -63,7 +106,8 @@ public class GameManager : MonoBehaviour
 		var asyncOp = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
 		asyncOp.completed += (op) =>
 		{
-			isGameOn = true;
+			SetGameOn(true);
+			CrowdAudioManager.MakeNormalMood();
 			GenerateLevel();
 			UiManager.instance.UpdateMoveText(GetAvailableMoves());
 		};
@@ -75,7 +119,8 @@ public class GameManager : MonoBehaviour
 		bool isAllClear = true;
 		notMovables.Clear();
 		int totalPeopleAttracted = 0;
-		foreach (CroudManager generator in playerGrids)
+
+		foreach (CroudManager generator in new List<CroudManager>(playerGrids))
 		{
 			if (generator.GridColor == color)
 			{
@@ -122,6 +167,14 @@ public class GameManager : MonoBehaviour
 	{
 		playerGrids.Remove(generator);
 	}
+	public void SusbscribeHole(Hole hole)
+	{
+		holes.Add(hole);
+	}
+	public void UnSubscribeHole(Hole hole)
+	{
+		holes.Remove(hole);
+	}
 	internal void UseMove()
 	{
 		usedMoves++;
@@ -133,7 +186,9 @@ public class GameManager : MonoBehaviour
 			{
 				if (UiManager.instance != null)
 				{
-					isGameOn = false;
+					SetGameOn(false);
+					CrowdAudioManager.MakeSadMood();
+
 					UiManager.instance.GameOver();
 				}
 			}
@@ -152,7 +207,7 @@ public class GameManager : MonoBehaviour
 
 		foreach (CroudManager _grid in playerGrids)
 		{
-			if (!_grid._moved)
+			if (!_grid.Moved)
 			{
 				completed = false;
 				break;
@@ -163,9 +218,15 @@ public class GameManager : MonoBehaviour
 		{
 			if (UiManager.instance != null)
 			{
+				SetGameOn(false);
 				UiManager.instance.LevelComplete();
 			}
 		}
 
+	}
+
+	internal int GetLevel()
+	{
+		return PlayerPrefs.GetInt(CurrentLevelKey, 0) + 1;
 	}
 }

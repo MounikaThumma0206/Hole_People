@@ -70,6 +70,7 @@ MonoBehaviour:
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
+  IsRefilledGrid: 0
   rows: 4
   columns: 4
   TileCount: 16
@@ -77,7 +78,8 @@ MonoBehaviour:
   shouldGeneratePillers: 0
   blockingGrid:
   - {fileID: 3849221108121459172}
-  _moved: 0
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -170,13 +172,15 @@ MonoBehaviour:
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
+  IsRefilledGrid: 0
   rows: 6
   columns: 4
   TileCount: 24
   isMovable: 1
   shouldGeneratePillers: 1
   blockingGrid: []
-  _moved: 0
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -269,13 +273,15 @@ MonoBehaviour:
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
+  IsRefilledGrid: 0
   rows: 20
   columns: 4
   TileCount: 80
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
-  _moved: 0
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -368,13 +374,15 @@ MonoBehaviour:
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
+  IsRefilledGrid: 0
   rows: 5
   columns: 4
   TileCount: 20
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
-  _moved: 0
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -467,6 +475,7 @@ MonoBehaviour:
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
+  IsRefilledGrid: 0
   rows: 21
   columns: 4
   TileCount: 84
@@ -475,7 +484,8 @@ MonoBehaviour:
   blockingGrid:
   - {fileID: 3910859492362316630}
   - {fileID: 373651468659140488}
-  _moved: 0
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []

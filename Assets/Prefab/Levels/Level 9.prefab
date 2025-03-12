@@ -69,14 +69,17 @@ MonoBehaviour:
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
+  IsRefilledGrid: 0
   rows: 21
   columns: 4
   TileCount: 84
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid:
-  - {fileID: 2615061808764906719}
-  _moved: 0
+  - {fileID: 2963808441904827709}
+  - {fileID: 1025014885306178730}
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -92,7 +95,7 @@ GameObject:
   - component: {fileID: 2385072717287631006}
   - component: {fileID: 4510001677072539428}
   m_Layer: 0
-  m_Name: Green Top (1)
+  m_Name: Green Bottom Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,13 +152,16 @@ MonoBehaviour:
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
+  IsRefilledGrid: 0
   rows: 21
   columns: 4
   TileCount: 84
   isMovable: 0
   shouldGeneratePillers: 0
-  blockingGrid: []
-  _moved: 0
+  blockingGrid:
+  - {fileID: 7986113121590691670}
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -171,7 +177,7 @@ GameObject:
   - component: {fileID: 702914377317622441}
   - component: {fileID: 462064361586055937}
   m_Layer: 0
-  m_Name: Voilet middle
+  m_Name: Voilet middle Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,13 +234,16 @@ MonoBehaviour:
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
+  IsRefilledGrid: 0
   rows: 21
   columns: 4
   TileCount: 84
   isMovable: 1
   shouldGeneratePillers: 0
-  blockingGrid: []
-  _moved: 0
+  blockingGrid:
+  - {fileID: 211758047042067688}
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -307,13 +316,15 @@ MonoBehaviour:
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
+  IsRefilledGrid: 0
   rows: 21
   columns: 4
   TileCount: 84
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
-  _moved: 0
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -329,7 +340,7 @@ GameObject:
   - component: {fileID: 8242067526084203815}
   - component: {fileID: 211758047042067688}
   m_Layer: 0
-  m_Name: Green Middle
+  m_Name: Blue Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,13 +397,16 @@ MonoBehaviour:
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
+  IsRefilledGrid: 0
   rows: 21
   columns: 4
   TileCount: 84
   isMovable: 0
   shouldGeneratePillers: 0
-  blockingGrid: []
-  _moved: 0
+  blockingGrid:
+  - {fileID: 4510001677072539428}
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -465,6 +479,7 @@ MonoBehaviour:
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
+  IsRefilledGrid: 0
   rows: 21
   columns: 4
   TileCount: 84
@@ -473,7 +488,8 @@ MonoBehaviour:
   blockingGrid:
   - {fileID: 2963808441904827709}
   - {fileID: 2615061808764906719}
-  _moved: 0
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -546,13 +562,15 @@ MonoBehaviour:
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
+  IsRefilledGrid: 0
   rows: 21
   columns: 4
   TileCount: 84
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
-  _moved: 0
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -625,16 +643,15 @@ MonoBehaviour:
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
+  IsRefilledGrid: 0
   rows: 21
   columns: 4
   TileCount: 84
   isMovable: 1
   shouldGeneratePillers: 0
-  blockingGrid:
-  - {fileID: 211758047042067688}
-  - {fileID: 462064361586055937}
-  - {fileID: 4510001677072539428}
-  _moved: 0
+  blockingGrid: []
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -650,7 +667,7 @@ GameObject:
   - component: {fileID: 1608899668098458034}
   - component: {fileID: 1025014885306178730}
   m_Layer: 0
-  m_Name: Blue Middle Left
+  m_Name: Blue Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -707,13 +724,16 @@ MonoBehaviour:
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
+  IsRefilledGrid: 0
   rows: 21
   columns: 4
   TileCount: 84
   isMovable: 1
   shouldGeneratePillers: 0
-  blockingGrid: []
-  _moved: 0
+  blockingGrid:
+  - {fileID: 2963808441904827709}
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -1334,6 +1354,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 9
       objectReference: {fileID: 0}
+    - target: {fileID: 3036551282701660160, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036551282701660160, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.87
+      objectReference: {fileID: 0}
     - target: {fileID: 3540600272356728428, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1531,6 +1561,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6695037957316161737, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.006434787
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695037957316161737, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695037957316161737, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.563737
+      objectReference: {fileID: 0}
     - target: {fileID: 7300445569625144214, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: gridSize.y
@@ -1581,6 +1626,31 @@ PrefabInstance:
       propertyPath: gizmoColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8017890414802711352, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.053565215
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017890414802711352, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017890414802711352, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.5622995
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037571605242488416, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037571605242488416, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.85
+      objectReference: {fileID: 0}
     - target: {fileID: 9083400231807024089, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_Center.x
@@ -1629,7 +1699,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       insertIndex: 1
-      addedObject: {fileID: 2098540972198552184}
+      addedObject: {fileID: 3018676242715064354}
     - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       insertIndex: 2
@@ -1637,19 +1707,19 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       insertIndex: 3
-      addedObject: {fileID: 3018676242715064354}
+      addedObject: {fileID: 2098540972198552184}
     - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       insertIndex: 4
-      addedObject: {fileID: 7933644949867366203}
-    - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
-        type: 3}
-      insertIndex: 5
       addedObject: {fileID: 7908505641915427803}
     - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
-      insertIndex: 6
+      insertIndex: 5
       addedObject: {fileID: 3732990031911818848}
+    - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 7933644949867366203}
     - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       insertIndex: 7

@@ -1,6 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class Hole : GridItemGenerator
 {
@@ -12,20 +13,41 @@ public class Hole : GridItemGenerator
 	[SerializeField] AudioClip noMovesClip;
 	[SerializeField] private Animator _animator;
 	[SerializeField] bool canClose;
-
-
+	[SerializeField] GameObject closableHoleCanvas;
+	[SerializeField] Image fill;
+	public UnityEvent OnHoleClosed = new();
 	private int _totalPeopleToBeAttracted = 0;
-
+	private int _totalPeople;
 	public float JumpDetectionRadius { get => jumpDetectionRadius; }
 	public float HoleRadius => holeRadius;
-
-
-
 
 #if UNITY_EDITOR
 	[Header("Gizmos")]
 	[SerializeField] float Radius = 3.0f;
 #endif
+
+	private void Awake()
+	{
+		if (canClose)
+		{
+			closableHoleCanvas.SetActive(true);
+		}
+		else
+		{
+			closableHoleCanvas.SetActive(false);
+		}
+	}
+	public override void OnEnable()
+	{
+		base.OnEnable();
+		GameManager.Instance.SusbscribeHole(this);
+	}
+	public override void OnDisable()
+	{
+		base.OnDisable();
+		GameManager.Instance.UnSubscribeHole(this);
+	}
+
 
 	internal override void Generate()
 	{
@@ -52,12 +74,27 @@ public class Hole : GridItemGenerator
 			}
 		}
 	}
+
+#if UNITY_EDITOR
+	private void OnValidate()
+	{
+		if (closableHoleCanvas != null && closableHoleCanvas.activeInHierarchy != canClose)
+		{
+			closableHoleCanvas.SetActive(canClose);
+		}
+	}
+
+#endif
+
+
+
 	private void CloseHole()
 	{
 		if (_animator != null)
 		{
 			_animator.SetTrigger("Close");
 		}
+		OnHoleClosed?.Invoke();
 		obstacle.enabled = false;
 	}
 
@@ -111,11 +148,12 @@ public class Hole : GridItemGenerator
 		/* if (other.gameObject.CompareTag("Stickman"))
 			 other.gameObject.SetActive(false);*/
 	}
-	internal void CloseHoleAfterEating(int totalPeopleAttracted)
+	internal void CloseHoleAfterEating(int peopleCount)
 	{
-		if (canClose && totalPeopleAttracted > 0)
+		if (canClose)
 		{
-			_totalPeopleToBeAttracted = totalPeopleAttracted;
+			_totalPeopleToBeAttracted = peopleCount;
+			_totalPeople = peopleCount;
 			GridElement.OnGridElementJumped.AddListener(CheckForClosing);
 		}
 	}
@@ -128,6 +166,7 @@ public class Hole : GridItemGenerator
 			return;
 		}
 		_totalPeopleToBeAttracted--;
+		fill.fillAmount = 1f - (_totalPeopleToBeAttracted / (float)_totalPeople);
 		if (_totalPeopleToBeAttracted <= 0)
 		{
 			CloseHole();

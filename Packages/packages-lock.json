@@ -14,6 +14,13 @@
       "dependencies": {},
       "hash": "daec2a5683744e52c825d42ce9ae2b0d94b04752"
     },
+    "com.dreamertheory.utilpackage": {
+      "version": "https://github.com/RahulLinganagoudra/com.dreamertheory.utilpackage.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "d97a7f6cfb1cccc12a32c92ea5518cd1dad714f5"
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,

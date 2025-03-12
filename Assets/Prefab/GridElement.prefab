@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509b954270743244287b25639d2eaaea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ElementColor: 0
   GridColor: 0
   lineIndex: 0
   playerGenerator: {fileID: 0}
@@ -60,12 +59,15 @@ MonoBehaviour:
   playerRenderer: {fileID: 2453976050141680445}
   rb: {fileID: 7926245341022345294}
   animator: {fileID: 8058442015659904010}
-  audioSource: {fileID: 9020715778008306660}
   PlayerInitialPos: {x: 0, y: 0, z: 0}
   PlayerInitialScale: {x: 0, y: 0, z: 0}
   StartedRunning: 0
   Hole: {fileID: 0}
   agent: {fileID: 6667166774211160897}
+  jumpStartPosition: {x: 0, y: 0, z: 0}
+  jumpMidPosition: {x: 0, y: 0, z: 0}
+  jumpEndPosition: {x: 0, y: -1, z: 1.5}
+  jumpInterpTime: 0.34
 --- !u!1001 &6148749906574982222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76,18 +78,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 707689307774293775, guid: 1d917d685d9ac2147a24a0f3e1e4d5c3,
         type: 3}
-      propertyPath: m_Speed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 707689307774293775, guid: 1d917d685d9ac2147a24a0f3e1e4d5c3,
-        type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 707689307774293775, guid: 1d917d685d9ac2147a24a0f3e1e4d5c3,
-        type: 3}
-      propertyPath: m_Acceleration
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 972845070692572869, guid: 1d917d685d9ac2147a24a0f3e1e4d5c3,
         type: 3}

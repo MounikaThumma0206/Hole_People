@@ -9,7 +9,8 @@ public class CroudManagerData : ScriptableObject
 	[SerializeField] string jumpTriggerName = "Jump";
 	public ColorManager colorManager;
 	public Vector2 spacing;
-
+	[Tooltip("the time interval at which crowd will Updates")]
+	public float crowdUpdateInterval = 0.1f;
 	private int runID;
 	private int jumpId;
 
