@@ -43,4 +43,8 @@ public class GridGenerator : GridSystem3D<GameObject>
 			croudGenerators.Remove(generator);
 		}
 	}
+	public void UpdateNavmesh()
+	{
+		navMeshSurface.UpdateNavMesh(navMeshSurface.navMeshData);
+	}
 }

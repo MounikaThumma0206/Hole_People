@@ -70,9 +70,10 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
   rows: 21
   columns: 4
-  TileCount: 84
+  TileCount: 16
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
@@ -152,9 +153,10 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 24
+  TileCount: 16
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
@@ -253,12 +255,14 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 24
+  TileCount: 16
   isMovable: 1
   shouldGeneratePillers: 0
-  blockingGrid: []
+  blockingGrid:
+  - {fileID: 2613770058174654529}
   pillarType: 1
   pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
@@ -354,9 +358,10 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 24
+  TileCount: 16
   isMovable: 0
   shouldGeneratePillers: 0
   blockingGrid:
@@ -456,9 +461,10 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
   rows: 21
   columns: 4
-  TileCount: 84
+  TileCount: 16
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid:
@@ -538,9 +544,10 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
   rows: 21
   columns: 4
-  TileCount: 84
+  TileCount: 16
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid:
@@ -621,9 +628,10 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
   rows: 21
   columns: 4
-  TileCount: 84
+  TileCount: 32
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
@@ -702,9 +710,10 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
   rows: 21
   columns: 4
-  TileCount: 84
+  TileCount: 16
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
@@ -784,9 +793,10 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 24
+  TileCount: 32
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid:
@@ -886,9 +896,10 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
   rows: 21
   columns: 4
-  TileCount: 84
+  TileCount: 16
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
@@ -967,9 +978,10 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
   rows: 21
   columns: 4
-  TileCount: 84
+  TileCount: 32
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid:
@@ -1097,6 +1109,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7594746353058964300, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8269099022414962021, guid: 501683f9395f1ae4990b5061f6f3f3d3,
         type: 3}
       propertyPath: m_Name
@@ -1203,6 +1220,11 @@ PrefabInstance:
       propertyPath: gridGenerator
       value: 
       objectReference: {fileID: 1796708653057558814}
+    - target: {fileID: 7489988490574736697, guid: 96eaa91d683d67543ac7f34a26571357,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8437730787568224221, guid: 96eaa91d683d67543ac7f34a26571357,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1361,6 +1383,11 @@ PrefabInstance:
       propertyPath: m_Carve
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4249028654007754550, guid: 8f3c67ff4ec01ec41b77fcd56a2ccdb9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4251586850982801979, guid: 8f3c67ff4ec01ec41b77fcd56a2ccdb9,
         type: 3}
       propertyPath: gridGenerator
@@ -1438,7 +1465,7 @@ PrefabInstance:
     - target: {fileID: 137498631920526701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5.816127
+      value: 5.333542
       objectReference: {fileID: 0}
     - target: {fileID: 137498631920526701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -1453,13 +1480,18 @@ PrefabInstance:
     - target: {fileID: 137498631920526701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0115
+      value: 0.013
       objectReference: {fileID: 0}
     - target: {fileID: 381103648670810599, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: gridGenerator
       value: 
       objectReference: {fileID: 1796708653057558814}
+    - target: {fileID: 519391375650170454, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: TileCount
+      value: 48
+      objectReference: {fileID: 0}
     - target: {fileID: 519391375650170454, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: boxSize.x
@@ -1632,6 +1664,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -11.71
       objectReference: {fileID: 0}
+    - target: {fileID: 3358681042496395673, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.4176717
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358681042496395673, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.1566
+      objectReference: {fileID: 0}
     - target: {fileID: 3540600272356728428, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1759,6 +1801,11 @@ PrefabInstance:
       objectReference: {fileID: 266255477707868497}
     - target: {fileID: 6482304172784229975, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
+      propertyPath: TileCount
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482304172784229975, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
       propertyPath: boxSize.x
       value: 1.3
       objectReference: {fileID: 0}
@@ -1806,7 +1853,7 @@ PrefabInstance:
     - target: {fileID: 6575556891631291634, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5.816127
+      value: 5.333542
       objectReference: {fileID: 0}
     - target: {fileID: 6575556891631291634, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -1821,7 +1868,7 @@ PrefabInstance:
     - target: {fileID: 6575556891631291634, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0292
+      value: -0.0031
       objectReference: {fileID: 0}
     - target: {fileID: 6601239774343227804, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -1930,18 +1977,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8017890414802711352, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.9519
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017890414802711352, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
       propertyPath: m_LocalScale.z
-      value: 7.600452
+      value: 7.694987
       objectReference: {fileID: 0}
     - target: {fileID: 8017890414802711352, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.053565215
+      value: 0.0224
       objectReference: {fileID: 0}
     - target: {fileID: 8017890414802711352, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.9759
       objectReference: {fileID: 0}
     - target: {fileID: 8017890414802711352, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -2318,6 +2370,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: YellowHole
+      objectReference: {fileID: 0}
+    - target: {fileID: 2883599120447165197, guid: 9265589dd6ece6844a44cec9fd7efecd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
         type: 3}

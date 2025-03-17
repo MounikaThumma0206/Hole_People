@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
 	bool isGameOn = true;
 	float gameActiveDelay = .1f;
 	float lastTimeGameBecameActive = 0;
-
+	readonly Dictionary<ColorEnum, int> holePlayerCount = new();
+	private int refillableGrids = 0;
 #if UNITY_EDITOR
 
 	[SerializeField] int levelTOloadDebug = 1;
@@ -48,6 +49,15 @@ public class GameManager : MonoBehaviour
 		Restart();
 	}
 #endif
+	public void AnnounceRefillable()
+	{
+		refillableGrids++;
+	}
+	public void AnnounceGridRetirement()
+	{
+		refillableGrids--;
+	}
+
 	private void OnEnable()
 	{
 		playerGrids.Clear();
@@ -78,11 +88,6 @@ public class GameManager : MonoBehaviour
 		maxMoves = levelData.maxMoves;
 		usedMoves = 0;
 		Instantiate(levelData.levelPrefab);
-
-		foreach (var hole in holes)
-		{
-			//set hole's player count
-		}
 	}
 	public void LoadNext()
 	{
@@ -103,9 +108,12 @@ public class GameManager : MonoBehaviour
 		Instance.playerGrids.Clear();
 		DOTween.KillAll();
 		usedMoves = 0;
+		holePlayerCount.Clear();
+		refillableGrids = 0;
 		var asyncOp = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
 		asyncOp.completed += (op) =>
 		{
+			holePlayerCount.Clear();
 			SetGameOn(true);
 			CrowdAudioManager.MakeNormalMood();
 			GenerateLevel();
@@ -118,28 +126,25 @@ public class GameManager : MonoBehaviour
 		bool hadMovables = false;
 		bool isAllClear = true;
 		notMovables.Clear();
-		int totalPeopleAttracted = 0;
 
 		foreach (CroudManager generator in new List<CroudManager>(playerGrids))
 		{
-			if (generator.GridColor == color)
+			if (generator.GridColor != color || generator.Moved)
 			{
-				if (!generator.Moved)
-				{
-					if (generator.CanMove())
-					{
-						totalPeopleAttracted += generator.TileCount;
-						generator.movePlayerToHole(hole);
-						hadMovables = true;
-						isAllClear = isAllClear && generator.IsCleared;
-					}
-					else
-					{
-						notMovables.Add(generator);
-					}
-				}
+				continue;
+			}
+			if (generator.CanMove())
+			{
+				generator.movePlayerToHole(hole);
+				hadMovables = true;
+				isAllClear = isAllClear && generator.IsCleared;
+			}
+			else
+			{
+				notMovables.Add(generator);
 			}
 		}
+		
 		if (!hadMovables)
 		{
 			hole.PlayNoMoves();
@@ -150,7 +155,7 @@ public class GameManager : MonoBehaviour
 		}
 		else if (isAllClear)
 		{
-			hole.CloseHoleAfterEating(totalPeopleAttracted);
+			hole.CloseHoleAfterEating(holePlayerCount[hole.ColorEnum]);
 			CheckLevelComplete();
 		}
 		else
@@ -162,11 +167,29 @@ public class GameManager : MonoBehaviour
 	public void SusbscribeGenerators(CroudManager generator)
 	{
 		playerGrids.Add(generator);
+
+		if (holePlayerCount.ContainsKey(generator.GridColor))
+		{
+			holePlayerCount[generator.GridColor] += generator.TileCount;
+		}
+		else
+		{
+			holePlayerCount.Add(generator.GridColor, generator.TileCount);
+		}
 	}
 	public void UnSubscribeGenerators(CroudManager generator)
 	{
 		playerGrids.Remove(generator);
+		if (holePlayerCount.ContainsKey(generator.GridColor))
+		{
+			holePlayerCount[generator.GridColor] -= generator.TileCount;
+			if (holePlayerCount[generator.GridColor] <= 0)
+			{
+				holePlayerCount.Remove(generator.GridColor);
+			}
+		}
 	}
+
 	public void SusbscribeHole(Hole hole)
 	{
 		holes.Add(hole);
@@ -203,6 +226,10 @@ public class GameManager : MonoBehaviour
 
 	public void CheckLevelComplete()
 	{
+		if(refillableGrids > 0)
+		{
+			return;
+		}
 		bool completed = true;
 
 		foreach (CroudManager _grid in playerGrids)

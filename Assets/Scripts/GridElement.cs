@@ -24,15 +24,12 @@ public class GridElement : MonoBehaviour
 	public SkinnedMeshRenderer playerRenderer;
 	public Rigidbody rb;
 	public Animator animator;
-	public bool IsFilled { get; private set; } = false;
 	public Vector3 PlayerInitialPos;
 	public Vector3 PlayerInitialScale;
 	public bool StartedRunning;
 	private bool isRefilling;
 	public Hole Hole;
 	public NavMeshAgent agent;
-	private float HoleRadius => Hole.HoleRadius;
-	private float JumpDetectionRadius => Hole.JumpDetectionRadius;
 	Vector3? targetPosition;
 
 	//For jump
@@ -40,6 +37,9 @@ public class GridElement : MonoBehaviour
 	[SerializeField] float jumpInterpTime = 0;
 	bool canJump = false;
 
+	private float HoleRadius => Hole.HoleRadius;
+	private float JumpDetectionRadius => Hole.JumpDetectionRadius;
+	public bool IsFilled { get; private set; } = false;
 
 	void Start()
 	{
@@ -100,8 +100,8 @@ public class GridElement : MonoBehaviour
 				canJump = true;
 				StartJumping(
 					agent.transform.position,
-					Hole.transform.position + Vector3.up * 3 + GetRandomDirectionalVector() * HoleRadius,
-					Hole.transform.position + Vector3.down  + GetRandomDirectionalVector() * HoleRadius);
+					Hole.transform.position + Vector3.up * 4 + GetRandomDirectionalVector() * HoleRadius,
+					Hole.transform.position + Vector3.down * 2 + GetRandomDirectionalVector() * HoleRadius);
 				yield return new WaitForSeconds(1f);
 				player.SetActive(false);
 				transform.gameObject.SetActive(false);
@@ -150,13 +150,13 @@ public class GridElement : MonoBehaviour
 	{
 		targetPosition = transform.position;
 		agent.transform.position = pipeMouthPosition;
-		agent.transform.DOMove(targetPosition.Value, .5f).SetDelay(.2f).OnComplete(() =>
-		{
-			isRefilling = false;
-			agent.transform.position = transform.position;
-			agent.transform.forward = Vector3.back;
-			animator.SetTrigger("Idle");
-		});
+		//agent.transform.DOMove(targetPosition.Value, .5f).SetDelay(.2f).OnComplete(() =>
+		//{
+		//	isRefilling = false;
+		//	agent.transform.position = transform.position;
+		//	agent.transform.forward = Vector3.back;
+		//	animator.SetTrigger("Idle");
+		//});
 		agent.enabled = false;
 		agent.transform.forward = (targetPosition.Value - pipeMouthPosition).normalized;
 		isRefilling = true;
@@ -165,6 +165,10 @@ public class GridElement : MonoBehaviour
 
 	public void OnCrowdUpdate()
 	{
+		if (!StartedRunning && !targetPosition.HasValue&&!canJump)
+		{
+			return;
+		}
 
 		if (StartedRunning && IsWithinStoppingDistance())
 		{
@@ -172,7 +176,7 @@ public class GridElement : MonoBehaviour
 		}
 		if (canJump)
 		{
-			jumpInterpTime += Time.deltaTime ;
+			jumpInterpTime += Time.deltaTime * 2;
 			agent.transform.position = VectorExt.CubicBezier(jumpStartPosition, jumpMidPosition, jumpEndPosition, jumpInterpTime);
 			if (jumpInterpTime > 1)
 			{
@@ -183,26 +187,34 @@ public class GridElement : MonoBehaviour
 			}
 		}
 
-		//if (targetPosition.HasValue)
-		//{
-		//	Vector3 distanceVector = targetPosition.Value - agent.transform.position;
-		//	if (distanceVector.sqrMagnitude < 0.01f)
-		//	{
-		//		targetPosition = null;
-		//		isRefilling = false;
-		//		agent.transform.position = transform.position;
-		//		agent.transform.forward = Vector3.back;
-		//		animator.SetTrigger("Idle");
-		//	}
-		//	agent.transform.Translate(distanceVector.normalized);
-		//}
-		//else
-		//{
-		//	Debug.LogWarning("Target position is not set!");
-		//}
+		if (targetPosition.HasValue)
+		{
+			Vector3 distanceVector = targetPosition.Value - agent.transform.position;
+			if (distanceVector.sqrMagnitude < 0.01f)
+			{
+				targetPosition = null;
+				isRefilling = false;
+				agent.transform.position = transform.position;
+				agent.transform.forward = Vector3.back;
+				animator.SetTrigger("Idle");
+				return;
+			}
+			// 5 is more when it is close and less when it is near
+			float magnitude = distanceVector.magnitude;
+			float agentMoveSpeed = 7;
+			float speed = magnitude > 1 ? agentMoveSpeed : agentMoveSpeed * magnitude;
+			agent.transform.Translate(Time.deltaTime * speed * distanceVector.normalized, Space.World);
+		}
+		else
+		{
+			Debug.LogWarning("Target position is not set!");
+		}
 
 
 	}
+
+#if UNITY_EDITOR
+
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.DrawSphere(agent.transform.position, .2f);
@@ -212,4 +224,5 @@ public class GridElement : MonoBehaviour
 		Gizmos.color = Color.blue;
 		Gizmos.DrawSphere(VectorExt.CubicBezier(jumpStartPosition, jumpMidPosition, jumpEndPosition, jumpInterpTime), .2f);
 	}
+#endif
 }

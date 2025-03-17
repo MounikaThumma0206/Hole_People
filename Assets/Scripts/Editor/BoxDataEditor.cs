@@ -22,5 +22,21 @@ public class BoxDataEditor : Editor
 			}
 		}
 		DrawDefaultInspector();
+		GUILayout.BeginHorizontal();
+		if (GUILayout.Button("Remove all blockers"))
+		{
+			foreach (CroudManager boxData in boxDataArray)
+			{
+				boxData.DebugClearBlockers();
+			}
+		}
+		if (GUILayout.Button("Remove all listerners"))
+		{
+			foreach (CroudManager boxData in boxDataArray)
+			{
+				boxData.DebugRemoveAllListeners();
+			}
+		}
+		GUILayout.EndHorizontal();
 	}
 }

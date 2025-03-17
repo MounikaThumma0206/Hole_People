@@ -20,7 +20,7 @@ public class Hole : GridItemGenerator
 	private int _totalPeople;
 	public float JumpDetectionRadius { get => jumpDetectionRadius; }
 	public float HoleRadius => holeRadius;
-
+	public ColorEnum ColorEnum => colorEnum;
 #if UNITY_EDITOR
 	[Header("Gizmos")]
 	[SerializeField] float Radius = 3.0f;
@@ -40,6 +40,7 @@ public class Hole : GridItemGenerator
 	public override void OnEnable()
 	{
 		base.OnEnable();
+		_totalPeopleToBeAttracted = 0;
 		GameManager.Instance.SusbscribeHole(this);
 	}
 	public override void OnDisable()
@@ -152,7 +153,6 @@ public class Hole : GridItemGenerator
 	{
 		if (canClose)
 		{
-			_totalPeopleToBeAttracted = peopleCount;
 			_totalPeople = peopleCount;
 			GridElement.OnGridElementJumped.AddListener(CheckForClosing);
 		}
@@ -165,9 +165,9 @@ public class Hole : GridItemGenerator
 		{
 			return;
 		}
-		_totalPeopleToBeAttracted--;
-		fill.fillAmount = 1f - (_totalPeopleToBeAttracted / (float)_totalPeople);
-		if (_totalPeopleToBeAttracted <= 0)
+		_totalPeopleToBeAttracted++;
+		fill.fillAmount = (float)(_totalPeopleToBeAttracted * 10 / ((float)_totalPeople * 10));
+		if (_totalPeopleToBeAttracted >= _totalPeople)
 		{
 			CloseHole();
 		}

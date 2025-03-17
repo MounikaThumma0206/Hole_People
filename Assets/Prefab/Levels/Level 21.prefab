@@ -41,7 +41,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44792278453536567}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 3.75, y: 0.5, z: 1}
@@ -71,9 +71,10 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 1
+  parentGridBeforeRefill: {fileID: 3185379492015713117}
   rows: 6
   columns: 4
-  TileCount: 24
+  TileCount: 80
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
@@ -81,7 +82,19 @@ MonoBehaviour:
   pipeMouthPosition: {fileID: 6864207406798941303}
   OnCrowdCleared:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6683236360135525473}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: EnableRefillGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4538411411195360993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +155,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61826122512462062}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 1.25, y: 0.5, z: 3.75}
@@ -172,9 +185,10 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 1
+  parentGridBeforeRefill: {fileID: 5076790472109567830}
   rows: 6
   columns: 4
-  TileCount: 24
+  TileCount: 96
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
@@ -243,7 +257,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212774876192857893}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 3.75, y: 0.5, z: 1}
@@ -273,9 +287,10 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 1
+  parentGridBeforeRefill: {fileID: 3536882776332194043}
   rows: 6
   columns: 4
-  TileCount: 24
+  TileCount: 80
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
@@ -436,9 +451,10 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 24
+  TileCount: 80
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
@@ -447,43 +463,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8129912356018059649}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 8563902814448030994}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 6683236360135525473}
-        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
-        m_MethodName: EnableRefillGrid
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3536882776332194043}
         m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
         m_MethodName: EnableRefillGrid
         m_Mode: 1
@@ -620,9 +600,10 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 24
+  TileCount: 96
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
@@ -631,43 +612,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 61826122512462062}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 212774876192857893}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 2863436426100689543}
-        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
-        m_MethodName: EnableRefillGrid
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6321277918096940606}
         m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
         m_MethodName: EnableRefillGrid
         m_Mode: 1
@@ -769,9 +714,10 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 24
+  TileCount: 80
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
@@ -780,18 +726,6 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 44792278453536567}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 7460387911081452144}
         m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
         m_MethodName: EnableRefillGrid
@@ -864,7 +798,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3148335122764002937}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 1.25, y: 0.5, z: 3.75}
@@ -894,9 +828,10 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 1
+  parentGridBeforeRefill: {fileID: 759630713980233627}
   rows: 6
   columns: 4
-  TileCount: 24
+  TileCount: 96
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
@@ -1030,9 +965,10 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 24
+  TileCount: 96
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
@@ -1041,18 +977,6 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3148335122764002937}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 3955412953401870080}
         m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
         m_MethodName: EnableRefillGrid
@@ -1156,7 +1080,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8129912356018059649}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 3.75, y: 0.5, z: 1}
@@ -1186,9 +1110,10 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 1
+  parentGridBeforeRefill: {fileID: 7460387911081452144}
   rows: 6
   columns: 4
-  TileCount: 24
+  TileCount: 80
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
@@ -1257,7 +1182,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8563902814448030994}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 3.75, y: 0.5, z: 1}
@@ -1287,9 +1212,10 @@ MonoBehaviour:
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 1
+  parentGridBeforeRefill: {fileID: 1466214151242345997}
   rows: 6
   columns: 4
-  TileCount: 24
+  TileCount: 80
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
@@ -1297,7 +1223,19 @@ MonoBehaviour:
   pipeMouthPosition: {fileID: 8576326696663742106}
   OnCrowdCleared:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6321277918096940606}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: EnableRefillGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4070918551535797608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1448,16 +1386,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: YellowHole
       objectReference: {fileID: 0}
+    - target: {fileID: 2883599120447165197, guid: 9265589dd6ece6844a44cec9fd7efecd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
         type: 3}
       propertyPath: canClose
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
         type: 3}
       propertyPath: gridGenerator
       value: 
       objectReference: {fileID: 1796708653057558814}
+    - target: {fileID: 7344249087291271676, guid: 9265589dd6ece6844a44cec9fd7efecd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9205636001794866352, guid: 9265589dd6ece6844a44cec9fd7efecd,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1555,13 +1503,23 @@ PrefabInstance:
     - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
         type: 3}
       propertyPath: canClose
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
         type: 3}
       propertyPath: gridGenerator
       value: 
       objectReference: {fileID: 1796708653057558814}
+    - target: {fileID: 7489988490574736697, guid: 96eaa91d683d67543ac7f34a26571357,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526685251795937950, guid: 96eaa91d683d67543ac7f34a26571357,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7558089995955316681, guid: 96eaa91d683d67543ac7f34a26571357,
         type: 3}
       propertyPath: m_Carve
@@ -1696,13 +1654,18 @@ PrefabInstance:
     - target: {fileID: 3410146510413488466, guid: 289da8af977403141bd8ffc4562acafd,
         type: 3}
       propertyPath: canClose
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3410146510413488466, guid: 289da8af977403141bd8ffc4562acafd,
         type: 3}
       propertyPath: gridGenerator
       value: 
       objectReference: {fileID: 1796708653057558814}
+    - target: {fileID: 6022690375727910206, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6798519505674516448, guid: 289da8af977403141bd8ffc4562acafd,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1774,10 +1737,15 @@ PrefabInstance:
       propertyPath: m_Carve
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 495455296728910136, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2666406258958278602, guid: 501683f9395f1ae4990b5061f6f3f3d3,
         type: 3}
       propertyPath: canClose
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2666406258958278602, guid: 501683f9395f1ae4990b5061f6f3f3d3,
         type: 3}
@@ -1847,6 +1815,11 @@ PrefabInstance:
     - target: {fileID: 5252318037437998400, guid: 501683f9395f1ae4990b5061f6f3f3d3,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594746353058964300, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8269099022414962021, guid: 501683f9395f1ae4990b5061f6f3f3d3,
@@ -1928,7 +1901,7 @@ PrefabInstance:
     - target: {fileID: 137498631920526701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5.816127
+      value: 5.7147036
       objectReference: {fileID: 0}
     - target: {fileID: 137498631920526701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -1938,12 +1911,12 @@ PrefabInstance:
     - target: {fileID: 137498631920526701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 137498631920526701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0115
+      value: 0.0106
       objectReference: {fileID: 0}
     - target: {fileID: 381103648670810599, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -2132,6 +2105,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -12.215743
       objectReference: {fileID: 0}
+    - target: {fileID: 3358681042496395673, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.491001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358681042496395673, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.962
+      objectReference: {fileID: 0}
     - target: {fileID: 3540600272356728428, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2296,7 +2279,7 @@ PrefabInstance:
     - target: {fileID: 6575556891631291634, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5.816127
+      value: 5.7147036
       objectReference: {fileID: 0}
     - target: {fileID: 6575556891631291634, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -2306,12 +2289,12 @@ PrefabInstance:
     - target: {fileID: 6575556891631291634, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6575556891631291634, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0292
+      value: -0.0068
       objectReference: {fileID: 0}
     - target: {fileID: 6601239774343227804, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -2326,22 +2309,22 @@ PrefabInstance:
     - target: {fileID: 6695037957316161737, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 8.204941
+      value: 7.620651
       objectReference: {fileID: 0}
     - target: {fileID: 6695037957316161737, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.01513043
+      value: 0.0137
       objectReference: {fileID: 0}
     - target: {fileID: 6695037957316161737, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6695037957316161737, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.7626195
+      value: 2.7626
       objectReference: {fileID: 0}
     - target: {fileID: 7300445569625144214, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
@@ -2421,17 +2404,17 @@ PrefabInstance:
     - target: {fileID: 8017890414802711352, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 8.3836975
+      value: 7.6268487
       objectReference: {fileID: 0}
     - target: {fileID: 8017890414802711352, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0938
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 8017890414802711352, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8017890414802711352, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}

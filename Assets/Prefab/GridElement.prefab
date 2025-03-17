@@ -65,9 +65,9 @@ MonoBehaviour:
   Hole: {fileID: 0}
   agent: {fileID: 6667166774211160897}
   jumpStartPosition: {x: 0, y: 0, z: 0}
-  jumpMidPosition: {x: 0, y: 0, z: 0}
+  jumpMidPosition: {x: 0.05, y: 0, z: 1.04}
   jumpEndPosition: {x: 0, y: -1, z: 1.5}
-  jumpInterpTime: 0.34
+  jumpInterpTime: 0
 --- !u!1001 &6148749906574982222
 PrefabInstance:
   m_ObjectHideFlags: 0

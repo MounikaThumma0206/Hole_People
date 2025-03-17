@@ -1,0 +1,5 @@
+Red: FA3524
+Green:23E623
+Yellow:E8E800
+Blue:3DB8FF
+Violet:A739DD

@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -19,9 +20,11 @@ public class CroudManager : GridItemGenerator
 
 	[Header("Generate Grid")]
 	[SerializeField] private bool IsRefilledGrid;
+	[Tooltip("The grid before this grid to identify whether this grid should be refilled or not")]
+	[SerializeField] CroudManager parentGridBeforeRefill;
 	[HideInInspector] public int rows;
 	[HideInInspector] public int columns;
-	[HideInInspector] public int TileCount;
+	public int TileCount;
 	[Header("Player Movement")]
 	public bool isMovable = false;
 	private Material gridMaterial;
@@ -46,15 +49,12 @@ public class CroudManager : GridItemGenerator
 	bool _moved;
 	private float lastTimeCrowdUpdate;
 
+
+
+
 	public int runTriggerName => croudManagerData.RunId;
 	public int jumpTriggerName => croudManagerData.JumpId;
-
-	public bool Moved
-	{
-		get { return _moved; }
-		set { _moved = value; }
-	}
-
+	public bool Moved { get => _moved; set => _moved = value; }
 	public bool IsCleared { get; private set; }
 	public PillarType PillarType { get => pillarType; set => pillarType = value; }
 	public ColorEnum GridColor => colorEnum;
@@ -82,6 +82,8 @@ public class CroudManager : GridItemGenerator
 		if (IsRefilledGrid)
 		{
 			gameObject.SetActive(false);
+
+			obstacle.enabled = false;
 		}
 
 	}
@@ -117,6 +119,10 @@ public class CroudManager : GridItemGenerator
 	public override void OnDisable()
 	{
 		base.OnDisable();
+		if (IsRefilledGrid)
+		{
+			GameManager.Instance.AnnounceGridRetirement();
+		}
 		GameManager.Instance.UnSubscribeGenerators(this);
 		if (shouldGeneratePillers)
 			Hole.OnAnyHoleClicked.RemoveListener(SwitchPillarType);
@@ -156,6 +162,10 @@ public class CroudManager : GridItemGenerator
 				gridMaterial = colorMaterial.material;
 				break; // Exit the loop once we find the matching color
 			}
+		}
+		if (IsRefilledGrid)
+		{
+			GameManager.Instance.AnnounceRefillable();
 		}
 
 		if (gridMaterial == null)
@@ -270,7 +280,6 @@ public class CroudManager : GridItemGenerator
 #if UNITY_EDITOR
 					Debug.LogError("GridElement component not found on " + cube.name);
 #endif
-
 				}
 			}
 		}
@@ -289,7 +298,10 @@ public class CroudManager : GridItemGenerator
 #if UNITY_EDITOR
 	private void OnValidate()
 	{
+		if (shouldGeneratePillers) return;
 		CalculateNavmeshSize();
+		var count = GetMaxBounds() - GetMinBounds();
+		TileCount = (count.x + 1) * (count.y + 1);
 	}
 #endif
 
@@ -330,6 +342,18 @@ public class CroudManager : GridItemGenerator
 		{
 			Debug.LogError("NavMeshObstacle component missing on " + gameObject.name);
 		}
+	}
+	public void DebugClearBlockers()
+	{
+		blockingGrid.Clear();
+	}
+	public void DebugRemoveAllListeners()
+	{
+		if (OnCrowdCleared != null)
+		{
+			OnCrowdCleared.RemoveAllListeners();
+		}
+
 	}
 
 
@@ -452,9 +476,106 @@ public class CroudManager : GridItemGenerator
 	}
 	public void EnableRefillGrid()
 	{
+		if (parentGridBeforeRefill != null && !parentGridBeforeRefill.Moved)
+		{
+			return;
+		}
+		gameObject.SetActive(true);
+		StartCoroutine(EnableObstacle());
 		foreach (GridElement gridElement in playerGridElements)
 		{
 			gridElement.MoveToPosition(pipeMouthPosition.position);
+		}
+		gridGenerator.UpdateNavmesh();
+	}
+	IEnumerator EnableObstacle()
+	{
+		yield return new WaitForSeconds(3f);
+		obstacle.enabled = true;
+	}
+	protected override void OnDrawGizmos()
+	{
+		if (gizmoColor == null)
+		{
+			return;
+		}
+		var normalColor = gizmoColor.GetGizmoColor(colorEnum);
+		Gizmos.color = normalColor;
+		if (gridGenerator == null)
+		{
+			return;
+		}
+
+		Vector2Int minBounds = GetMinBounds();
+		Vector2Int maxBounds = GetMaxBounds();
+		int minX = minBounds.x;
+		int minY = minBounds.y;
+		int maxX = maxBounds.x;
+		int maxY = maxBounds.y;
+		var gridSize = gridGenerator.GridSize;
+
+		for (int i = minX; i <= maxX; i++)
+		{
+			for (int j = minY; j <= maxY; j++)
+			{
+				Gizmos.color = normalColor;
+
+				if (shouldGeneratePillers)
+				{
+
+					#region Generate corner pillars
+					if (
+						(i == minBounds.x && j == minBounds.y) || //bottom left
+						(i == maxBounds.x && j == maxBounds.y) ||//top right
+						(i == minBounds.x && j == maxBounds.y) ||//bottom right	
+						(i == maxBounds.x && j == minBounds.y) //top left
+						)
+					{
+						//Take grid space bounds to consideration
+						if (
+							(i != gridSize.x - 1 || j != gridSize.y - 1) && //top right
+							(i != 0 || j != 0) &&//bottom left
+							(i != gridSize.x - 1 || j != 0) &&//bottom right	
+							(i != 0 || j != gridSize.y - 1) //top left
+							)
+						{
+							DrawPiller(i, j);
+
+							continue;
+						}
+
+					}
+					#endregion
+					#region skips the world edges
+					if (i == 0 || i == gridSize.x - 1 || j == 0 || j == gridSize.y - 1)
+					{
+						//I dont know how to invert this or may be I am too lazy to do it
+					}
+					#endregion
+					#region Generates the edge pillars
+					//this is good dont change it
+					else if (i == minBounds.x || i == maxBounds.x || j == minBounds.y || j == maxBounds.y)
+					{
+						DrawPiller(i, j);
+
+						continue;
+					}
+					#endregion
+				}
+
+
+				Gizmos.DrawSphere(gridGenerator.GetWorldPosition(i, j, true), 0.1f);
+			}
+		}
+
+
+
+		void DrawPiller(int i, int j)
+		{
+			Gizmos.color = Color.black;
+			Gizmos.DrawSphere(gridGenerator.GetWorldPosition(i, j, true), 0.1f);
+			Gizmos.color = pillarType == PillarType.ACTIVE ? Color.green : Color.red;
+			Gizmos.DrawSphere(gridGenerator.GetWorldPosition(i, j, true), 0.05f);
 		}
 	}
 }
