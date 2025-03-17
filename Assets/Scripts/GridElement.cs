@@ -1,80 +1,105 @@
 using System.Collections;
 using UnityEngine;
-using DG.Tweening;
 using UnityEngine.AI;
 using UnityEngine.Events;
 using DT_Util;
 
+/// <summary>
+/// Represents an element in the grid that can move, jump, and interact with holes.
+/// </summary>
 public class GridElement : MonoBehaviour
 {
+	/// <summary>
+	/// Event triggered when a GridElement jumps.
+	/// </summary>
 	public static UnityEvent<GridElement> OnGridElementJumped = new();
 
+	public ColorEnum GridColor; // The color assigned to this grid element.
+	public int lineIndex; // Index position in a line formation.
+	public CroudManager playerGenerator; // Reference to the crowd manager.
+	public Color gizmoColor = Color.yellow; // Color used for editor gizmos.
+	public int Row; // The row position in the grid.
+	public int Column; // The column position in the grid.
+	public bool BlockedPath; // Determines if this grid element blocks movement.
+	public bool IsOccupied; // Checks if this grid element is occupied.
+	public bool IsEmpty; // Checks if this grid element is empty.
+	public ColorEnum PlayerColor; // The color of the player on this grid element.
+	public GameObject Player; // Reference to the player GameObject.
+	public SkinnedMeshRenderer playerRenderer; // Renderer for changing player appearance.
+	public Rigidbody rb; // Rigidbody component for physics.
+	public Animator animator; // Animator for movement/jump animations.
+	public Vector3 PlayerInitialPos; // The initial position of the player.
+	public Vector3 PlayerInitialScale; // The initial scale of the player.
+	public bool StartedRunning; // Tracks if the entity has started running.
+	private bool isRefilling; // Flag for refill status.
+	public Hole Hole; // Reference to the hole the entity is associated with.
+	public NavMeshAgent agent; // AI agent for navigation.
+	private Vector3? targetPosition; // Target position for movement.
 
-	public ColorEnum GridColor;
-	public int lineIndex;
-	public CroudManager playerGenerator;
-	public Color gizmoColor = Color.yellow;
-	public int Row;
-	public int Column;
-	public bool BlockedPath;
-	public bool IsOccupied;
-	public bool IsEmpty;
-	public ColorEnum PlayerColor;
-	public GameObject Player;
-	public SkinnedMeshRenderer playerRenderer;
-	public Rigidbody rb;
-	public Animator animator;
-	public Vector3 PlayerInitialPos;
-	public Vector3 PlayerInitialScale;
-	public bool StartedRunning;
-	private bool isRefilling;
-	public Hole Hole;
-	public NavMeshAgent agent;
-	Vector3? targetPosition;
+	// Variables for jump handling
+	[SerializeField] private Vector3 jumpStartPosition, jumpMidPosition, jumpEndPosition;
+	[SerializeField] private float jumpInterpTime = 0;
+	private bool canJump = false;
 
-	//For jump
-	[SerializeField] Vector3 jumpStartPosition, jumpMidPosition, jumpEndPosition;
-	[SerializeField] float jumpInterpTime = 0;
-	bool canJump = false;
-
+	/// <summary>
+	/// Gets the radius of the associated hole.
+	/// </summary>
 	private float HoleRadius => Hole.HoleRadius;
+
+	/// <summary>
+	/// Gets the jump detection radius of the hole.
+	/// </summary>
 	private float JumpDetectionRadius => Hole.JumpDetectionRadius;
+
+	/// <summary>
+	/// Gets whether the grid element is filled.
+	/// </summary>
 	public bool IsFilled { get; private set; } = false;
 
+	/// <summary>
+	/// Initializes the grid element.
+	/// </summary>
 	void Start()
 	{
-		// Offset idle animation clip
+		// Offset idle animation clip for animation variety
 		if (animator != null)
 		{
 			AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
 			animator.Play(state.fullPathHash, -1, Random.Range(0f, 1f));
 		}
 
-		// Ensure the Rigidbody reference is set
+		// Ensure the Rigidbody component is assigned
 		if (rb == null)
 		{
-			rb = GetComponent<Rigidbody>();
-			if (rb == null)
-			{
-				rb = gameObject.AddComponent<Rigidbody>();
-			}
+			rb = GetComponent<Rigidbody>() ?? gameObject.AddComponent<Rigidbody>();
 		}
 
-		rb.useGravity = false; // Initially disable gravity
-		rb.isKinematic = true; // Set 
+		rb.useGravity = false; // Disable gravity initially
+		rb.isKinematic = true; // Prevent physics interactions initially
 	}
+
+	/// <summary>
+	/// Initializes jump parameters.
+	/// </summary>
 	public void StartJumping(Vector3 jumpStartPos, Vector3 jumpMidPoint, Vector3 jumpEndPos)
 	{
 		jumpStartPosition = jumpStartPos;
 		jumpMidPosition = jumpMidPoint;
 		jumpEndPosition = jumpEndPos;
 	}
-	bool IsWithinStoppingDistance()
+
+	/// <summary>
+	/// Checks if the entity is within stopping distance of the hole.
+	/// </summary>
+	/// <returns>True if within stopping distance, otherwise false.</returns>
+	private bool IsWithinStoppingDistance()
 	{
-		if (Hole != null)
-			return (Hole.transform.position - rb.transform.position).sqrMagnitude < JumpDetectionRadius * JumpDetectionRadius;
-		else return false;
+		return Hole != null && (Hole.transform.position - rb.transform.position).sqrMagnitude < JumpDetectionRadius * JumpDetectionRadius;
 	}
+
+	/// <summary>
+	/// Coroutine executed when the destination is reached, triggering jump behavior.
+	/// </summary>
 	private IEnumerator OnReachedDestination()
 	{
 		StartedRunning = false;
@@ -91,18 +116,15 @@ public class GridElement : MonoBehaviour
 
 			if (Hole != null)
 			{
-				//player.transform.DOJump(Hole.transform.position + Vector3.down * 1 + GetRandomDirectionalVector() * HoleRadius, 1.5f, 1, .7f).SetEase(Ease.InQuad).OnComplete(() =>
-				//{
-				//	CrowdAudioManager.PlayJumpSound();
-				//	OnGridElementJumped?.Invoke(this);
-				//});
 				agent.enabled = false;
 				canJump = true;
 				StartJumping(
 					agent.transform.position,
 					Hole.transform.position + Vector3.up * 4 + GetRandomDirectionalVector() * HoleRadius,
 					Hole.transform.position + Vector3.down * 2 + GetRandomDirectionalVector() * HoleRadius);
+
 				yield return new WaitForSeconds(1f);
+
 				player.SetActive(false);
 				transform.gameObject.SetActive(false);
 			}
@@ -115,57 +137,69 @@ public class GridElement : MonoBehaviour
 		{
 			Debug.LogWarning("No children found under this transform!");
 		}
-		yield return null;
 	}
+
+	/// <summary>
+	/// Determines if the entity has reached the hole.
+	/// </summary>
+	/// <returns>True if within range of the hole, otherwise false.</returns>
 	public bool HasReachedHole()
 	{
-
-		if (transform != null && Hole != null)
-		{
-
-			float distanceToHole = Vector3.Distance(transform.position, Hole.transform.position);
-			return distanceToHole <= 0.5f;
-		}
-
-		return false;
+		return transform != null && Hole != null && Vector3.Distance(transform.position, Hole.transform.position) <= 0.5f;
 	}
+
+	/// <summary>
+	/// Marks the grid element as filled.
+	/// </summary>
 	public void MarkAsFilled()
 	{
 		IsFilled = true;
 	}
+
+	/// <summary>
+	/// Resets the filled status of the grid element.
+	/// </summary>
 	public void ResetFillStatus()
 	{
 		IsFilled = false;
 	}
 
+	/// <summary>
+	/// Changes the material of the player.
+	/// </summary>
 	public void ChangePlayerMaterial(Material material)
 	{
 		playerRenderer.sharedMaterial = material;
 	}
+
+	/// <summary>
+	/// Generates a random directional vector.
+	/// </summary>
 	private Vector3 GetRandomDirectionalVector()
 	{
 		return new Vector3(Random.Range(-1f, 1f), Random.Range(-1, 1), Random.Range(-1f, 1f)).normalized;
 	}
+
+	/// <summary>
+	/// Moves the entity to a specified position.
+	/// </summary>
 	public void MoveToPosition(Vector3 pipeMouthPosition)
 	{
 		targetPosition = transform.position;
 		agent.transform.position = pipeMouthPosition;
-		//agent.transform.DOMove(targetPosition.Value, .5f).SetDelay(.2f).OnComplete(() =>
-		//{
-		//	isRefilling = false;
-		//	agent.transform.position = transform.position;
-		//	agent.transform.forward = Vector3.back;
-		//	animator.SetTrigger("Idle");
-		//});
+
 		agent.enabled = false;
 		agent.transform.forward = (targetPosition.Value - pipeMouthPosition).normalized;
 		isRefilling = true;
 		animator.SetTrigger("Run");
 	}
 
+	/// <summary>
+	/// Updates the crowd movement logic.
+	/// </summary>
 	public void OnCrowdUpdate()
 	{
-		if (!StartedRunning && !targetPosition.HasValue&&!canJump)
+		if (!StartedRunning && !targetPosition.HasValue && !canJump)
 		{
 			return;
 		}
@@ -174,6 +208,7 @@ public class GridElement : MonoBehaviour
 		{
 			StartCoroutine(OnReachedDestination());
 		}
+
 		if (canJump)
 		{
 			jumpInterpTime += Time.deltaTime * 2;
@@ -199,7 +234,8 @@ public class GridElement : MonoBehaviour
 				animator.SetTrigger("Idle");
 				return;
 			}
-			// 5 is more when it is close and less when it is near
+
+			// Adjust movement speed based on distance
 			float magnitude = distanceVector.magnitude;
 			float agentMoveSpeed = 7;
 			float speed = magnitude > 1 ? agentMoveSpeed : agentMoveSpeed * magnitude;
@@ -209,12 +245,12 @@ public class GridElement : MonoBehaviour
 		{
 			Debug.LogWarning("Target position is not set!");
 		}
-
-
 	}
 
 #if UNITY_EDITOR
-
+	/// <summary>
+	/// Draws debugging gizmos in the Unity Editor.
+	/// </summary>
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.DrawSphere(agent.transform.position, .2f);

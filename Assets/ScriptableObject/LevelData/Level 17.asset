@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 17
   m_EditorClassIdentifier: 
   cameraPosition: {x: 0, y: 0, z: 0}
-  cameraSize: 0
+  cameraSize: 8.5
   maxMoves: 7
   cameraRotation: {x: 0, y: 0, z: 0}
   levelPrefab: {fileID: 6516054358963939257, guid: 5315c1220642df44fb2c8f7600eed443,

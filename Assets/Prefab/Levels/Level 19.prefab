@@ -181,6 +181,9 @@ MonoBehaviour:
   shouldGeneratePillers: 0
   blockingGrid:
   - {fileID: 5476382548815929217}
+  - {fileID: 4365279937433214992}
+  - {fileID: 2891788893492059801}
+  - {fileID: 3764075995235202366}
   pillarType: 1
   pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
@@ -279,7 +282,7 @@ MonoBehaviour:
   parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 16
+  TileCount: 9
   isMovable: 1
   shouldGeneratePillers: 1
   blockingGrid: []
@@ -381,11 +384,10 @@ MonoBehaviour:
   parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 16
+  TileCount: 6
   isMovable: 1
   shouldGeneratePillers: 1
-  blockingGrid:
-  - {fileID: 1583775202791634195}
+  blockingGrid: []
   pillarType: 0
   pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
@@ -1101,6 +1103,7 @@ MonoBehaviour:
   shouldGeneratePillers: 0
   blockingGrid:
   - {fileID: 3764075995235202366}
+  - {fileID: 4365279937433214992}
   pillarType: 1
   pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
@@ -1199,7 +1202,7 @@ MonoBehaviour:
   parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 16
+  TileCount: 6
   isMovable: 1
   shouldGeneratePillers: 1
   blockingGrid:
@@ -1439,7 +1442,7 @@ MonoBehaviour:
   parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 16
+  TileCount: 6
   isMovable: 1
   shouldGeneratePillers: 1
   blockingGrid:
@@ -1548,6 +1551,7 @@ MonoBehaviour:
   blockingGrid:
   - {fileID: 9090272968136488040}
   - {fileID: 1583775202791634195}
+  - {fileID: 2891788893492059801}
   pillarType: 1
   pipeMouthPosition: {fileID: 0}
   OnCrowdCleared:
@@ -2319,33 +2323,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1622041530705504448}
     m_Modifications:
-    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
-        type: 3}
-      propertyPath: Radius
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
-        type: 3}
-      propertyPath: isHole
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
-        type: 3}
-      propertyPath: obstacle
-      value: 
-      objectReference: {fileID: 7000222182074838917, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
-        type: 3}
-    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
-        type: 3}
-      propertyPath: boxSize.x
-      value: 1.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
-        type: 3}
-      propertyPath: gridGenerator
-      value: 
-      objectReference: {fileID: 7300445569625144214, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
-        type: 3}
     - target: {fileID: 1998059514662551848, guid: 9265589dd6ece6844a44cec9fd7efecd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2506,25 +2483,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9265589dd6ece6844a44cec9fd7efecd, type: 3}
---- !u!4 &6279657438622646218 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1998059514662551848, guid: 9265589dd6ece6844a44cec9fd7efecd,
-    type: 3}
-  m_PrefabInstance: {fileID: 5521232417503903458}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &8433450802099678673
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1622041530705504448}
-    m_Modifications:
     - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
         type: 3}
       propertyPath: Radius
@@ -2552,6 +2510,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7300445569625144214, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9265589dd6ece6844a44cec9fd7efecd, type: 3}
+--- !u!4 &6279657438622646218 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1998059514662551848, guid: 9265589dd6ece6844a44cec9fd7efecd,
+    type: 3}
+  m_PrefabInstance: {fileID: 5521232417503903458}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8433450802099678673
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1622041530705504448}
+    m_Modifications:
     - target: {fileID: 669215114900688147, guid: 8f3c67ff4ec01ec41b77fcd56a2ccdb9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2642,6 +2619,33 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.26
       objectReference: {fileID: 0}
+    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: Radius
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: isHole
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: obstacle
+      value: 
+      objectReference: {fileID: 7000222182074838917, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: boxSize.x
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: gridGenerator
+      value: 
+      objectReference: {fileID: 7300445569625144214, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2896,12 +2900,12 @@ PrefabInstance:
     - target: {fileID: 3358681042496395673, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.3175168
+      value: 2.7460258
       objectReference: {fileID: 0}
     - target: {fileID: 3358681042496395673, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.3782
+      value: 6.5209
       objectReference: {fileID: 0}
     - target: {fileID: 3540600272356728428, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}

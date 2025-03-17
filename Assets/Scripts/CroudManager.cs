@@ -1,7 +1,6 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -447,8 +446,6 @@ public class CroudManager : GridItemGenerator
 			}
 
 		}
-		// Start movement to the hole
-		//StartCoroutine(MoveAllPlayersToHole(hole));
 
 		// Handle unblocking grids
 		foreach (CroudManager gridGenerator in blockingGrid)
@@ -493,6 +490,7 @@ public class CroudManager : GridItemGenerator
 		yield return new WaitForSeconds(3f);
 		obstacle.enabled = true;
 	}
+#if UNITY_EDITOR
 	protected override void OnDrawGizmos()
 	{
 		if (gizmoColor == null)
@@ -577,5 +575,17 @@ public class CroudManager : GridItemGenerator
 			Gizmos.color = pillarType == PillarType.ACTIVE ? Color.green : Color.red;
 			Gizmos.DrawSphere(gridGenerator.GetWorldPosition(i, j, true), 0.05f);
 		}
+
 	}
+	private void OnDrawGizmosSelected()
+	{
+		foreach (var blocker in blockingGrid)
+		{
+			Gizmos.color = Color.blue;
+			Gizmos.DrawSphere(blocker.transform.position, .2f);
+			Gizmos.color = Color.red;
+			Gizmos.DrawLine(transform.position + Vector3.up * .1f, blocker.transform.position + Vector3.up * .1f);
+		}
+	}
+#endif
 }

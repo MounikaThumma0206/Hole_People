@@ -1306,12 +1306,12 @@ PrefabInstance:
     - target: {fileID: 3358681042496395673, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.243131
+      value: 3.0479665
       objectReference: {fileID: 0}
     - target: {fileID: 3358681042496395673, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.5544
+      value: 8.5785
       objectReference: {fileID: 0}
     - target: {fileID: 3358681042496395673, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
