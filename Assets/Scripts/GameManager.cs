@@ -88,6 +88,21 @@ public class GameManager : MonoBehaviour
 		maxMoves = levelData.maxMoves;
 		usedMoves = 0;
 		Instantiate(levelData.levelPrefab);
+		CameraSizeChanger.instance.ChangeSize(levelData.cameraSize);
+	}
+	public void LoadPrevious()
+	{
+		int currentLevel = GetLevel() - 1;
+		if (currentLevel <= 0)
+		{
+			PlayerPrefs.SetInt(CurrentLevelKey, gameData.Levels.Length - 1);
+		}
+		else
+		{
+			PlayerPrefs.SetInt(CurrentLevelKey, currentLevel - 1);
+		}
+		PlayerPrefs.Save();
+		Restart();
 	}
 	public void LoadNext()
 	{
@@ -120,6 +135,7 @@ public class GameManager : MonoBehaviour
 			UiManager.instance.UpdateMoveText(GetAvailableMoves());
 		};
 	}
+
 	List<CroudManager> notMovables = new List<CroudManager>();
 	public void IsPlayerMovable(ColorEnum color, Hole hole)
 	{
@@ -144,7 +160,7 @@ public class GameManager : MonoBehaviour
 				notMovables.Add(generator);
 			}
 		}
-		
+
 		if (!hadMovables)
 		{
 			hole.PlayNoMoves();
@@ -213,6 +229,7 @@ public class GameManager : MonoBehaviour
 					CrowdAudioManager.MakeSadMood();
 
 					UiManager.instance.GameOver();
+					break;
 				}
 			}
 		}
@@ -226,7 +243,7 @@ public class GameManager : MonoBehaviour
 
 	public void CheckLevelComplete()
 	{
-		if(refillableGrids > 0)
+		if (refillableGrids > 0)
 		{
 			return;
 		}

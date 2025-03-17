@@ -551,33 +551,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1622041530705504448}
     m_Modifications:
-    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
-        type: 3}
-      propertyPath: Radius
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
-        type: 3}
-      propertyPath: isHole
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
-        type: 3}
-      propertyPath: obstacle
-      value: 
-      objectReference: {fileID: 7000222182074838917, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
-        type: 3}
-    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
-        type: 3}
-      propertyPath: boxSize.x
-      value: 1.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
-        type: 3}
-      propertyPath: gridGenerator
-      value: 
-      objectReference: {fileID: 7300445569625144214, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
-        type: 3}
     - target: {fileID: 1998059514662551848, guid: 9265589dd6ece6844a44cec9fd7efecd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -663,6 +636,33 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: Radius
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: isHole
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: obstacle
+      value: 
+      objectReference: {fileID: 7000222182074838917, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: boxSize.x
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: gridGenerator
+      value: 
+      objectReference: {fileID: 7300445569625144214, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -922,12 +922,12 @@ PrefabInstance:
     - target: {fileID: 3358681042496395673, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.5166638
+      value: 2.9545634
       objectReference: {fileID: 0}
     - target: {fileID: 3358681042496395673, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.2093
+      value: 7.399
       objectReference: {fileID: 0}
     - target: {fileID: 3540600272356728428, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}

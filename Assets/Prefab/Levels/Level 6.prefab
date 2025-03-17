@@ -1209,12 +1209,12 @@ PrefabInstance:
     - target: {fileID: 3358681042496395673, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.116362
+      value: 2.4181554
       objectReference: {fileID: 0}
     - target: {fileID: 3358681042496395673, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.5374
+      value: 7.0459
       objectReference: {fileID: 0}
     - target: {fileID: 3358681042496395673, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}

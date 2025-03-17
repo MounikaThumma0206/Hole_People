@@ -84,6 +84,14 @@ public class UiManager : MonoBehaviour
 			}
 		});
 	}
+	public void OnLoadNextLevel()
+	{
+		GameManager.Instance.LoadNext();
+	}
+	public void OnLoadPreviousLevel()
+	{
+		GameManager.Instance.LoadPrevious();
+	}
 
 	// OnContinueButtonClicked is already fine
 	public void OnContinueButtonClicked()
