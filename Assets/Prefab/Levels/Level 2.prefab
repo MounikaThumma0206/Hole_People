@@ -110,6 +110,9 @@ MonoBehaviour:
   blockingGrid: []
   pillarType: 1
   pipeMouthPosition: {fileID: 0}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -193,6 +196,9 @@ MonoBehaviour:
   - {fileID: 462064361586055937}
   pillarType: 1
   pipeMouthPosition: {fileID: 0}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -277,6 +283,9 @@ MonoBehaviour:
   - {fileID: 211758047042067688}
   pillarType: 1
   pipeMouthPosition: {fileID: 0}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []

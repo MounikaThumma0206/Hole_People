@@ -169,6 +169,7 @@ public class Hole : GridItemGenerator
 	internal void PlayNoMoves()
 	{
 		audioSource.PlayOneShot(noMovesClip);
+		CroudHaptics.PlayHeavyHaptics();
 	}
 
 	/// <summary>

@@ -1,5 +1,217 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &424210168677984987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9092271346679308767}
+  - component: {fileID: 8210467396634686031}
+  - component: {fileID: 2851685712900321976}
+  - component: {fileID: 8283587150090905284}
+  m_Layer: 0
+  m_Name: Yellow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &9092271346679308767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424210168677984987}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.08, y: 0, z: -2.86}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 425663526741795061}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &8210467396634686031
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424210168677984987}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.75, y: 0.5, z: 0.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.08000004, y: 0, z: -0.1400001}
+  m_TimeToStationary: 0.5
+--- !u!114 &2851685712900321976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424210168677984987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridGenerator: {fileID: 1796708653057558814}
+  colorEnum: 3
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
+  boxSize: {x: 1.3, y: 0, z: 1.3}
+  obstacle: {fileID: 8210467396634686031}
+  croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
+  playerGridElements: []
+  PlayerPositions: []
+  IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
+  rows: 6
+  columns: 4
+  TileCount: 16
+  isMovable: 1
+  shouldGeneratePillers: 0
+  blockingGrid:
+  - {fileID: 7088305300787169357}
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8283587150090905284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424210168677984987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: f2652fae
+--- !u!1 &787589226597491940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2970948831547796529}
+  - component: {fileID: 5508237727426400233}
+  - component: {fileID: 545680798647624748}
+  - component: {fileID: 5879526994827740155}
+  m_Layer: 0
+  m_Name: Violet (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &2970948831547796529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787589226597491940}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.06, y: 0, z: -2.86}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 425663526741795061}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &5508237727426400233
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787589226597491940}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.75, y: 0.5, z: 0.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.059999943, y: 0, z: -0.1400001}
+  m_TimeToStationary: 0.5
+--- !u!114 &545680798647624748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787589226597491940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridGenerator: {fileID: 1796708653057558814}
+  colorEnum: 5
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
+  boxSize: {x: 3.3, y: 0, z: 1.3}
+  obstacle: {fileID: 5508237727426400233}
+  croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
+  playerGridElements: []
+  PlayerPositions: []
+  IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
+  rows: 6
+  columns: 4
+  TileCount: 32
+  isMovable: 1
+  shouldGeneratePillers: 0
+  blockingGrid:
+  - {fileID: 8401680513717799224}
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5879526994827740155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787589226597491940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: f2652fae
 --- !u!1 &848151946523081039
 GameObject:
   m_ObjectHideFlags: 0
@@ -28,7 +240,7 @@ Transform:
   m_GameObject: {fileID: 848151946523081039}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.9, y: 0, z: -1.13}
+  m_LocalPosition: {x: 2.91, y: 0, z: 1.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,11 +256,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 2.75, y: 0.5, z: 0.75}
+  m_Extents: {x: 0.75, y: 0.5, z: 0.75}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: -0.100000024, y: 0, z: 0.13}
+  m_Center: {x: 0.089999914, y: 0, z: -0.07000005}
   m_TimeToStationary: 0.5
 --- !u!114 &1466214151242345997
 MonoBehaviour:
@@ -65,7 +277,7 @@ MonoBehaviour:
   gridGenerator: {fileID: 1796708653057558814}
   colorEnum: 0
   gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
-  boxSize: {x: 5.41, y: 0, z: 1.3}
+  boxSize: {x: 1.3, y: 0, z: 1.3}
   obstacle: {fileID: 769879541405905734}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
@@ -74,12 +286,16 @@ MonoBehaviour:
   parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 48
+  TileCount: 16
   isMovable: 1
   shouldGeneratePillers: 0
-  blockingGrid: []
+  blockingGrid:
+  - {fileID: 745012042391069306}
   pillarType: 1
   pipeMouthPosition: {fileID: 0}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -130,7 +346,7 @@ Transform:
   m_GameObject: {fileID: 989539651792499338}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.08, y: 0, z: -1.02}
+  m_LocalPosition: {x: -2.92, y: 0, z: 4.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -150,7 +366,7 @@ NavMeshObstacle:
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: -0.07999992, y: 0, z: 0.01999998}
+  m_Center: {x: -0.07999992, y: 0, z: 0.05000019}
   m_TimeToStationary: 0.5
 --- !u!114 &2844362726550372939
 MonoBehaviour:
@@ -182,6 +398,9 @@ MonoBehaviour:
   blockingGrid: []
   pillarType: 1
   pipeMouthPosition: {fileID: 0}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -233,9 +452,114 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6864207406798941303}
+  - {fileID: 8278663921480357326}
   m_Father: {fileID: 5520824494747299044}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1925341427898651173
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3446779736288348799}
+  - component: {fileID: 6045565818573464951}
+  - component: {fileID: 5683012759175077608}
+  - component: {fileID: 9147006428245186646}
+  m_Layer: 0
+  m_Name: Blue (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &3446779736288348799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925341427898651173}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.85, y: 0, z: -5.02}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 425663526741795061}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &6045565818573464951
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925341427898651173}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.75, y: 0.5, z: 0.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.1500001, y: 0, z: 0.01999998}
+  m_TimeToStationary: 0.5
+--- !u!114 &5683012759175077608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925341427898651173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridGenerator: {fileID: 1796708653057558814}
+  colorEnum: 2
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
+  boxSize: {x: 1.3, y: 0, z: 1.3}
+  obstacle: {fileID: 6045565818573464951}
+  croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
+  playerGridElements: []
+  PlayerPositions: []
+  IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
+  rows: 6
+  columns: 4
+  TileCount: 16
+  isMovable: 1
+  shouldGeneratePillers: 0
+  blockingGrid: []
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &9147006428245186646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925341427898651173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: f2652fae
 --- !u!1 &2164680016516115472
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +588,7 @@ Transform:
   m_GameObject: {fileID: 2164680016516115472}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.16, y: 0, z: 0.95000005}
+  m_LocalPosition: {x: 3.06, y: 0, z: 5.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -280,11 +604,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 3.75, y: 0.5, z: 0.75}
+  m_Extents: {x: 0.75, y: 0.5, z: 0.75}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0.16, y: 0, z: 0.049999952}
+  m_Center: {x: -0.059999943, y: 0, z: -0.09000015}
   m_TimeToStationary: 0.5
 --- !u!114 &5076790472109567830
 MonoBehaviour:
@@ -301,7 +625,7 @@ MonoBehaviour:
   gridGenerator: {fileID: 1796708653057558814}
   colorEnum: 0
   gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
-  boxSize: {x: 7.79, y: 0, z: 1.3}
+  boxSize: {x: 1.3, y: 0, z: 1.3}
   obstacle: {fileID: 7546301091233828151}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
@@ -310,14 +634,15 @@ MonoBehaviour:
   parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 64
+  TileCount: 16
   isMovable: 1
   shouldGeneratePillers: 0
-  blockingGrid:
-  - {fileID: 3185379492015713117}
-  - {fileID: 8254117289413809309}
+  blockingGrid: []
   pillarType: 1
   pipeMouthPosition: {fileID: 0}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -328,6 +653,112 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2164680016516115472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: f2652fae
+--- !u!1 &2268265511995262389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1550297128974358355}
+  - component: {fileID: 2890850789122909986}
+  - component: {fileID: 8882314376989751401}
+  - component: {fileID: 6773071337612286421}
+  m_Layer: 0
+  m_Name: Yellow (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1550297128974358355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2268265511995262389}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.99, y: 0, z: 2.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 425663526741795061}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &2890850789122909986
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2268265511995262389}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.75, y: 0.5, z: 0.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.00999999, y: 0, z: 0.049999952}
+  m_TimeToStationary: 0.5
+--- !u!114 &8882314376989751401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2268265511995262389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridGenerator: {fileID: 1796708653057558814}
+  colorEnum: 3
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
+  boxSize: {x: 1.3, y: 0, z: 1.3}
+  obstacle: {fileID: 2890850789122909986}
+  croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
+  playerGridElements: []
+  PlayerPositions: []
+  IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
+  rows: 6
+  columns: 4
+  TileCount: 16
+  isMovable: 1
+  shouldGeneratePillers: 0
+  blockingGrid:
+  - {fileID: 2844362726550372939}
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6773071337612286421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2268265511995262389}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
@@ -368,7 +799,7 @@ Transform:
   m_GameObject: {fileID: 2756526089784415982}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.91, y: 0, z: 2.91}
+  m_LocalPosition: {x: 1.06, y: 0, z: 3.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -384,11 +815,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 2.75, y: 0.5, z: 0.75}
+  m_Extents: {x: 0.75, y: 0.5, z: 1.75}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0.089999974, y: 0, z: 0.089999914}
+  m_Center: {x: -0.059999943, y: 0, z: 0.029999971}
   m_TimeToStationary: 0.5
 --- !u!114 &3185379492015713117
 MonoBehaviour:
@@ -405,7 +836,7 @@ MonoBehaviour:
   gridGenerator: {fileID: 1796708653057558814}
   colorEnum: 1
   gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
-  boxSize: {x: 5.35, y: 0, z: 1.3}
+  boxSize: {x: 1.3, y: 0, z: 3.3}
   obstacle: {fileID: 183976056580058790}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
@@ -414,13 +845,16 @@ MonoBehaviour:
   parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 48
+  TileCount: 32
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid:
-  - {fileID: 8254117289413809309}
+  - {fileID: 5076790472109567830}
   pillarType: 1
-  pipeMouthPosition: {fileID: 6864207406798941303}
+  pipeMouthPosition: {fileID: 8278663921480357326}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -471,7 +905,7 @@ Transform:
   m_GameObject: {fileID: 2883319218077312003}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.95, y: 0, z: 1.11}
+  m_LocalPosition: {x: -0.97, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -491,7 +925,7 @@ NavMeshObstacle:
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0.050000012, y: 0, z: -0.110000014}
+  m_Center: {x: -0.029999971, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!114 &1659281176091083298
 MonoBehaviour:
@@ -520,12 +954,40 @@ MonoBehaviour:
   TileCount: 48
   isMovable: 1
   shouldGeneratePillers: 0
-  blockingGrid: []
+  blockingGrid:
+  - {fileID: 6331621096733097436}
   pillarType: 1
-  pipeMouthPosition: {fileID: 6864207406798941303}
+  pipeMouthPosition: {fileID: 8278663921480357326}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2844362726550372939}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: SetIsMovable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCrowdCleared:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2844362726550372939}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: SetIsMovable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &8818040545224231002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,12 +1037,19 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1689426018001824404}
-  - {fileID: 272431092666315087}
   - {fileID: 7166285610781022711}
+  - {fileID: 2163835021131882713}
+  - {fileID: 4884079899928125539}
   - {fileID: 4093336848610596328}
+  - {fileID: 6057595981164103770}
+  - {fileID: 3446779736288348799}
   - {fileID: 2762079220134206234}
+  - {fileID: 272431092666315087}
   - {fileID: 2268496012444133777}
   - {fileID: 1848208043619285992}
+  - {fileID: 2970948831547796529}
+  - {fileID: 1550297128974358355}
+  - {fileID: 9092271346679308767}
   m_Father: {fileID: 8128193471260524997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3959827416813226146
@@ -596,7 +1065,7 @@ GameObject:
   - component: {fileID: 759630713980233627}
   - component: {fileID: 7892362754120938}
   m_Layer: 0
-  m_Name: Blue
+  m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -611,7 +1080,7 @@ Transform:
   m_GameObject: {fileID: 3959827416813226146}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.95, y: 0, z: 5}
+  m_LocalPosition: {x: -0.99, y: 0, z: 0.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -627,11 +1096,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 2.75, y: 0.5, z: 0.75}
+  m_Extents: {x: 0.75, y: 0.5, z: 0.75}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0.050000012, y: 0, z: 0}
+  m_Center: {x: -0.00999999, y: 0, z: 0.13999999}
   m_TimeToStationary: 0.5
 --- !u!114 &759630713980233627
 MonoBehaviour:
@@ -646,9 +1115,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridGenerator: {fileID: 1796708653057558814}
-  colorEnum: 2
+  colorEnum: 1
   gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
-  boxSize: {x: 5.1, y: 0, z: 1.3}
+  boxSize: {x: 1.3, y: 0, z: 1.3}
   obstacle: {fileID: 5362419468810203567}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
@@ -657,12 +1126,16 @@ MonoBehaviour:
   parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 48
+  TileCount: 16
   isMovable: 1
   shouldGeneratePillers: 0
-  blockingGrid: []
+  blockingGrid:
+  - {fileID: 1937143424750327841}
   pillarType: 1
   pipeMouthPosition: {fileID: 0}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -685,7 +1158,7 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: f2652fae
---- !u!1 &4494742776654239696
+--- !u!1 &4580335298045136080
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -693,29 +1166,103 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6864207406798941303}
+  - component: {fileID: 7271984211943879670}
+  - component: {fileID: 1042414102106764360}
+  - component: {fileID: 7386760931131253387}
+  - component: {fileID: 3007578534431059445}
   m_Layer: 0
-  m_Name: PipeUp
+  m_Name: Violet (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!4 &6864207406798941303
+--- !u!4 &7271984211943879670
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4494742776654239696}
+  m_GameObject: {fileID: 4580335298045136080}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.58, y: 0, z: 8.1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.93, y: 0, z: -5.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1284088343731977324}
+  m_Father: {fileID: 9146763124973450389}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1042414102106764360
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4580335298045136080}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.75, y: 0.5, z: 0.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.06999993, y: 0, z: 0.059999943}
+  m_TimeToStationary: 0.5
+--- !u!114 &7386760931131253387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4580335298045136080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridGenerator: {fileID: 1796708653057558814}
+  colorEnum: 5
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
+  boxSize: {x: 1.3, y: 0, z: 1.3}
+  obstacle: {fileID: 1042414102106764360}
+  croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
+  playerGridElements: []
+  PlayerPositions: []
+  IsRefilledGrid: 1
+  parentGridBeforeRefill: {fileID: 0}
+  rows: 6
+  columns: 4
+  TileCount: 16
+  isMovable: 1
+  shouldGeneratePillers: 0
+  blockingGrid: []
+  pillarType: 1
+  pipeMouthPosition: {fileID: 8278663921480357326}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3007578534431059445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4580335298045136080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: f2652fae
 --- !u!1 &5119273023219173347
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,7 +1291,7 @@ Transform:
   m_GameObject: {fileID: 5119273023219173347}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.4, y: 0, z: -3}
+  m_LocalPosition: {x: -1.11, y: 0, z: 3.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -760,11 +1307,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 2.75, y: 0.5, z: 0.75}
+  m_Extents: {x: 0.75, y: 0.5, z: 0.75}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0.39999998, y: 0, z: 0}
+  m_Center: {x: 0.110000014, y: 0, z: -0.109999895}
   m_TimeToStationary: 0.5
 --- !u!114 &1937143424750327841
 MonoBehaviour:
@@ -781,7 +1328,7 @@ MonoBehaviour:
   gridGenerator: {fileID: 1796708653057558814}
   colorEnum: 5
   gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
-  boxSize: {x: 5.85, y: 0, z: 1.3}
+  boxSize: {x: 1.3, y: 0, z: 1.3}
   obstacle: {fileID: 8906367719274172879}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
@@ -790,14 +1337,16 @@ MonoBehaviour:
   parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 48
+  TileCount: 16
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid:
-  - {fileID: 8254117289413809309}
-  - {fileID: 3185379492015713117}
+  - {fileID: 8882314376989751401}
   pillarType: 1
   pipeMouthPosition: {fileID: 0}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -808,6 +1357,467 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5119273023219173347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: f2652fae
+--- !u!1 &5199488014826797275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2163835021131882713}
+  - component: {fileID: 3560635733655403907}
+  - component: {fileID: 745012042391069306}
+  - component: {fileID: 2510433465782997907}
+  m_Layer: 0
+  m_Name: Green (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &2163835021131882713
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5199488014826797275}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.92, y: 0, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 425663526741795061}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &3560635733655403907
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5199488014826797275}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.75, y: 0.5, z: 0.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.08000004, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!114 &745012042391069306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5199488014826797275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridGenerator: {fileID: 1796708653057558814}
+  colorEnum: 1
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
+  boxSize: {x: 3.3, y: 0, z: 1.3}
+  obstacle: {fileID: 3560635733655403907}
+  croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
+  playerGridElements: []
+  PlayerPositions: []
+  IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
+  rows: 6
+  columns: 4
+  TileCount: 32
+  isMovable: 1
+  shouldGeneratePillers: 0
+  blockingGrid:
+  - {fileID: 8254117289413809309}
+  - {fileID: 2851685712900321976}
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2510433465782997907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5199488014826797275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: f2652fae
+--- !u!1 &5898926266086041428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8316686619134206387}
+  - component: {fileID: 2434535218752739979}
+  - component: {fileID: 6869047308753027266}
+  - component: {fileID: 5122167196569482886}
+  m_Layer: 0
+  m_Name: Blue (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &8316686619134206387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5898926266086041428}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.92, y: 0, z: -1.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9146763124973450389}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &2434535218752739979
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5898926266086041428}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.75, y: 0.5, z: 0.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.07999992, y: 0, z: 0.00999999}
+  m_TimeToStationary: 0.5
+--- !u!114 &6869047308753027266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5898926266086041428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridGenerator: {fileID: 1796708653057558814}
+  colorEnum: 2
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
+  boxSize: {x: 1.3, y: 0, z: 1.3}
+  obstacle: {fileID: 2434535218752739979}
+  croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
+  playerGridElements: []
+  PlayerPositions: []
+  IsRefilledGrid: 1
+  parentGridBeforeRefill: {fileID: 0}
+  rows: 6
+  columns: 4
+  TileCount: 16
+  isMovable: 1
+  shouldGeneratePillers: 0
+  blockingGrid: []
+  pillarType: 1
+  pipeMouthPosition: {fileID: 8278663921480357326}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5122167196569482886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5898926266086041428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: f2652fae
+--- !u!1 &6260691128529490255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6057595981164103770}
+  - component: {fileID: 1095097404931212041}
+  - component: {fileID: 8401680513717799224}
+  - component: {fileID: 6006660231625459726}
+  m_Layer: 0
+  m_Name: Blue (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &6057595981164103770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6260691128529490255}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.86, y: 0, z: -5.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 425663526741795061}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1095097404931212041
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6260691128529490255}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.75, y: 0.5, z: 0.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.13999999, y: 0, z: 0.119999886}
+  m_TimeToStationary: 0.5
+--- !u!114 &8401680513717799224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6260691128529490255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridGenerator: {fileID: 1796708653057558814}
+  colorEnum: 2
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
+  boxSize: {x: 3.3, y: 0, z: 1.3}
+  obstacle: {fileID: 1095097404931212041}
+  croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
+  playerGridElements: []
+  PlayerPositions: []
+  IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 0}
+  rows: 6
+  columns: 4
+  TileCount: 32
+  isMovable: 1
+  shouldGeneratePillers: 0
+  blockingGrid: []
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6331621096733097436}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: EnableRefillGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2778795807233919222}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: EnableRefillGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 5162912876776337331}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: EnableRefillGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 721009901166120996}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: EnableRefillGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7386760931131253387}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: EnableRefillGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2403667888343585008}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: EnableRefillGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1659281176091083298}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: EnableRefillGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 6869047308753027266}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: EnableRefillGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 6195350397957914576}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: EnableRefillGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7775927121189961810}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: EnableRefillGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7787559586450963392}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: EnableRefillGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 3477923198487840526}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: EnableRefillGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &6006660231625459726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6260691128529490255}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
@@ -833,7 +1843,7 @@ GameObject:
   - component: {fileID: 2778795807233919222}
   - component: {fileID: 4574222949495078619}
   m_Layer: 0
-  m_Name: Green (1)
+  m_Name: Violet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -848,7 +1858,7 @@ Transform:
   m_GameObject: {fileID: 6276764814516488065}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.91, y: 0, z: -0.9799998}
+  m_LocalPosition: {x: -0.88, y: 0, z: -1.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -864,11 +1874,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 2.75, y: 0.5, z: 0.75}
+  m_Extents: {x: 0.75, y: 0.5, z: 3.75}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0.089999974, y: 0, z: -0.02000022}
+  m_Center: {x: -0.120000005, y: 0, z: -0.15999997}
   m_TimeToStationary: 0.5
 --- !u!114 &2778795807233919222
 MonoBehaviour:
@@ -883,9 +1893,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridGenerator: {fileID: 1796708653057558814}
-  colorEnum: 1
+  colorEnum: 5
   gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
-  boxSize: {x: 5.35, y: 0, z: 1.3}
+  boxSize: {x: 1.3, y: 0, z: 7.54}
   obstacle: {fileID: 7059369108635986045}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
@@ -894,12 +1904,17 @@ MonoBehaviour:
   parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 48
+  TileCount: 64
   isMovable: 1
   shouldGeneratePillers: 0
-  blockingGrid: []
+  blockingGrid:
+  - {fileID: 6869047308753027266}
+  - {fileID: 7775927121189961810}
   pillarType: 1
-  pipeMouthPosition: {fileID: 6864207406798941303}
+  pipeMouthPosition: {fileID: 8278663921480357326}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -910,6 +1925,111 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6276764814516488065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: f2652fae
+--- !u!1 &6404769205450292853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5002053106429863553}
+  - component: {fileID: 1635296678967337759}
+  - component: {fileID: 5162912876776337331}
+  - component: {fileID: 2399461636486346504}
+  m_Layer: 0
+  m_Name: Violet (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &5002053106429863553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6404769205450292853}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.1, y: 0, z: -0.02}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9146763124973450389}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1635296678967337759
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6404769205450292853}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.75, y: 0.5, z: 1.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.099999905, y: 0, z: 0.02}
+  m_TimeToStationary: 0.5
+--- !u!114 &5162912876776337331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6404769205450292853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridGenerator: {fileID: 1796708653057558814}
+  colorEnum: 5
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
+  boxSize: {x: 1.3, y: 0, z: 3.3}
+  obstacle: {fileID: 1635296678967337759}
+  croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
+  playerGridElements: []
+  PlayerPositions: []
+  IsRefilledGrid: 1
+  parentGridBeforeRefill: {fileID: 0}
+  rows: 6
+  columns: 4
+  TileCount: 32
+  isMovable: 1
+  shouldGeneratePillers: 0
+  blockingGrid: []
+  pillarType: 1
+  pipeMouthPosition: {fileID: 8278663921480357326}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2399461636486346504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6404769205450292853}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
@@ -950,7 +2070,7 @@ Transform:
   m_GameObject: {fileID: 6907324514450959050}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.95, y: 0, z: 5}
+  m_LocalPosition: {x: 1.13, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -966,11 +2086,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 2.75, y: 0.5, z: 0.75}
+  m_Extents: {x: 0.75, y: 0.5, z: 0.75}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0.050000012, y: 0, z: 0}
+  m_Center: {x: -0.13, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!114 &2403667888343585008
 MonoBehaviour:
@@ -987,7 +2107,7 @@ MonoBehaviour:
   gridGenerator: {fileID: 1796708653057558814}
   colorEnum: 2
   gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
-  boxSize: {x: 5.1, y: 0, z: 1.3}
+  boxSize: {x: 1.3, y: 0, z: 1.3}
   obstacle: {fileID: 222822936338296533}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
@@ -996,15 +2116,42 @@ MonoBehaviour:
   parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 48
+  TileCount: 16
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
   pillarType: 1
-  pipeMouthPosition: {fileID: 6864207406798941303}
+  pipeMouthPosition: {fileID: 8278663921480357326}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5076790472109567830}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: SetIsMovable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCrowdCleared:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5076790472109567830}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: SetIsMovable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &3211083542839782009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1012,6 +2159,111 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6907324514450959050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: f2652fae
+--- !u!1 &6929749238467269355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 417023721848428820}
+  - component: {fileID: 2913375430311729960}
+  - component: {fileID: 7787559586450963392}
+  - component: {fileID: 6535226860479944657}
+  m_Layer: 0
+  m_Name: Blue (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &417023721848428820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6929749238467269355}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.05, y: 0, z: -4.99}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9146763124973450389}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &2913375430311729960
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6929749238467269355}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.75, y: 0.5, z: 0.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.049999952, y: 0, z: -0.010000229}
+  m_TimeToStationary: 0.5
+--- !u!114 &7787559586450963392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6929749238467269355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridGenerator: {fileID: 1796708653057558814}
+  colorEnum: 2
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
+  boxSize: {x: 1.3, y: 0, z: 1.3}
+  obstacle: {fileID: 2913375430311729960}
+  croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
+  playerGridElements: []
+  PlayerPositions: []
+  IsRefilledGrid: 1
+  parentGridBeforeRefill: {fileID: 7088305300787169357}
+  rows: 6
+  columns: 4
+  TileCount: 16
+  isMovable: 1
+  shouldGeneratePillers: 0
+  blockingGrid: []
+  pillarType: 1
+  pipeMouthPosition: {fileID: 8278663921480357326}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6535226860479944657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6929749238467269355}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
@@ -1037,7 +2289,7 @@ GameObject:
   - component: {fileID: 721009901166120996}
   - component: {fileID: 3929637510500429043}
   m_Layer: 0
-  m_Name: Green (2)
+  m_Name: Violet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1052,7 +2304,7 @@ Transform:
   m_GameObject: {fileID: 7837386117749310108}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.13, y: 0, z: -2.92}
+  m_LocalPosition: {x: -3.12, y: 0, z: -2.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1068,11 +2320,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 2.75, y: 0.5, z: 0.75}
+  m_Extents: {x: 0.75, y: 0.5, z: 0.75}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0.13, y: 0, z: -0.07999992}
+  m_Center: {x: 0.119999886, y: 0, z: -0.07999992}
   m_TimeToStationary: 0.5
 --- !u!114 &721009901166120996
 MonoBehaviour:
@@ -1087,9 +2339,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridGenerator: {fileID: 1796708653057558814}
-  colorEnum: 1
+  colorEnum: 5
   gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
-  boxSize: {x: 5.35, y: 0, z: 1.3}
+  boxSize: {x: 1.3, y: 0, z: 1.3}
   obstacle: {fileID: 2353421470582140080}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
@@ -1098,12 +2350,15 @@ MonoBehaviour:
   parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 48
+  TileCount: 16
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
   pillarType: 1
-  pipeMouthPosition: {fileID: 6864207406798941303}
+  pipeMouthPosition: {fileID: 8278663921480357326}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -1114,6 +2369,137 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7837386117749310108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: f2652fae
+--- !u!1 &8001157564992151591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6513528626578859773}
+  - component: {fileID: 3794622145955308118}
+  - component: {fileID: 6195350397957914576}
+  - component: {fileID: 3182634898772203474}
+  m_Layer: 0
+  m_Name: Blue (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &6513528626578859773
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8001157564992151591}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.03, y: 0, z: -1.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9146763124973450389}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &3794622145955308118
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8001157564992151591}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.75, y: 0.5, z: 1.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.029999971, y: 0, z: -0.049999952}
+  m_TimeToStationary: 0.5
+--- !u!114 &6195350397957914576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8001157564992151591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridGenerator: {fileID: 1796708653057558814}
+  colorEnum: 2
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
+  boxSize: {x: 1.3, y: 0, z: 3.3}
+  obstacle: {fileID: 3794622145955308118}
+  croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
+  playerGridElements: []
+  PlayerPositions: []
+  IsRefilledGrid: 1
+  parentGridBeforeRefill: {fileID: 0}
+  rows: 6
+  columns: 4
+  TileCount: 32
+  isMovable: 1
+  shouldGeneratePillers: 0
+  blockingGrid:
+  - {fileID: 5162912876776337331}
+  - {fileID: 7386760931131253387}
+  pillarType: 1
+  pipeMouthPosition: {fileID: 8278663921480357326}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7088305300787169357}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: SetIsMovable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7088305300787169357}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: SetIsMovable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &3182634898772203474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8001157564992151591}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
@@ -1154,7 +2540,7 @@ Transform:
   m_GameObject: {fileID: 8245721781127950226}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.04, y: 0, z: -5.14}
+  m_LocalPosition: {x: -1.86, y: 0, z: -1.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1170,11 +2556,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 2.75, y: 0.5, z: 0.75}
+  m_Extents: {x: 1.75, y: 0.5, z: 0.75}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0.03999996, y: 0, z: 0.13999987}
+  m_Center: {x: -0.13999999, y: 0, z: 0.14999998}
   m_TimeToStationary: 0.5
 --- !u!114 &8254117289413809309
 MonoBehaviour:
@@ -1191,7 +2577,7 @@ MonoBehaviour:
   gridGenerator: {fileID: 1796708653057558814}
   colorEnum: 2
   gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
-  boxSize: {x: 5.1, y: 0, z: 1.3}
+  boxSize: {x: 3.3, y: 0, z: 1.3}
   obstacle: {fileID: 2348879935393298405}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
@@ -1200,99 +2586,20 @@ MonoBehaviour:
   parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 48
+  TileCount: 32
   isMovable: 1
   shouldGeneratePillers: 0
-  blockingGrid: []
+  blockingGrid:
+  - {fileID: 759630713980233627}
+  - {fileID: 545680798647624748}
   pillarType: 1
   pipeMouthPosition: {fileID: 0}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
   OnCrowdCleared:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8329297237493214091}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 6331621096733097436}
-        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
-        m_MethodName: EnableRefillGrid
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2778795807233919222}
-        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
-        m_MethodName: EnableRefillGrid
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 721009901166120996}
-        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
-        m_MethodName: EnableRefillGrid
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2403667888343585008}
-        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
-        m_MethodName: EnableRefillGrid
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1659281176091083298}
-        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
-        m_MethodName: EnableRefillGrid
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 7775927121189961810}
-        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
-        m_MethodName: EnableRefillGrid
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &3367028164811508651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1325,7 +2632,7 @@ GameObject:
   - component: {fileID: 6331621096733097436}
   - component: {fileID: 726698932550465172}
   m_Layer: 0
-  m_Name: Green
+  m_Name: Violet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1340,7 +2647,7 @@ Transform:
   m_GameObject: {fileID: 8298536041434898386}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.91, y: 0, z: 2.91}
+  m_LocalPosition: {x: -3.08, y: 0, z: 4.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1356,11 +2663,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 2.75, y: 0.5, z: 0.75}
+  m_Extents: {x: 0.75, y: 0.5, z: 0.75}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0.089999974, y: 0, z: 0.089999914}
+  m_Center: {x: 0.07999992, y: 0, z: 0.07999992}
   m_TimeToStationary: 0.5
 --- !u!114 &6331621096733097436
 MonoBehaviour:
@@ -1375,23 +2682,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridGenerator: {fileID: 1796708653057558814}
-  colorEnum: 1
+  colorEnum: 5
   gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
-  boxSize: {x: 5.35, y: 0, z: 1.3}
+  boxSize: {x: 1.3, y: 0, z: 1.3}
   obstacle: {fileID: 980252492976340572}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
   PlayerPositions: []
   IsRefilledGrid: 1
-  parentGridBeforeRefill: {fileID: 0}
+  parentGridBeforeRefill: {fileID: 2844362726550372939}
   rows: 6
   columns: 4
-  TileCount: 48
+  TileCount: 16
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
   pillarType: 1
-  pipeMouthPosition: {fileID: 6864207406798941303}
+  pipeMouthPosition: {fileID: 8278663921480357326}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -1402,6 +2712,123 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8298536041434898386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: f2652fae
+--- !u!1 &8299888529006406836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4884079899928125539}
+  - component: {fileID: 5437906322131613355}
+  - component: {fileID: 7088305300787169357}
+  - component: {fileID: 7629450800024147629}
+  m_Layer: 0
+  m_Name: Green (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &4884079899928125539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8299888529006406836}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.07, y: 0, z: -5.04}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 425663526741795061}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &5437906322131613355
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8299888529006406836}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.75, y: 0.5, z: 0.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.07000005, y: 0, z: 0.03999996}
+  m_TimeToStationary: 0.5
+--- !u!114 &7088305300787169357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8299888529006406836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridGenerator: {fileID: 1796708653057558814}
+  colorEnum: 1
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
+  boxSize: {x: 1.3, y: 0, z: 1.3}
+  obstacle: {fileID: 5437906322131613355}
+  croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
+  playerGridElements: []
+  PlayerPositions: []
+  IsRefilledGrid: 0
+  parentGridBeforeRefill: {fileID: 6195350397957914576}
+  rows: 6
+  columns: 4
+  TileCount: 16
+  isMovable: 1
+  shouldGeneratePillers: 0
+  blockingGrid: []
+  pillarType: 1
+  pipeMouthPosition: {fileID: 0}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8401680513717799224}
+        m_TargetAssemblyTypeName: CroudManager, Assembly-CSharp
+        m_MethodName: SetIsMovable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &7629450800024147629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8299888529006406836}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
@@ -1445,10 +2872,16 @@ Transform:
   m_Children:
   - {fileID: 7623351064607399767}
   - {fileID: 9133394775884802798}
+  - {fileID: 5002053106429863553}
   - {fileID: 1975742587431085534}
+  - {fileID: 7271984211943879670}
   - {fileID: 144802455886388386}
+  - {fileID: 796765125773646111}
   - {fileID: 1090084229270869965}
+  - {fileID: 8316686619134206387}
+  - {fileID: 6513528626578859773}
   - {fileID: 2563014027554724075}
+  - {fileID: 417023721848428820}
   m_Father: {fileID: 8128193471260524997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8645010816699149701
@@ -1479,7 +2912,7 @@ Transform:
   m_GameObject: {fileID: 8645010816699149701}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.03, y: 0, z: -4.99}
+  m_LocalPosition: {x: -2.92, y: 0, z: -4.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1495,11 +2928,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 2.75, y: 0.5, z: 0.75}
+  m_Extents: {x: 0.75, y: 0.5, z: 0.75}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0.029999971, y: 0, z: -0.010000229}
+  m_Center: {x: -0.07999992, y: 0, z: -0.010000229}
   m_TimeToStationary: 0.5
 --- !u!114 &7775927121189961810
 MonoBehaviour:
@@ -1516,7 +2949,7 @@ MonoBehaviour:
   gridGenerator: {fileID: 1796708653057558814}
   colorEnum: 2
   gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
-  boxSize: {x: 5.1, y: 0, z: 1.3}
+  boxSize: {x: 1.3, y: 0, z: 1.3}
   obstacle: {fileID: 289766719330443083}
   croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
   playerGridElements: []
@@ -1525,12 +2958,15 @@ MonoBehaviour:
   parentGridBeforeRefill: {fileID: 0}
   rows: 6
   columns: 4
-  TileCount: 48
+  TileCount: 16
   isMovable: 1
   shouldGeneratePillers: 0
   blockingGrid: []
   pillarType: 1
-  pipeMouthPosition: {fileID: 6864207406798941303}
+  pipeMouthPosition: {fileID: 8278663921480357326}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
@@ -1553,6 +2989,262 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: f2652fae
+--- !u!1 &9123672412606669818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 796765125773646111}
+  - component: {fileID: 286137772762828607}
+  - component: {fileID: 3477923198487840526}
+  - component: {fileID: 2759858990458252960}
+  m_Layer: 0
+  m_Name: Blue (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &796765125773646111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9123672412606669818}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.98, y: 0, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9146763124973450389}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &286137772762828607
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9123672412606669818}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.75, y: 0.5, z: 0.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.01999998, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!114 &3477923198487840526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9123672412606669818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b221a5b868e5cee49996b28f16b625dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridGenerator: {fileID: 1796708653057558814}
+  colorEnum: 2
+  gizmoColor: {fileID: 11400000, guid: ac0b9ebc75725504d95d48547de5a3ec, type: 2}
+  boxSize: {x: 1.3, y: 0, z: 1.3}
+  obstacle: {fileID: 286137772762828607}
+  croudManagerData: {fileID: 11400000, guid: 1795c6c6870fec84ea9f1c41f2701f3b, type: 2}
+  playerGridElements: []
+  PlayerPositions: []
+  IsRefilledGrid: 1
+  parentGridBeforeRefill: {fileID: 5076790472109567830}
+  rows: 6
+  columns: 4
+  TileCount: 16
+  isMovable: 1
+  shouldGeneratePillers: 0
+  blockingGrid: []
+  pillarType: 1
+  pipeMouthPosition: {fileID: 8278663921480357326}
+  OnCroudRefilled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCrowdCleared:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2759858990458252960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9123672412606669818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: f2652fae
+--- !u!1001 &908921731881767995
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1622041530705504448}
+    m_Modifications:
+    - target: {fileID: 495455296728910136, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 669215114900688147, guid: 8f3c67ff4ec01ec41b77fcd56a2ccdb9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 669215114900688147, guid: 8f3c67ff4ec01ec41b77fcd56a2ccdb9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 669215114900688147, guid: 8f3c67ff4ec01ec41b77fcd56a2ccdb9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 669215114900688147, guid: 8f3c67ff4ec01ec41b77fcd56a2ccdb9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 669215114900688147, guid: 8f3c67ff4ec01ec41b77fcd56a2ccdb9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 669215114900688147, guid: 8f3c67ff4ec01ec41b77fcd56a2ccdb9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 669215114900688147, guid: 8f3c67ff4ec01ec41b77fcd56a2ccdb9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 669215114900688147, guid: 8f3c67ff4ec01ec41b77fcd56a2ccdb9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 669215114900688147, guid: 8f3c67ff4ec01ec41b77fcd56a2ccdb9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5716558189861624269, guid: 9265589dd6ece6844a44cec9fd7efecd,
+        type: 3}
+      propertyPath: m_Carve
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998059514662551848, guid: 9265589dd6ece6844a44cec9fd7efecd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998059514662551848, guid: 9265589dd6ece6844a44cec9fd7efecd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 2255699205092448698, guid: 9265589dd6ece6844a44cec9fd7efecd,
+        type: 3}
+      propertyPath: m_Name
+      value: YellowHole
+      objectReference: {fileID: 0}
+    - target: {fileID: 2883599120447165197, guid: 9265589dd6ece6844a44cec9fd7efecd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
+        type: 3}
+      propertyPath: canClose
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022940800166821376, guid: 9265589dd6ece6844a44cec9fd7efecd,
+        type: 3}
+      propertyPath: gridGenerator
+      value: 
+      objectReference: {fileID: 1796708653057558814}
+    - target: {fileID: 9205636001794866352, guid: 9265589dd6ece6844a44cec9fd7efecd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 9205636001794866352, guid: 9265589dd6ece6844a44cec9fd7efecd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 9205636001794866352, guid: 9265589dd6ece6844a44cec9fd7efecd,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 9205636001794866352, guid: 9265589dd6ece6844a44cec9fd7efecd,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: isHole
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: obstacle
+      value: 
+      objectReference: {fileID: 7000222182074838917, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: boxSize.x
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: boxSize.z
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: gridGenerator
+      value: 
+      objectReference: {fileID: 7300445569625144214, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9265589dd6ece6844a44cec9fd7efecd, type: 3}
+--- !u!4 &1668491255836775699 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1998059514662551848, guid: 9265589dd6ece6844a44cec9fd7efecd,
+    type: 3}
+  m_PrefabInstance: {fileID: 908921731881767995}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1524730387174550198
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1570,6 +3262,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666406258958278602, guid: 501683f9395f1ae4990b5061f6f3f3d3,
+        type: 3}
+      propertyPath: canClose
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2666406258958278602, guid: 501683f9395f1ae4990b5061f6f3f3d3,
         type: 3}
@@ -1609,7 +3306,7 @@ PrefabInstance:
     - target: {fileID: 5252318037437998400, guid: 501683f9395f1ae4990b5061f6f3f3d3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.85
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 5252318037437998400, guid: 501683f9395f1ae4990b5061f6f3f3d3,
         type: 3}
@@ -1649,7 +3346,7 @@ PrefabInstance:
     - target: {fileID: 7594746353058964300, guid: 501683f9395f1ae4990b5061f6f3f3d3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8269099022414962021, guid: 501683f9395f1ae4990b5061f6f3f3d3,
         type: 3}
@@ -1694,6 +3391,80 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1524730387174550198}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3140959196003714227
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1284088343731977324}
+    m_Modifications:
+    - target: {fileID: 2772523944717421653, guid: 23f79fa11b49a80488b82ce273383c12,
+        type: 3}
+      propertyPath: m_Name
+      value: Pipe
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446152201413955965, guid: 23f79fa11b49a80488b82ce273383c12,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446152201413955965, guid: 23f79fa11b49a80488b82ce273383c12,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446152201413955965, guid: 23f79fa11b49a80488b82ce273383c12,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446152201413955965, guid: 23f79fa11b49a80488b82ce273383c12,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446152201413955965, guid: 23f79fa11b49a80488b82ce273383c12,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446152201413955965, guid: 23f79fa11b49a80488b82ce273383c12,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446152201413955965, guid: 23f79fa11b49a80488b82ce273383c12,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446152201413955965, guid: 23f79fa11b49a80488b82ce273383c12,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446152201413955965, guid: 23f79fa11b49a80488b82ce273383c12,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446152201413955965, guid: 23f79fa11b49a80488b82ce273383c12,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 23f79fa11b49a80488b82ce273383c12, type: 3}
+--- !u!4 &8278663921480357326 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6446152201413955965, guid: 23f79fa11b49a80488b82ce273383c12,
+    type: 3}
+  m_PrefabInstance: {fileID: 3140959196003714227}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3594075591120256214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1710,7 +3481,7 @@ PrefabInstance:
     - target: {fileID: 359530969950709178, guid: 96eaa91d683d67543ac7f34a26571357,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 359530969950709178, guid: 96eaa91d683d67543ac7f34a26571357,
         type: 3}
@@ -1720,7 +3491,7 @@ PrefabInstance:
     - target: {fileID: 359530969950709178, guid: 96eaa91d683d67543ac7f34a26571357,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.2
+      value: -0.85
       objectReference: {fileID: 0}
     - target: {fileID: 359530969950709178, guid: 96eaa91d683d67543ac7f34a26571357,
         type: 3}
@@ -1767,6 +3538,46 @@ PrefabInstance:
       propertyPath: gridGenerator
       value: 
       objectReference: {fileID: 1796708653057558814}
+    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
+        type: 3}
+      propertyPath: OnHoleClosed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
+        type: 3}
+      propertyPath: OnHoleClosed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
+        type: 3}
+      propertyPath: OnHoleClosed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 759630713980233627}
+    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
+        type: 3}
+      propertyPath: OnHoleClosed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
+        type: 3}
+      propertyPath: OnHoleClosed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetIsMovable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
+        type: 3}
+      propertyPath: OnHoleClosed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CroudManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
+        type: 3}
+      propertyPath: OnHoleClosed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127406077336735913, guid: 96eaa91d683d67543ac7f34a26571357,
+        type: 3}
+      propertyPath: OnHoleClosed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7489988490574736697, guid: 96eaa91d683d67543ac7f34a26571357,
         type: 3}
       propertyPath: m_IsActive
@@ -1851,7 +3662,7 @@ PrefabInstance:
     - target: {fileID: 1302996149566819346, guid: 289da8af977403141bd8ffc4562acafd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.95
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 1302996149566819346, guid: 289da8af977403141bd8ffc4562acafd,
         type: 3}
@@ -1861,7 +3672,7 @@ PrefabInstance:
     - target: {fileID: 1302996149566819346, guid: 289da8af977403141bd8ffc4562acafd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.98
+      value: -4.97
       objectReference: {fileID: 0}
     - target: {fileID: 1302996149566819346, guid: 289da8af977403141bd8ffc4562acafd,
         type: 3}
@@ -1902,11 +3713,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BlueHole
-      objectReference: {fileID: 0}
-    - target: {fileID: 3410146510413488466, guid: 289da8af977403141bd8ffc4562acafd,
-        type: 3}
-      propertyPath: canClose
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3410146510413488466, guid: 289da8af977403141bd8ffc4562acafd,
         type: 3}
@@ -1984,37 +3790,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1622041530705504448}
     m_Modifications:
-    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
-        type: 3}
-      propertyPath: Radius
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
-        type: 3}
-      propertyPath: isHole
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
-        type: 3}
-      propertyPath: obstacle
-      value: 
-      objectReference: {fileID: 7000222182074838917, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
-        type: 3}
-    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
-        type: 3}
-      propertyPath: boxSize.z
-      value: 1.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
-        type: 3}
-      propertyPath: gridGenerator
-      value: 
-      objectReference: {fileID: 7300445569625144214, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
-        type: 3}
     - target: {fileID: 669215114900688147, guid: 8f3c67ff4ec01ec41b77fcd56a2ccdb9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.91
+      value: -3.94
       objectReference: {fileID: 0}
     - target: {fileID: 669215114900688147, guid: 8f3c67ff4ec01ec41b77fcd56a2ccdb9,
         type: 3}
@@ -2024,7 +3803,7 @@ PrefabInstance:
     - target: {fileID: 669215114900688147, guid: 8f3c67ff4ec01ec41b77fcd56a2ccdb9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.85
+      value: -0.89
       objectReference: {fileID: 0}
     - target: {fileID: 669215114900688147, guid: 8f3c67ff4ec01ec41b77fcd56a2ccdb9,
         type: 3}
@@ -2069,12 +3848,7 @@ PrefabInstance:
     - target: {fileID: 4249028654007754550, guid: 8f3c67ff4ec01ec41b77fcd56a2ccdb9,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4251586850982801979, guid: 8f3c67ff4ec01ec41b77fcd56a2ccdb9,
-        type: 3}
-      propertyPath: canClose
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4251586850982801979, guid: 8f3c67ff4ec01ec41b77fcd56a2ccdb9,
         type: 3}
@@ -2096,6 +3870,33 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.26
       objectReference: {fileID: 0}
+    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: Radius
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: isHole
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: obstacle
+      value: 
+      objectReference: {fileID: 7000222182074838917, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: boxSize.z
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167851439626140352, guid: 289da8af977403141bd8ffc4562acafd,
+        type: 3}
+      propertyPath: gridGenerator
+      value: 
+      objectReference: {fileID: 7300445569625144214, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2472,6 +4273,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6102525971865276649, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6482304172784229975, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: _moved
@@ -2735,6 +4541,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6758519134123069430}
+    - targetCorrespondingSourceObject: {fileID: 7727600530480470600, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1668491255836775699}
     - targetCorrespondingSourceObject: {fileID: 968961618806010701, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       insertIndex: -1

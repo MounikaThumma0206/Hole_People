@@ -1,8 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
-using System;
 
 public class UiManager : MonoBehaviour
 {
@@ -24,11 +22,8 @@ public class UiManager : MonoBehaviour
 
 	private void Start()
 	{
-		//UpdateMoveText(); // Initial update to show the starting number of moves
 		UpdateLevelText();
 	}
-
-
 
 	public void UpdateLevelText()
 	{
@@ -37,18 +32,6 @@ public class UiManager : MonoBehaviour
 			levelText.text = "Level " + GameManager.Instance.GetLevel();
 		}
 	}
-	// Method to reduce the moves
-	public void DecreaseMoveCount()
-	{
-		moveCount--; // Decrease move count on each action
-					 //UpdateMoveText(); // Update the text with remaining moves
-
-		if (moveCount <= 0) // Show retry panel when moves are 0
-		{
-			ShowRetryPanel();
-		}
-	}
-
 	// Method to update the move text
 	public void UpdateMoveText(int moveCount)
 	{
@@ -56,16 +39,7 @@ public class UiManager : MonoBehaviour
 		{
 			moveText.text = "Moves: " + moveCount.ToString();
 		}
-	}
-
-	// Method to show the retry panel
-	private void ShowRetryPanel()
-	{
-		if (retryPanel != null)
-		{
-			retryPanel.SetActive(true);
-		}
-	}
+	}		
 	public void RestartLevel()
 	{
 		GameManager.Instance.Restart();
@@ -104,45 +78,3 @@ public class UiManager : MonoBehaviour
 		retryPanel.SetActive(true);
 	}
 }
-
-
-//using DG.Tweening;
-//using UnityEngine;
-//using UnityEngine.SceneManagement;
-
-//public class UiManager : MonoBehaviour
-//{
-//    public static UiManager instance;
-//    public GameObject levelCompleteMenu;
-//    private void Awake()
-//    {
-//        if (instance == null)
-//            instance = this;
-//        else
-//            Destroy(gameObject);
-//    }
-//    public void LevelComplete()
-//    {
-//        DOVirtual.DelayedCall(2f, () =>
-//        {
-//            if (levelCompleteMenu != null)
-//                levelCompleteMenu.SetActive(true);
-//        });
-//    }
-//    public void OnContinueButtonClicked()
-//    {
-//        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-//        int nextSceneIndex = currentSceneIndex + 1;
-
-//        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-//        {
-//            SceneManager.LoadScene(nextSceneIndex);
-//        }
-//        else
-//        {
-//            Debug.Log("No more levels available. Returning to the main menu or restarting.");
-//            SceneManager.LoadScene(0);
-//        }
-//    }
-//}
-

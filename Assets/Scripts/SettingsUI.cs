@@ -46,11 +46,12 @@ public class SettingsUI : MonoBehaviour
 		value = PlayerPrefs.GetInt("Vibration", 1) == 1;
 		SetVibration(PlayerPrefs.GetInt("Vibration", 1) == 1);
 		vibration.isOn = value;
+
 	}
 
 	private void SetVibration(bool value)
 	{
-
+		CroudHaptics.CanUseHaptics = value;
 	}
 
 	private void SetSFX(bool value)

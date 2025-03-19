@@ -53,6 +53,8 @@ public class CrowdAudioManager : MonoBehaviour
 			if (Time.time - instance.lastPlayedTime > instance.audioDelay)
 			{
 				instance.audioSource.PlayOneShot(instance.jumpClip);
+				CroudHaptics.PlayMidHaptics();
+
 				instance.lastPlayedTime = Time.time;
 			}
 		}

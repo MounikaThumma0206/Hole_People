@@ -37,6 +37,8 @@ public class CroudManager : GridItemGenerator
 	[SerializeField] private PillarType pillarType = PillarType.DEACTIVE;
 	[SerializeField] private Transform pipeMouthPosition;
 	[Header("Events")]
+
+	[SerializeField] UnityEvent OnCroudRefilled = new();
 	[SerializeField] UnityEvent OnCrowdCleared = new();
 
 
@@ -44,15 +46,9 @@ public class CroudManager : GridItemGenerator
 	private List<Pillar> pillars = new List<Pillar>();
 
 
-
 	bool _moved;
 	private float lastTimeCrowdUpdate;
 
-
-
-
-	public int runTriggerName => croudManagerData.RunId;
-	public int jumpTriggerName => croudManagerData.JumpId;
 	public bool Moved { get => _moved; set => _moved = value; }
 	public bool IsCleared { get; private set; }
 	public PillarType PillarType { get => pillarType; set => pillarType = value; }
@@ -304,10 +300,6 @@ public class CroudManager : GridItemGenerator
 	}
 #endif
 
-
-
-
-
 	public void CalculateNavmeshSize()
 	{
 		if (!TryGetComponent(out obstacle))
@@ -355,7 +347,6 @@ public class CroudManager : GridItemGenerator
 
 	}
 
-
 	private void GeneratePillers(int i, int j, PillarType pillarType)
 	{
 		var pillar = Instantiate(pillerPrefab, gridGenerator.GetWorldPosition(i, j, true), Quaternion.identity, parent: pillarParent.transform);
@@ -380,17 +371,6 @@ public class CroudManager : GridItemGenerator
 			}
 			PlayerGrid[Column, Row] = Tile.gameObject;
 		}
-	}
-
-	public GridElement GetGridElement(int column, int row)
-	{
-		GameObject grid = PlayerGrid[column, row];
-		GridElement gridElement = grid.GetComponent<GridElement>();
-		if (gridElement == null)
-		{
-			Debug.Log("Send_" + column);
-		}
-		return gridElement;
 	}
 
 	private void Update()
@@ -477,19 +457,34 @@ public class CroudManager : GridItemGenerator
 		{
 			return;
 		}
-		gameObject.SetActive(true);
-		StartCoroutine(EnableObstacle());
 		foreach (GridElement gridElement in playerGridElements)
 		{
-			gridElement.MoveToPosition(pipeMouthPosition.position);
+			gridElement.gameObject.SetActive(false);
 		}
+		gameObject.SetActive(true);
+		obstacle.enabled = false;
+		StartCoroutine(EnableObstacle(isMovable));
+		isMovable = false;
+
 		gridGenerator.UpdateNavmesh();
 	}
-	IEnumerator EnableObstacle()
+	IEnumerator EnableObstacle(bool isMovable)
 	{
-		yield return new WaitForSeconds(3f);
+		yield return new WaitForSeconds(1f);
+
+		foreach (GridElement gridElement in playerGridElements)
+		{
+			gridElement.gameObject.SetActive(true);
+
+			gridElement.MoveToPosition(pipeMouthPosition.position);
+		}
+
+		yield return new WaitForSeconds(1);
+		this.isMovable = isMovable;
 		obstacle.enabled = true;
+		OnCroudRefilled?.Invoke();
 	}
+
 #if UNITY_EDITOR
 	protected override void OnDrawGizmos()
 	{
@@ -588,4 +583,5 @@ public class CroudManager : GridItemGenerator
 		}
 	}
 #endif
+
 }

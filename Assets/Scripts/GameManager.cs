@@ -6,23 +6,33 @@ using DG.Tweening;
 public class GameManager : MonoBehaviour
 {
 	private const string CurrentLevelKey = "CurrentLevel";
+	private const float gameActiveDelay = 0.1f;
+
 	public static GameManager Instance;
-	List<CroudManager> playerGrids = new List<CroudManager>();
-	List<Hole> holes = new List<Hole>();
-	//public List<GridElement> playerGridElements;
 
 	[SerializeField] GameData gameData;
-	private int usedMoves = 0;
 	[SerializeField] private int maxMoves = 3;
-	bool isGameOn = true;
-	float gameActiveDelay = .1f;
-	float lastTimeGameBecameActive = 0;
-	readonly Dictionary<ColorEnum, int> holePlayerCount = new();
-	private int refillableGrids = 0;
-#if UNITY_EDITOR
 
+
+	private List<CroudManager> playerGrids = new List<CroudManager>();
+	private List<Hole> holes = new List<Hole>();
+
+	private int usedMoves = 0;
+	private bool isGameOn = true;
+	private float lastTimeGameBecameActive = 0;
+
+
+	private readonly Dictionary<ColorEnum, int> holePlayerCount = new();
+
+
+	private int refillableGrids = 0;
+
+
+#if UNITY_EDITOR
 	[SerializeField] int levelTOloadDebug = 1;
 #endif
+
+
 	private void Awake()
 	{
 		if (Instance == null)
@@ -160,7 +170,10 @@ public class GameManager : MonoBehaviour
 				notMovables.Add(generator);
 			}
 		}
-
+		if (hadMovables)
+		{
+			CroudHaptics.PlayMidHaptics();
+		}
 		if (!hadMovables)
 		{
 			hole.PlayNoMoves();
@@ -169,6 +182,7 @@ public class GameManager : MonoBehaviour
 				generator.PlayNoMoves();
 			}
 		}
+		
 		else if (isAllClear)
 		{
 			hole.CloseHoleAfterEating(holePlayerCount[hole.ColorEnum]);
@@ -221,16 +235,14 @@ public class GameManager : MonoBehaviour
 		if (GetAvailableMoves() > 0) return;
 		foreach (CroudManager generator in playerGrids)
 		{
-			if (!generator.IsCleared)
+			if (!generator.IsCleared && UiManager.instance != null)
 			{
-				if (UiManager.instance != null)
-				{
-					SetGameOn(false);
-					CrowdAudioManager.MakeSadMood();
+				SetGameOn(false);
+				CrowdAudioManager.MakeSadMood();
+				CroudHaptics.PlayHeavyHaptics();
+				UiManager.instance.GameOver();
+				break;
 
-					UiManager.instance.GameOver();
-					break;
-				}
 			}
 		}
 	}
@@ -266,7 +278,6 @@ public class GameManager : MonoBehaviour
 				UiManager.instance.LevelComplete();
 			}
 		}
-
 	}
 
 	internal int GetLevel()
