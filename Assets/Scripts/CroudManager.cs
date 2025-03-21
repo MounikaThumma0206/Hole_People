@@ -40,14 +40,15 @@ public class CroudManager : GridItemGenerator
 
 	[SerializeField] UnityEvent OnCroudRefilled = new();
 	[SerializeField] UnityEvent OnCrowdCleared = new();
-
-
+	[SerializeField] Transform chatBubblePosition;
+	ParticleSystem chatBubble;
 	GameObject pillarParent;
 	private List<Pillar> pillars = new List<Pillar>();
 
 
 	bool _moved;
 	private float lastTimeCrowdUpdate;
+	private Tweener scaleTween;
 
 	public bool Moved { get => _moved; set => _moved = value; }
 	public bool IsCleared { get; private set; }
@@ -60,6 +61,9 @@ public class CroudManager : GridItemGenerator
 
 	void Start()
 	{
+		chatBubble = Resources.Load<ParticleSystem>("Chat Bubble");
+		chatBubble = Instantiate(chatBubble);
+		chatBubble.transform.position = chatBubblePosition.position;
 		foreach (CroudManager generator in blockingGrid)
 		{
 			generator.isMovable = false;
@@ -294,6 +298,12 @@ public class CroudManager : GridItemGenerator
 	private void OnValidate()
 	{
 		if (shouldGeneratePillers) return;
+		if (chatBubblePosition == null)
+		{
+			chatBubblePosition = new GameObject("ChatBubble").transform;
+			chatBubblePosition.SetParent(transform);
+		}
+
 		CalculateNavmeshSize();
 		var count = GetMaxBounds() - GetMinBounds();
 		TileCount = (count.x + 1) * (count.y + 1);
@@ -333,6 +343,16 @@ public class CroudManager : GridItemGenerator
 		{
 			Debug.LogError("NavMeshObstacle component missing on " + gameObject.name);
 		}
+
+
+
+
+		//for the particle effect of chatbubble
+		Vector3 midPoint = startPosition + (endPosition - startPosition) / 2f;
+
+		chatBubblePosition.position = midPoint + Vector3.up * 1.5f;
+
+
 	}
 	public void DebugClearBlockers()
 	{
@@ -444,7 +464,15 @@ public class CroudManager : GridItemGenerator
 	}
 	internal void PlayNoMoves()
 	{
-		transform.DOPunchScale(transform.localScale * .1f, 0.2f, 1, 5);
+		if (scaleTween == null)
+		{
+			scaleTween = transform.DOPunchScale(transform.localScale * .1f, 0.2f, 1, 5).SetAutoKill(false);
+		}
+		else
+		{
+			scaleTween.Restart();
+		}
+		chatBubble.Play();
 	}
 
 	internal bool CanMove()

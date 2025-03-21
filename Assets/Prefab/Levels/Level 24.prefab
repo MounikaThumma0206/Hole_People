@@ -77,7 +77,9 @@ MonoBehaviour:
   TileCount: 48
   isMovable: 1
   shouldGeneratePillers: 0
-  blockingGrid: []
+  blockingGrid:
+  - {fileID: 5076790472109567830}
+  - {fileID: 1466214151242345997}
   pillarType: 1
   pipeMouthPosition: {fileID: 0}
   OnCroudRefilled:
@@ -86,6 +88,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &8283587150090905284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +194,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &5879526994827740155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +300,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &7126199564838062950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,6 +406,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &6951379709187799776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,6 +616,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &8643782725765726827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,6 +722,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &6773071337612286421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,6 +881,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &3007578534431059445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -978,6 +987,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &6495448782454461282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1083,6 +1093,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &4574222949495078619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,6 +1199,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &2399461636486346504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1284,7 +1296,9 @@ MonoBehaviour:
   TileCount: 48
   isMovable: 1
   shouldGeneratePillers: 0
-  blockingGrid: []
+  blockingGrid:
+  - {fileID: 1937143424750327841}
+  - {fileID: 2844362726550372939}
   pillarType: 1
   pipeMouthPosition: {fileID: 0}
   OnCroudRefilled:
@@ -1293,6 +1307,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &5831518943915401243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1412,6 +1427,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &3211083542839782009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1517,6 +1533,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &3929637510500429043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1622,6 +1639,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &726698932550465172
 MonoBehaviour:
   m_ObjectHideFlags: 0

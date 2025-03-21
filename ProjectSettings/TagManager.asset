@@ -42,3 +42,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: UI FX
+    uniqueID: 3556185129
+    locked: 0

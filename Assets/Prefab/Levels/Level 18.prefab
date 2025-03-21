@@ -86,6 +86,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &5238264185932365153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,6 +191,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!1 &8944297959230558753
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +277,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!1001 &3336027593872949166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -778,6 +781,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 519391375650170454, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
+      propertyPath: chatBubblePosition
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 519391375650170454, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
       propertyPath: shouldGeneratePillers
       value: 1
       objectReference: {fileID: 0}
@@ -1248,6 +1256,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 11.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182225194571193050, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9083400231807024089, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}

@@ -86,6 +86,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &7126199564838062950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +192,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &7436448613869778284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +298,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &6223064834451439178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,6 +406,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &496283308390448622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,6 +512,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &2585613443412255064
 MonoBehaviour:
   m_ObjectHideFlags: 0

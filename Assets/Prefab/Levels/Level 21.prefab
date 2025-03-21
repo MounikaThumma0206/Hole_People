@@ -98,6 +98,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &4538411411195360993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +204,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &7578287999476537434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,6 +310,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &6782663757498832574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,6 +428,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &7126199564838062950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -577,6 +581,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &8643782725765726827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,6 +699,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &496283308390448622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,6 +805,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &1116331841695277904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,6 +958,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &7892362754120938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1056,6 +1064,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &8595489216746681230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1173,6 +1182,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  chatBubblePosition: {fileID: 0}
 --- !u!114 &4070918551535797608
 MonoBehaviour:
   m_ObjectHideFlags: 0

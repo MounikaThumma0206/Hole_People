@@ -14,7 +14,6 @@ public class GridElement : MonoBehaviour
 	/// </summary>
 	public static UnityEvent<GridElement> OnGridElementJumped = new();
 
-	public ColorEnum GridColor; // The color assigned to this grid element.
 	public int lineIndex; // Index position in a line formation.
 	public CroudManager playerGenerator; // Reference to the crowd manager.
 	public Color gizmoColor = Color.yellow; // Color used for editor gizmos.
@@ -31,6 +30,7 @@ public class GridElement : MonoBehaviour
 	public Vector3 PlayerInitialPos; // The initial position of the player.
 	public Vector3 PlayerInitialScale; // The initial scale of the player.
 	public bool StartedRunning; // Tracks if the entity has started running.
+	[SerializeField] private ParticleSystem dirtSmokeFx;
 	private bool isRefilling; // Flag for refill status.
 	public Hole Hole; // Reference to the hole the entity is associated with.
 	public NavMeshAgent agent; // AI agent for navigation.
@@ -38,6 +38,7 @@ public class GridElement : MonoBehaviour
 
 	// Variables for jump handling
 	[SerializeField] private Vector3 jumpStartPosition, jumpMidPosition, jumpEndPosition;
+	[SerializeField] private float jumpSpeed;
 	[SerializeField] private float jumpInterpTime = 0;
 	private bool canJump = false;
 
@@ -118,6 +119,7 @@ public class GridElement : MonoBehaviour
 			{
 				agent.enabled = false;
 				canJump = true;
+				dirtSmokeFx.Stop();
 				StartJumping(
 					agent.transform.position,
 					Hole.transform.position + Vector3.up * 4 + VectorExt.GetRandomDirectionalVector() * HoleRadius,
@@ -203,12 +205,14 @@ public class GridElement : MonoBehaviour
 
 		if (canJump)
 		{
-			jumpInterpTime += Time.deltaTime * 2;
-			agent.transform.position = VectorExt.CubicBezier(jumpStartPosition, jumpMidPosition, jumpEndPosition, jumpInterpTime);
+			jumpInterpTime += Time.deltaTime * jumpSpeed;
+			var agentNewPos = VectorExt.CubicBezier(jumpStartPosition, jumpMidPosition, jumpEndPosition, jumpInterpTime);
+			agent.transform.position = agentNewPos;
 			if (jumpInterpTime > 1)
 			{
 				jumpInterpTime = 1;
 				canJump = false;
+				agent.gameObject.SetActive(false);
 				CrowdAudioManager.PlayJumpSound();
 				OnGridElementJumped?.Invoke(this);
 			}
@@ -221,6 +225,12 @@ public class GridElement : MonoBehaviour
 			{
 				targetPosition = null;
 				isRefilling = false;
+				// Offset idle animation clip for animation variety
+				if (animator != null)
+				{
+					AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+					animator.Play(state.fullPathHash, -1, Random.Range(0f, 1f));
+				}
 				agent.transform.position = transform.position;
 				agent.transform.forward = Vector3.back;
 				animator.SetTrigger("Idle");

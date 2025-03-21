@@ -21,6 +21,8 @@ public class Hole : GridItemGenerator
 	[SerializeField] private bool canClose; // Determines if the hole can be closed.
 	[SerializeField] private GameObject closableHoleCanvas; // UI element indicating a closable hole.
 	[SerializeField] private Image fill; // UI fill bar for closing progress.
+	[SerializeField] private ParticleSystem carrotFx;
+	[SerializeField] private ParticleSystem carrotEatFX;
 
 	/// <summary>
 	/// Event triggered when the hole is closed.
@@ -65,13 +67,23 @@ public class Hole : GridItemGenerator
 	{
 		base.OnEnable();
 		_totalPeopleToBeAttracted = 0;
+		OnAnyHoleClicked.AddListener(PlayCarrot);
 		GameManager.Instance.SusbscribeHole(this);
+		GridElement.OnGridElementJumped.AddListener(PlayCarrotFx);
+
 		if (canClose)
 		{
 			GridElement.OnGridElementJumped.AddListener(CheckForClosing);
 		}
 	}
 
+	void PlayCarrot(ColorEnum @enum)
+	{
+		if (@enum == colorEnum)
+		{
+			carrotFx.Play();
+		}
+	}
 	/// <summary>
 	/// Unsubscribes the hole from the GameManager when disabled.
 	/// </summary>
@@ -124,6 +136,14 @@ public class Hole : GridItemGenerator
 	}
 #endif
 
+	internal void PlayCarrotFx(GridElement gridElement)
+	{
+		if (gridElement.PlayerColor == colorEnum)
+		{
+			//carrotFx.Play();
+			carrotEatFX.Play();
+		}
+	}
 	/// <summary>
 	/// Closes the hole, triggers animations, and invokes closure events.
 	/// </summary>

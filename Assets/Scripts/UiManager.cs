@@ -8,10 +8,12 @@ public class UiManager : MonoBehaviour
 	public GameObject levelCompleteMenu;
 	public GameObject retryPanel; // Reference to the retry panel
 	private int moveCount = 5; // Start with 5 moves
+	[SerializeField] string movePrefix;
 	public TextMeshProUGUI moveText; // Reference to the UI Text component for showing remaining moves
 	public TextMeshProUGUI levelText; // Reference to the UI Text component for showing remaining moves
 	public TextMeshProUGUI levelTextInCompletePanel; // Reference to the UI Text component for showing remaining moves
 
+	[SerializeField] ParticleSystem levelCompleteConfetti;
 	private void Awake()
 	{
 		if (instance == null)
@@ -37,9 +39,9 @@ public class UiManager : MonoBehaviour
 	{
 		if (moveText != null)
 		{
-			moveText.text = "Moves: " + moveCount.ToString();
+			moveText.text = movePrefix + ": " + moveCount.ToString();
 		}
-	}		
+	}
 	public void RestartLevel()
 	{
 		GameManager.Instance.Restart();
@@ -53,6 +55,7 @@ public class UiManager : MonoBehaviour
 			{
 				levelTextInCompletePanel.text = "Level " + GameManager.Instance.GetLevel();
 				levelCompleteMenu.SetActive(true);
+				levelCompleteConfetti.Play();
 				CrowdAudioManager.MakeHappyMood();
 
 			}
