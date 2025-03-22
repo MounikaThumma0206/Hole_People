@@ -180,8 +180,47 @@ MonoBehaviour:
   drawGizmos: 1
   gridPrefab: {fileID: 3889648112902271224, guid: 4b14ce8cb3385d14d946b1d5419458af,
     type: 3}
+  cornerStonePrefab: {fileID: 7940617690452464204, guid: c4c72ceca6c34fc47a07deeb95a42aa0,
+    type: 3}
+  wallPrefab: {fileID: 4177522666287987941, guid: 1d5d015e08f62fd42a93302f13322e8e,
+    type: 3}
+  edgePlanePrefab: {fileID: 774348621837046637, guid: 9f0ea3e5ac70361429b70c874b382510,
+    type: 3}
+  paddingforBoundary: 0.5
+  planeWidth: 10
   croudGenerators: []
   navMeshSurface: {fileID: 1961927896193233052}
+--- !u!1 &2881313220994144710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7067021463241770501}
+  m_Layer: 0
+  m_Name: ChatBubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7067021463241770501
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2881313220994144710}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.015789475, y: 1.5, z: -0.03137255}
+  m_LocalScale: {x: 0.5263158, y: 1, z: 0.13071896}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2309788744569678583}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3802375127605933060
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,7 +252,8 @@ Transform:
   m_LocalPosition: {x: -2.07, y: 0, z: -0.7}
   m_LocalScale: {x: 1.7, y: 1, z: 5.65}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5829907118652779384}
   m_Father: {fileID: 968961618806010701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &5108655910121296119
@@ -268,7 +308,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
-  chatBubblePosition: {fileID: 0}
+  chatBubblePosition: {fileID: 5829907118652779384}
 --- !u!114 &2824811132594302907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,7 +358,8 @@ Transform:
   m_LocalPosition: {x: 0.22, y: 0, z: 0.24}
   m_LocalScale: {x: 1.9, y: 1, z: 7.65}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7067021463241770501}
   m_Father: {fileID: 968961618806010701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &9083400231807024089
@@ -375,7 +416,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
-  chatBubblePosition: {fileID: 0}
+  chatBubblePosition: {fileID: 7067021463241770501}
 --- !u!1 &4468566509907499213
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +480,68 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
+--- !u!1 &4708863815131031909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5829907118652779384}
+  m_Layer: 0
+  m_Name: ChatBubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5829907118652779384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4708863815131031909}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.105882384, y: 1.5, z: -0.05309735}
+  m_LocalScale: {x: 0.58823526, y: 1, z: 0.17699115}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7972908394689583477}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4969372198293328094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 91376630526667468}
+  m_Layer: 0
+  m_Name: ChatBubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &91376630526667468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4969372198293328094}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.026967974, y: 1.5, z: -0.7748315}
+  m_LocalScale: {x: 1.3484, y: 1, z: 2.499457}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7383903937789203408}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5123527242748620906
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,13 +569,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5123527242748620906}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0.3261, y: -8, z: 4.0457}
   m_LocalScale: {x: 1.5614752, y: 10, z: 2.5752637}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3540600272356728428}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &7475727333535756507
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -855,7 +958,8 @@ Transform:
   m_LocalPosition: {x: 2.23, y: 0, z: 1.31}
   m_LocalScale: {x: 0.7416197, y: 1, z: 0.40008694}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 91376630526667468}
   m_Father: {fileID: 968961618806010701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &2422678713353090172
@@ -910,7 +1014,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
-  chatBubblePosition: {fileID: 0}
+  chatBubblePosition: {fileID: 91376630526667468}
 --- !u!1 &6093465874805029304
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,7 +1096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5437701852963026778
 Transform:
   m_ObjectHideFlags: 0

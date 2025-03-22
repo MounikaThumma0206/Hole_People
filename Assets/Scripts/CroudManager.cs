@@ -8,6 +8,8 @@ using UnityEngine.Events;
 public class CroudManager : GridItemGenerator
 {
 
+	static GameObject pillarParent;
+
 	public CroudManagerData croudManagerData;
 	public GameObject[,] PlayerGrid;
 
@@ -32,18 +34,18 @@ public class CroudManager : GridItemGenerator
 	[Header("Pillers")]
 	public bool shouldGeneratePillers;
 	[SerializeField] static Pillar pillerPrefab;
-	[SerializeField] List<CroudManager> blockingGrid = new List<CroudManager>();
-	private List<CroudManager> unBlockingGrid = new List<CroudManager>();
+	[SerializeField] List<CroudManager> blockingGrid = new();
 	[SerializeField] private PillarType pillarType = PillarType.DEACTIVE;
 	[SerializeField] private Transform pipeMouthPosition;
+
+	private readonly List<CroudManager> unBlockingGrid = new();
 	[Header("Events")]
 
 	[SerializeField] UnityEvent OnCroudRefilled = new();
 	[SerializeField] UnityEvent OnCrowdCleared = new();
 	[SerializeField] Transform chatBubblePosition;
 	ParticleSystem chatBubble;
-	GameObject pillarParent;
-	private List<Pillar> pillars = new List<Pillar>();
+	private readonly List<Pillar> pillars = new();
 
 
 	bool _moved;
@@ -55,7 +57,7 @@ public class CroudManager : GridItemGenerator
 	public PillarType PillarType { get => pillarType; set => pillarType = value; }
 	public ColorEnum GridColor => colorEnum;
 	public GameObject Tile => croudManagerData.croudPrefab;
-	public ColorManager colorManager => croudManagerData.colorManager;
+	public ColorManager ColorManager => croudManagerData.colorManager;
 	public float Column_spacing => croudManagerData.spacing.y;
 	public float Row_spacing => croudManagerData.spacing.x;
 
@@ -145,7 +147,7 @@ public class CroudManager : GridItemGenerator
 		float x = transform.position.x;
 		float y = transform.position.y;
 		float z = transform.position.z;
-		if (pillarParent == null)
+		if (shouldGeneratePillers && pillarParent == null)
 		{
 			pillarParent = new GameObject("Pillars");
 		}
@@ -154,7 +156,7 @@ public class CroudManager : GridItemGenerator
 			PillarType = PillarType.DEACTIVE;
 		}
 		//Get the color with same enum from the color manager
-		foreach (ColorMaterial colorMaterial in colorManager.colorMaterials)
+		foreach (ColorMaterial colorMaterial in ColorManager.colorMaterials)
 		{
 			if (colorMaterial.colorEnum == GridColor)
 			{

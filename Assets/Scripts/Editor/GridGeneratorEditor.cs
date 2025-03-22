@@ -5,6 +5,7 @@ using UnityEngine;
 [CanEditMultipleObjects]
 public class GridGeneratorEditor : Editor
 {
+
 	public override void OnInspectorGUI()
 	{
 
@@ -14,14 +15,15 @@ public class GridGeneratorEditor : Editor
 			boxDataArray[i] = (GridGenerator)targets[i];
 		}
 
-		if (GUILayout.Button("Generate grid tiles"))
+		if (GUILayout.Button("Generate CornerStoneAndWalls"))
 		{
-			//foreach (var
-			//	boxData in boxDataArray)
-			//{
-			//	boxData.GenerateTiles();
-			//}
+			foreach (GridGenerator box in boxDataArray)
+			{
+				box.PlaceCornerStonesAndWalls(box.paddingforBoundary);
+				box.PlaceEdgePlanes();
+			}
 		}
+
 		DrawDefaultInspector();
 	}
 }
