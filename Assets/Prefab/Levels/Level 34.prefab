@@ -31,7 +31,8 @@ Transform:
   m_LocalPosition: {x: 2.02, y: 0, z: -2.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7629434723020768870}
   m_Father: {fileID: 8128193471260524997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &3623142075076148993
@@ -86,7 +87,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
-  chatBubblePosition: {fileID: 0}
+  chatBubblePosition: {fileID: 7629434723020768870}
 --- !u!114 &8638244484803336989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,6 +107,37 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: f2652fae
+--- !u!1 &602547370519658541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4194597373385655207}
+  m_Layer: 0
+  m_Name: ChatBubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4194597373385655207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602547370519658541}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.049999952, y: 1.5, z: -0.07000005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7893992764044254427}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &848151946523081039
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +169,8 @@ Transform:
   m_LocalPosition: {x: 1.88, y: 0, z: 1.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8564489533459281373}
   m_Father: {fileID: 8128193471260524997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &769879541405905734
@@ -192,7 +225,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
-  chatBubblePosition: {fileID: 0}
+  chatBubblePosition: {fileID: 8564489533459281373}
 --- !u!114 &7126199564838062950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,8 +274,8 @@ Transform:
   m_GameObject: {fileID: 1088145639893633803}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7080318, z: -0, w: 0.7061806}
-  m_LocalPosition: {x: -1.9573, y: -0.8095, z: 1.5047}
-  m_LocalScale: {x: 0.14308, y: 2.6190262, z: 1.9393691}
+  m_LocalPosition: {x: -1.8437, y: -0.8095, z: 1.5048}
+  m_LocalScale: {x: 0.14308, y: 2.6190262, z: 1.7861195}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3947911495761872338}
@@ -275,7 +308,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2449733ef73d20a49b28e3580dde441c, type: 2}
+  - {fileID: 2100000, guid: 94439be0f2a3ed24cb8f616eb520f7b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -337,6 +370,68 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!1 &1474234792923421364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7629434723020768870}
+  m_Layer: 0
+  m_Name: ChatBubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7629434723020768870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474234792923421364}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.01999998, y: 1.5, z: 0.109999895}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7589901431398465011}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1735936072609314959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8049807231695332430}
+  m_Layer: 0
+  m_Name: ChatBubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8049807231695332430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735936072609314959}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.12, y: 1.5, z: 0.049999952}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515918176912292008}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1871268909446766704
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +463,8 @@ Transform:
   m_LocalPosition: {x: 0.04, y: 0, z: -2.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4925508481844050614}
   m_Father: {fileID: 8128193471260524997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &6573161043279898899
@@ -424,7 +520,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
-  chatBubblePosition: {fileID: 0}
+  chatBubblePosition: {fileID: 4925508481844050614}
 --- !u!114 &8355997131177456258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -475,7 +571,8 @@ Transform:
   m_LocalPosition: {x: -1.95, y: 0, z: 1.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4194597373385655207}
   m_Father: {fileID: 8128193471260524997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &7887079725591794779
@@ -530,7 +627,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
-  chatBubblePosition: {fileID: 0}
+  chatBubblePosition: {fileID: 4194597373385655207}
 --- !u!114 &7436448613869778284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,6 +647,68 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: f2652fae
+--- !u!1 &2456518957683386546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6624500429411472869}
+  m_Layer: 0
+  m_Name: ChatBubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6624500429411472869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2456518957683386546}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.09, y: 1.5, z: -0.010000229}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7227382570698369449}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3018106183618485350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 169229062709173438}
+  m_Layer: 0
+  m_Name: ChatBubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &169229062709173438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3018106183618485350}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.02, y: 1.5, z: -0.11000013}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7550878551317257773}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4259577774940039113
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,7 +740,8 @@ Transform:
   m_LocalPosition: {x: -0.04, y: 0, z: 1.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2365240467994295598}
   m_Father: {fileID: 8128193471260524997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1382812148172627090
@@ -637,7 +797,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
-  chatBubblePosition: {fileID: 0}
+  chatBubblePosition: {fileID: 2365240467994295598}
 --- !u!114 &2585613443412255064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,6 +817,68 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: f2652fae
+--- !u!1 &4408168067495244000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8564489533459281373}
+  m_Layer: 0
+  m_Name: ChatBubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8564489533459281373
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4408168067495244000}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.120000005, y: 1.5, z: 0.01999998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 272431092666315087}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4973856550296874628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2365240467994295598}
+  m_Layer: 0
+  m_Name: ChatBubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2365240467994295598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4973856550296874628}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.04, y: 1.5, z: -0.09000003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4088263017333364094}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5570202737084494180
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,7 +910,8 @@ Transform:
   m_LocalPosition: {x: -0.02, y: 0, z: -4.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 169229062709173438}
   m_Father: {fileID: 8128193471260524997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &7360044751419487045
@@ -744,7 +967,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
-  chatBubblePosition: {fileID: 0}
+  chatBubblePosition: {fileID: 169229062709173438}
 --- !u!114 &8788654995751918407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -795,7 +1018,8 @@ Transform:
   m_LocalPosition: {x: 0.04, y: 0, z: 3.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7144291051044808943}
   m_Father: {fileID: 8128193471260524997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1007248486536395336
@@ -851,7 +1075,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
-  chatBubblePosition: {fileID: 0}
+  chatBubblePosition: {fileID: 7144291051044808943}
 --- !u!114 &4129871285563322901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -902,7 +1126,8 @@ Transform:
   m_LocalPosition: {x: 0.09, y: 0, z: 5.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6624500429411472869}
   m_Father: {fileID: 8128193471260524997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &8688476743894247179
@@ -961,7 +1186,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
-  chatBubblePosition: {fileID: 0}
+  chatBubblePosition: {fileID: 6624500429411472869}
 --- !u!114 &369813861299687279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1010,8 +1235,8 @@ Transform:
   m_GameObject: {fileID: 7547986240684798633}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7080318, z: -0, w: 0.7061806}
-  m_LocalPosition: {x: 1.89, y: -0.8095, z: 1.509}
-  m_LocalScale: {x: 0.14308, y: 2.6190262, z: 2.0129817}
+  m_LocalPosition: {x: 1.6992, y: -0.8095, z: 1.5087}
+  m_LocalScale: {x: 0.14308, y: 2.6190262, z: 1.8539151}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3947911495761872338}
@@ -1044,7 +1269,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2449733ef73d20a49b28e3580dde441c, type: 2}
+  - {fileID: 2100000, guid: 94439be0f2a3ed24cb8f616eb520f7b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1137,7 +1362,8 @@ Transform:
   m_LocalPosition: {x: 0.12, y: 0, z: -1.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8049807231695332430}
   m_Father: {fileID: 8128193471260524997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &4358274019869351209
@@ -1193,7 +1419,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
-  chatBubblePosition: {fileID: 0}
+  chatBubblePosition: {fileID: 8049807231695332430}
 --- !u!114 &8550858842909774393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1244,7 +1470,8 @@ Transform:
   m_LocalPosition: {x: -2.06, y: 0, z: -2.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2101461675820904679}
   m_Father: {fileID: 8128193471260524997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &3502427746403782243
@@ -1299,7 +1526,7 @@ MonoBehaviour:
   OnCrowdCleared:
     m_PersistentCalls:
       m_Calls: []
-  chatBubblePosition: {fileID: 0}
+  chatBubblePosition: {fileID: 2101461675820904679}
 --- !u!114 &5974909729858196758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1319,6 +1546,99 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: f2652fae
+--- !u!1 &9126384494188131906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7144291051044808943}
+  m_Layer: 0
+  m_Name: ChatBubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7144291051044808943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9126384494188131906}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.04, y: 1.5, z: -0.00999999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1750026590057875520}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9132829610939234851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2101461675820904679}
+  m_Layer: 0
+  m_Name: ChatBubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2101461675820904679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9132829610939234851}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.059999943, y: 1.5, z: 0.13000011}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7956245107566408688}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9176905739105234820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4925508481844050614}
+  m_Layer: 0
+  m_Name: ChatBubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4925508481844050614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9176905739105234820}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.04, y: 1.5, z: -0.059999943}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4829179088565476111}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3380755627602118808
 PrefabInstance:
   m_ObjectHideFlags: 0

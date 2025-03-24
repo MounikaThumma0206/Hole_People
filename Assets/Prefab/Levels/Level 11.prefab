@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 734052845111448207}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.0385, y: 0, z: 0.526}
-  m_LocalScale: {x: 3.8636868, y: 1, z: 0.1802125}
+  m_LocalPosition: {x: 0.8697, y: 0, z: 0.526}
+  m_LocalScale: {x: 3.5260005, y: 1, z: 0.1802125}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3947911495761872338}
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2449733ef73d20a49b28e3580dde441c, type: 2}
+  - {fileID: 2100000, guid: 94439be0f2a3ed24cb8f616eb520f7b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125,6 +125,37 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!1 &2325679181189100438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5314420690815924516}
+  m_Layer: 0
+  m_Name: ChatBubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5314420690815924516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2325679181189100438}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.06999993, y: 1.5, z: -0.17999995}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1376448239749475325}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3133877495137956807
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,8 +185,8 @@ Transform:
   m_GameObject: {fileID: 3133877495137956807}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9213, y: -0, z: -1.2512}
-  m_LocalScale: {x: 3.4811752, y: 1, z: 1.5646455}
+  m_LocalPosition: {x: 0.9213, y: -0, z: -1.1692}
+  m_LocalScale: {x: 3.4811752, y: 1, z: 1.4006706}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3947911495761872338}
@@ -188,7 +219,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2449733ef73d20a49b28e3580dde441c, type: 2}
+  - {fileID: 2100000, guid: 94439be0f2a3ed24cb8f616eb520f7b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -250,6 +281,37 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!1 &8195441679129882031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4222245202634338904}
+  m_Layer: 0
+  m_Name: ChatBubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4222245202634338904
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8195441679129882031}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.13, y: 1.5, z: 0.07999992}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6751266586554538111}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3336027593872949166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -508,7 +570,7 @@ PrefabInstance:
         type: 3}
       propertyPath: chatBubblePosition
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5314420690815924516}
     - target: {fileID: 519391375650170454, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: blockingGrid.Array.size
@@ -821,7 +883,7 @@ PrefabInstance:
         type: 3}
       propertyPath: chatBubblePosition
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4222245202634338904}
     - target: {fileID: 6482304172784229975, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       propertyPath: shouldGeneratePillers
@@ -1023,11 +1085,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2309788744569678583, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 0}
+      addedObject: {fileID: 4222245202634338904}
     - targetCorrespondingSourceObject: {fileID: 7972908394689583477, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 0}
+      addedObject: {fileID: 5314420690815924516}
     - targetCorrespondingSourceObject: {fileID: 5437701852963026778, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
         type: 3}
       insertIndex: 2
@@ -1082,6 +1144,12 @@ MonoBehaviour:
 --- !u!208 &266255477707868497 stripped
 NavMeshObstacle:
   m_CorrespondingSourceObject: {fileID: 9083400231807024089, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 9061055055641801352}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1376448239749475325 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7972908394689583477, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
     type: 3}
   m_PrefabInstance: {fileID: 9061055055641801352}
   m_PrefabAsset: {fileID: 0}
@@ -1168,6 +1236,12 @@ MonoBehaviour:
 --- !u!4 &3947911495761872338 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5437701852963026778, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 9061055055641801352}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6751266586554538111 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2309788744569678583, guid: 5fbb7c9a3f81b374aa8ea26c0e48be6c,
     type: 3}
   m_PrefabInstance: {fileID: 9061055055641801352}
   m_PrefabAsset: {fileID: 0}

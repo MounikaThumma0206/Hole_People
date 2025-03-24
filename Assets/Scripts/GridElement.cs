@@ -25,7 +25,6 @@ public class GridElement : MonoBehaviour
 	public ColorEnum PlayerColor; // The color of the player on this grid element.
 	public GameObject Player; // Reference to the player GameObject.
 	public SkinnedMeshRenderer playerRenderer; // Renderer for changing player appearance.
-	public Rigidbody rb; // Rigidbody component for physics.
 	public Animator animator; // Animator for movement/jump animations.
 	public Vector3 PlayerInitialPos; // The initial position of the player.
 	public Vector3 PlayerInitialScale; // The initial scale of the player.
@@ -68,15 +67,6 @@ public class GridElement : MonoBehaviour
 			AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
 			animator.Play(state.fullPathHash, -1, Random.Range(0f, 1f));
 		}
-
-		// Ensure the Rigidbody component is assigned
-		if (rb == null)
-		{
-			rb = GetComponent<Rigidbody>() ?? gameObject.AddComponent<Rigidbody>();
-		}
-
-		rb.useGravity = false; // Disable gravity initially
-		rb.isKinematic = true; // Prevent physics interactions initially
 	}
 
 	/// <summary>
@@ -95,7 +85,7 @@ public class GridElement : MonoBehaviour
 	/// <returns>True if within stopping distance, otherwise false.</returns>
 	private bool IsWithinStoppingDistance()
 	{
-		return Hole != null && (Hole.transform.position - rb.transform.position).sqrMagnitude < JumpDetectionRadius * JumpDetectionRadius;
+		return Hole != null && (Hole.transform.position - agent.transform.position).sqrMagnitude < JumpDetectionRadius * JumpDetectionRadius;
 	}
 
 	/// <summary>
@@ -242,12 +232,6 @@ public class GridElement : MonoBehaviour
 			float agentMoveSpeed = 7;
 			float speed = magnitude > 1 ? agentMoveSpeed : agentMoveSpeed * magnitude;
 			agent.transform.Translate(Time.deltaTime * speed * distanceVector.normalized, Space.World);
-		}
-		else
-		{
-#if UNITY_EDITOR
-			Debug.LogWarning("Target position is not set!");
-#endif
 		}
 	}
 

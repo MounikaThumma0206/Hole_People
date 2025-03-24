@@ -75,7 +75,6 @@ public class CroudManager : GridItemGenerator
 		{
 			//GameManager.Instance.playerGrids.Add(this);
 		}
-
 		foreach (Pillar pillar in pillars)
 		{
 			pillar.SwitchPillarType(GridColor);
@@ -397,10 +396,11 @@ public class CroudManager : GridItemGenerator
 
 	private void Update()
 	{
-		if (Time.time - lastTimeCrowdUpdate > croudManagerData.crowdUpdateInterval)
-		{
-			lastTimeCrowdUpdate = Time.time;
-		}
+		//if (Time.time - lastTimeCrowdUpdate > croudManagerData.crowdUpdateInterval)
+		//{
+		//	lastTimeCrowdUpdate = Time.time;
+		//}
+		//if()
 		foreach (GridElement gridElement in playerGridElements)
 		{
 			gridElement.OnCrowdUpdate();
