@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1bf3d55122eaf419478da5ca4f203f, type: 3}
+  m_Name: New Ruletile
+  m_EditorClassIdentifier: 
+  defaultPrefab: {fileID: 1527364339510511751, guid: d11b032762a10694c95f0bd4393ac610,
+    type: 3}
+  gridObjects:
+  - prefab: {fileID: 1575632657645409139, guid: 8dbbc837f3d0df845ae90773ac89e4dc,
+      type: 3}
+    ruleState: 010000000200000000000000010000000100000000000000010000000200000000000000
+  - prefab: {fileID: 1575632657645409139, guid: 73308b1c24b8d5e4aa66d7dab2f09292,
+      type: 3}
+    ruleState: 000000000200000001000000000000000100000001000000000000000200000001000000
+  - prefab: {fileID: 1575632657645409139, guid: d00b33d1979b25a408aefb6f62f31372,
+      type: 3}
+    ruleState: 010000000100000001000000020000000100000002000000000000000000000000000000
+  - prefab: {fileID: 1575632657645409139, guid: 26a1a50dec7a84c4293a4c07da2591d5,
+      type: 3}
+    ruleState: 000000000000000000000000020000000100000002000000010000000100000001000000
